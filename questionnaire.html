@@ -636,8 +636,8 @@ main{padding-top:var(--ehh)}
 .sec+.sec:not(.bg2):not(.tint){border-top:1px solid var(--hair)}
 .num,time,.tel,.price,.n{font-family:var(--min)}
 h1,h2,h3{font-weight:400}
-main *:not(.lp-emblems div):not(.fv *){border-radius:0!important}
-main *:not(.lp-emblems div):not(.fv *){box-shadow:none!important}
+main *:not(.lp-emblems div):not(.fv-badge):not(.fv-strip .ic){border-radius:0!important}
+main *:not(.lp-emblems div){box-shadow:none!important}
 .photo{background:var(--muted)}
 .photo .cap{background:rgba(17,21,28,.72);font-size:10.5px;letter-spacing:.08em}
 .tbd{background:linear-gradient(transparent 60%,#efe3c4 60%)}
@@ -1313,21 +1313,31 @@ a:hover .arw{background:var(--ink);color:#fff;border-color:var(--ink)}
  .btn{letter-spacing:.06em;font-size:13.5px;padding:0 18px;gap:14px}
 }
 
-/* ---------- TOP FV：以前（v3〜v5）と全く同じ形・色を維持（ユーザー指示） ---------- */
-.fv{--main:#1942a8;--main-d:#12317f;--main-l:#e6edf8;--text:#46505f;--ink:#1c2a44;--sub:#7d8796;--line:#d9e1ec;--green:#06c755;--green2:#248b28;--navy:#16284f;--en:"Marcellus",serif;--go:"Noto Sans JP","Hiragino Sans",sans-serif;
- height:calc(100vh - var(--ehh) - 64px);min-height:660px;max-height:900px;padding-top:0;font-family:var(--go);letter-spacing:.04em;color:var(--text)}
-.fv h3{font-weight:700}
-.fv .btn{border-radius:6px;font-family:var(--go);font-weight:700;letter-spacing:.06em;justify-content:center;gap:10px;border:1px solid transparent;min-height:48px;padding:0 24px;font-size:14px}
-.fv .btn::after{content:none}
-.fv .btn.web{background:var(--main);color:#fff}
-.fv .btn.line{background:var(--green);color:#fff}
-.fv .btn:hover{opacity:.85}
-.fv .tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--main);border:1px solid var(--main);border-radius:4px;padding:1px 8px;line-height:1.7;background:#fff;letter-spacing:.04em;text-align:center}
-.fv .tag.g{color:var(--green2);border-color:var(--green2)}
-.fv .tag.fill{background:var(--main);color:#fff}
-.fv time{font-family:var(--min)}
+/* ---------- TOP FV：形（配置）は以前と同じ。見た目は他ページのエディトリアルに統一 ---------- */
+.fv{height:calc(100vh - var(--ehh) - 64px);min-height:660px;max-height:900px;padding-top:0;background:var(--paper2)}
+.fv-bg{opacity:.35;filter:grayscale(.5)}
+.fv-bg::after{background:linear-gradient(90deg,rgba(249,249,246,.98) 0%,rgba(249,249,246,.92) 40%,rgba(249,249,246,.35) 72%,rgba(249,249,246,.1) 100%)}
+.fv-catch{font-weight:400;font-size:40px;letter-spacing:.14em;color:var(--ink)}
+.fv-catch em,.fv-catch em.g{color:var(--ink);background:linear-gradient(transparent 80%,rgba(179,154,104,.4) 80%)}
+.fv-rule{background:var(--gold);opacity:1;width:220px}
+.fv-sub{font-weight:400;color:var(--txt);font-size:15px;line-height:2.1}
+.fv-cta{gap:8px}
+.fv-cta .btn{min-height:54px;padding:0 26px;font-size:14px;gap:26px}
+.fv-badge{background:var(--paper);border:1px solid var(--gold);color:var(--ink);font-family:var(--min);font-weight:400;letter-spacing:.06em;box-shadow:inset 0 0 0 4px var(--paper),inset 0 0 0 5px var(--gold-l)!important}
+.fv-badge b,.fv-badge svg{color:var(--gold)}
+.fv-badge b{font-weight:500}
+.fv-strip{background:rgba(249,249,246,.96);border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);padding:18px 0}
+.fv-strip>div{border-right-color:var(--hair)}
+.fv-strip .ic,.fv-strip .ic.g{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.fv-strip h3{font-family:var(--min);font-weight:400;font-size:16px;letter-spacing:.08em;color:var(--ink)}
+.fv-strip p{color:var(--gray)}
+.fv-news{background:rgba(249,249,246,.96);border-bottom:1px solid var(--hair);padding:0;margin-top:0;gap:0}
+.fv-news .lab{background:var(--ink);font-weight:400;letter-spacing:.14em;font-size:14px}
+.fv-news .rows a{padding:12px 20px;border-bottom-color:var(--hair);color:var(--ink)}
+.fv-news time{font-family:var(--min);color:var(--gray);font-size:13px}
+.fv-news .go{color:var(--ink)}
 .static .fv{height:760px}
-@media (max-width:900px){.fv{height:auto;min-height:0;max-height:none;padding-top:0}.static .fv{height:auto}.fv .btn{width:100%}}
+@media (max-width:900px){.fv{height:auto;min-height:0;max-height:none;padding-top:0}.static .fv{height:auto}.fv-catch{font-size:24px;letter-spacing:.06em}.fv-cta .btn{width:100%}}
 </style></head>
 <body class=""><header class="ehd"><div class="ehd-in"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"><span class="tx"><b>NARIMASU DENTAL</b><small>成増駅北口 徒歩0分・完全予約制</small></span></a>
 <nav class="enav"><a href="index.html" class="">ホーム</a><div class="hm"><a href="services.html" class="">診療案内</a><div class="emega"><div class="emega-in"><div class="side"><p class="ey">Service</p><h3>診療案内</h3><p>突然の痛みから、一生涯の噛める喜び、そして美しい口元まで。専門治療のページをご覧ください。</p><a href="services.html">診療案内一覧を見る<span>↗</span></a></div><div class="grid"><a href="lp-implant.html"><div class="photo "><img src="img/implant.jpg" alt="" loading="lazy"></div><span class="en">Implant</span><span class="t">インプラント</span><span class="d">しっかり噛めて、自然な見た目を取り戻す</span></a><a href="lp-snoring.html"><div class="photo "><img src="img/snoring.jpg" alt="" loading="lazy"></div><span class="en">Sleep Dentistry</span><span class="t">いびき治療（睡眠歯科）</span><span class="d">専用マウスピースで、いびき・無呼吸を改善</span></a><a href="lp-whitening.html"><div class="photo "><img src="img/whitening.jpg" alt="" loading="lazy"></div><span class="en">Whitening</span><span class="t">ホワイトニング</span><span class="d">ライフスタイルで選べる医療ホワイトニング</span></a><a href="lp-denture.html"><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><span class="en">Denture</span><span class="t">入れ歯（義歯）</span><span class="d">「痛い」「噛めない」「外れやすい」を解決</span></a><a href="lp-ortho.html"><div class="photo "><img src="img/ortho.jpg" alt="" loading="lazy"></div><span class="en">Orthodontics</span><span class="t">矯正歯科</span><span class="d">目立たないマウスピース矯正・部分矯正</span></a></div></div></div></div><a href="about.html" class="">クリニック紹介</a><a href="reservation.html" class="on">初めての方へ</a><a href="column.html" class="">コラム</a><a href="access.html" class="">アクセス・診療時間</a></nav>
