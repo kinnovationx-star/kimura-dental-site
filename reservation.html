@@ -1391,6 +1391,14 @@ a:hover .arw{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 .sec:has(.e-sym){background:#eef2fa}
 .sec:has(.e-sym) .e-sym a{border-color:#d6deef;border-top-color:var(--mc)}
+
+/* 症状カードに画像（上に写真・下に文字） */
+.e-sym a,.e-sym a:nth-child(n+4),.e-sym a:nth-child(-n+3){padding:0 0 70px;overflow:hidden}
+.e-sym .sym-ph{aspect-ratio:16/10;margin:0;overflow:hidden}
+.e-sym .sym-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.e-sym a:hover .sym-ph img{transform:scale(1.05)}
+.e-sym .bd{padding:28px 34px 0}
+@media (max-width:900px){.e-sym a,.e-sym a:nth-child(n+4),.e-sym a:nth-child(-n+3){padding:0 0 60px}.e-sym .bd{padding:22px 22px 0}}
 </style></head>
 <body class=""><header class="ehd"><div class="ehd-in"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"><span class="tx"><b>NARIMASU DENTAL</b><small>成増駅北口 徒歩0分・完全予約制</small></span></a>
 <nav class="enav"><a href="index.html" class="">ホーム</a><div class="hm"><a href="services.html" class="">診療案内</a><div class="emega"><div class="emega-in"><div class="side"><p class="ey">Service</p><h3>診療案内</h3><p>突然の痛みから、一生涯の噛める喜び、そして美しい口元まで。専門治療のページをご覧ください。</p><a href="services.html">診療案内一覧を見る<span>↗</span></a></div><div class="grid"><a href="lp-implant.html"><div class="photo "><img src="img/implant.jpg" alt="" loading="lazy"></div><span class="en">Implant</span><span class="t">インプラント</span><span class="d">しっかり噛めて、自然な見た目を取り戻す</span></a><a href="lp-snoring.html"><div class="photo "><img src="img/snoring.jpg" alt="" loading="lazy"></div><span class="en">Sleep Dentistry</span><span class="t">いびき治療（睡眠歯科）</span><span class="d">専用マウスピースで、いびき・無呼吸を改善</span></a><a href="lp-whitening.html"><div class="photo "><img src="img/whitening.jpg" alt="" loading="lazy"></div><span class="en">Whitening</span><span class="t">ホワイトニング</span><span class="d">ライフスタイルで選べる医療ホワイトニング</span></a><a href="lp-denture.html"><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><span class="en">Denture</span><span class="t">入れ歯（義歯）</span><span class="d">「痛い」「噛めない」「外れやすい」を解決</span></a><a href="lp-ortho.html"><div class="photo "><img src="img/ortho.jpg" alt="" loading="lazy"></div><span class="en">Orthodontics</span><span class="t">矯正歯科</span><span class="d">目立たないマウスピース矯正・部分矯正</span></a></div></div></div></div><a href="about.html" class="">クリニック紹介</a><a href="reservation.html" class="on">初めての方へ</a><a href="column.html" class="">コラム</a><a href="access.html" class="">アクセス・診療時間</a></nav>
