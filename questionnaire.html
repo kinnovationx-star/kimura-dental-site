@@ -1399,6 +1399,53 @@ a:hover .arw{background:var(--ink);color:#fff;border-color:var(--ink)}
 .e-sym a:hover .sym-ph img{transform:scale(1.05)}
 .e-sym .bd{padding:28px 34px 0}
 @media (max-width:900px){.e-sym a,.e-sym a:nth-child(n+4),.e-sym a:nth-child(-n+3){padding:0 0 60px}.e-sym .bd{padding:22px 22px 0}}
+
+/* ---------- 10/31 セクション間の余白を詰める ---------- */
+.sec{padding:96px 0}
+.lp .sec{padding:90px 0}
+.e-sym-cap{margin:-20px 0 32px}
+/* FVの文字は文節単位で改行（変な位置で折り返さない） */
+.fv-catch .ph1,.fv-sub .ph1{display:inline-block}
+@media (max-width:900px){
+ .sec,.lp .sec{padding:56px 0}
+ /* FV（スマホ）：文字とボタンを整える */
+ .fv-text{padding-top:28px}
+ .fv-catch{font-size:clamp(20px,6.2vw,26px);line-height:1.65;letter-spacing:.04em}
+ .fv-catch br.pc{display:none}
+ .fv-rule{width:120px;margin:16px 0 14px}
+ .fv-sub{font-size:13px;line-height:1.85;letter-spacing:.02em}
+ .fv-cta{gap:8px}
+ .fv-cta .btn{min-height:50px;padding:0 18px;font-size:13px;letter-spacing:.06em;gap:12px;white-space:nowrap}
+ /* 特徴＋お知らせはFVの外（下のセクション側）に出す */
+ .fv-foot{background:var(--paper);padding:36px 20px 8px;gap:14px}
+ .fv-strip{box-shadow:none;padding:0}
+ .fv-strip>div{padding:16px 18px;gap:14px}
+ .fv-strip .ic{width:42px;height:42px}
+ .fv-strip h3{font-size:15px}
+ .fv-strip p{font-size:12px;line-height:1.7}
+ .fv-news{box-shadow:none}
+ .fv-news .lab{padding:12px;font-size:14px}
+ .fv-news .rows a{padding:14px 16px;font-size:13.5px;line-height:1.7}
+}
+
+/* ---------- スマホ：注力メニュー・コラムは1枚ずつ見せる横スライダー ---------- */
+.sp-dots{display:none}
+@media (max-width:900px){
+ .e-feat,.e-col{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:14px;margin:0 -20px;padding:0 20px;border-bottom:0}
+ .e-feat::-webkit-scrollbar,.e-col::-webkit-scrollbar{display:none}
+ .e-feat{border-top:0}
+ .e-feat a,.e-col a{flex:0 0 84%;scroll-snap-align:center;min-width:0}
+ .e-feat a,.e-feat a:nth-child(n+3),.e-feat a:first-child{border:1px solid var(--hair);border-top:2px solid var(--mc);background:#fff;padding:22px 20px 24px}
+ .e-feat h3{font-size:17px}.e-feat .pr b{font-size:36px}
+ .e-col a{background:#fff;border:1px solid var(--hair);padding:0 0 20px}
+ .e-col a>*:not(.photo){margin-left:18px;margin-right:18px}
+ .sp-dots{display:flex;justify-content:center;gap:8px;margin:18px 0 0}
+ .sp-dots i{width:8px;height:8px;background:#c9d3ea;transition:background .3s,width .3s}
+ .sp-dots i.on{background:var(--mc);width:22px}
+}
+
+/* LPキャッチ：文節単位で折り返す */
+.lphero h1 .ph1{display:inline-block}
 </style></head>
 <body class=""><header class="ehd"><div class="ehd-in"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"><span class="tx"><b>NARIMASU DENTAL</b><small>成増駅北口 徒歩0分・完全予約制</small></span></a>
 <nav class="enav"><a href="index.html" class="">ホーム</a><div class="hm"><a href="services.html" class="">診療案内</a><div class="emega"><div class="emega-in"><div class="side"><p class="ey">Service</p><h3>診療案内</h3><p>突然の痛みから、一生涯の噛める喜び、そして美しい口元まで。専門治療のページをご覧ください。</p><a href="services.html">診療案内一覧を見る<span>↗</span></a></div><div class="grid"><a href="lp-implant.html"><div class="photo "><img src="img/implant.jpg" alt="" loading="lazy"></div><span class="en">Implant</span><span class="t">インプラント</span><span class="d">しっかり噛めて、自然な見た目を取り戻す</span></a><a href="lp-snoring.html"><div class="photo "><img src="img/snoring.jpg" alt="" loading="lazy"></div><span class="en">Sleep Dentistry</span><span class="t">いびき治療（睡眠歯科）</span><span class="d">専用マウスピースで、いびき・無呼吸を改善</span></a><a href="lp-whitening.html"><div class="photo "><img src="img/whitening.jpg" alt="" loading="lazy"></div><span class="en">Whitening</span><span class="t">ホワイトニング</span><span class="d">ライフスタイルで選べる医療ホワイトニング</span></a><a href="lp-denture.html"><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><span class="en">Denture</span><span class="t">入れ歯（義歯）</span><span class="d">「痛い」「噛めない」「外れやすい」を解決</span></a><a href="lp-ortho.html"><div class="photo "><img src="img/ortho.jpg" alt="" loading="lazy"></div><span class="en">Orthodontics</span><span class="t">矯正歯科</span><span class="d">目立たないマウスピース矯正・部分矯正</span></a></div></div></div></div><a href="about.html" class="">クリニック紹介</a><a href="reservation.html" class="on">初めての方へ</a><a href="column.html" class="">コラム</a><a href="access.html" class="">アクセス・診療時間</a></nav>
@@ -1429,6 +1476,13 @@ a:hover .arw{background:var(--ink);color:#fff;border-color:var(--ink)}
 <div class="ebar"><div class="ebar-in"><a href="monshin.html">24時間WEB予約<small>初診・再診</small></a><a href="#line">LINE予約<small>事前問診もそのまま</small></a><a href="tel:0339756888">電話<small class="num">03-3975-6888</small></a></div></div>
 <script>
 (function(){
+ document.querySelectorAll('.e-feat,.e-col').forEach(function(sl){
+  var n=sl.children.length, d=document.createElement('div'); d.className='sp-dots';
+  for(var i=0;i<n;i++){var b=document.createElement('i'); if(!i)b.className='on'; d.appendChild(b)}
+  sl.after(d);
+  sl.addEventListener('scroll',function(){var w=sl.children[0].offsetWidth+14, k=Math.round(sl.scrollLeft/w);
+   [].forEach.call(d.children,function(x,j){x.classList.toggle('on',j===k)})},{passive:true});
+ });
  var bg=document.querySelector('.eburger'); if(bg)bg.addEventListener('click',function(){document.body.classList.toggle('menu-open')});
  document.querySelectorAll('.spmenu a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open')})});
  if(/static/.test(location.search)){document.documentElement.classList.add('static');document.querySelectorAll('.rv').forEach(function(e){e.classList.add('vis')});}
