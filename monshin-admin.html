@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>問診受付一覧（スタッフ用）｜成増歯科室キムラ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--main:#1950c8;--main-l:#eaf1fd;--ink:#1c2740;--text:#3c475a;--sub:#7b8597;--line:#dfe6f1;--bg:#f4f7fb;--red:#e5383b;--green:#2f9e44}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP",sans-serif;font-size:14px;line-height:1.7}
+button,select,input{font:inherit}
+header{background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:12px 24px;position:sticky;top:0;z-index:5}
+header img{height:42px}
+header h1{font-size:17px;color:var(--ink);margin:0}
+header .demo{font-size:11.5px;background:#fff4d6;color:#8a6100;border-radius:4px;padding:2px 8px}
+header .sp{margin-left:auto;display:flex;gap:8px}
+.btn{border:1px solid var(--line);background:#fff;border-radius:6px;padding:7px 14px;font-weight:700;cursor:pointer;color:var(--ink)}
+.btn.p{background:var(--main);border-color:var(--main);color:#fff}
+.btn.d{color:var(--red);border-color:#f3c6c7}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:20px;padding:20px 24px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.stat{background:#fff;border-radius:10px;padding:14px 16px;border:1px solid var(--line)}
+.stat b{display:block;font-size:26px;color:var(--ink);line-height:1.2}
+.stat.r b{color:var(--red)}
+.filters{display:flex;gap:8px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+.filters input{border:1px solid var(--line);border-radius:6px;padding:7px 12px;min-width:240px}
+.filters select{border:1px solid var(--line);border-radius:6px;padding:7px 10px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f8fafd;font-size:12.5px;color:var(--sub);font-weight:700;white-space:nowrap}
+tr.row{cursor:pointer}
+tr.row:hover td{background:#f8fbff}
+tr.row.sel td{background:var(--main-l)}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;border-radius:4px;padding:1px 8px;white-space:nowrap}
+.tag.n{background:#ffe9ea;color:var(--red)}
+.tag.u{background:#fff1d6;color:#a35d00}
+.tag.ok{background:#e4f5e8;color:var(--green)}
+.tag.urg{background:var(--red);color:#fff}
+.empty{background:#fff;border:1px dashed var(--line);border-radius:10px;padding:40px;text-align:center;color:var(--sub)}
+.detail{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;position:sticky;top:86px;max-height:calc(100vh - 110px);overflow:auto}
+.detail h2{margin:0 0 4px;font-size:18px;color:var(--ink)}
+.detail .meta{font-size:12.5px;color:var(--sub);margin-bottom:12px}
+.detail .ctl{display:flex;gap:8px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.sec{border-top:1px solid var(--line);padding:12px 0}
+.sec h3{margin:0 0 4px;font-size:13.5px;color:var(--main)}
+.sec p{margin:0;white-space:pre-line;font-size:13.5px;color:var(--ink)}
+.note{font-size:12px;color:var(--sub);padding:0 24px 30px}
+@media (max-width:1000px){.wrap{grid-template-columns:1fr}.detail{position:static;max-height:none}.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><img src="img/logo.png" alt="成増歯科室キムラ"><h1>オンライン問診 受付一覧</h1><span class="demo">スタッフ用・デモ</span>
+<div class="sp"><button class="btn" id="csv">CSVで書き出す</button><button class="btn" id="sample">サンプルを追加</button><button class="btn d" id="clear">全件削除</button></div></header>
+<div class="wrap">
+ <div>
+  <div class="stats" id="stats"></div>
+  <div class="filters"><input id="kw" placeholder="お名前・受付番号・電話番号で検索"><select id="st"><option value="">すべての状態</option><option>未対応</option><option>連絡済み</option><option>予約確定</option></select><label><input type="checkbox" id="uo"> 要確認（緊急度）のみ</label></div>
+  <div id="list"></div>
+ </div>
+ <aside class="detail" id="detail"><p style="color:var(--sub)">左の一覧から問診を選ぶと、内容が表示されます。</p></aside>
+</div>
+<p class="note">※このデモでは、問診の回答はブラウザ内（localStorage）に保存されます。同じブラウザで送信した問診だけが表示されます。本番運用時は、送信先をサーバー（予約システム・フォームサービス等）に接続し、スタッフ用画面にはログイン認証を設けてください。</p>
+<script>
+const DB="kimura_monshin_records";
+const load=()=>{try{return JSON.parse(localStorage.getItem(DB)||"[]")}catch(e){return[]}};
+const store=l=>localStorage.setItem(DB,JSON.stringify(l));
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const P={pain:"歯が痛い",gum:"歯ぐきが腫れている",caries:"むし歯が気になる",whitening:"歯を白くしたい",ortho:"歯並びを治したい",implant:"インプラント相談",denture:"入れ歯相談",cleaning:"定期検診・クリーニング",second:"セカンドオピニオン",snoring:"いびき・睡眠時無呼吸症候群の相談",breath:"口臭の相談",other:"その他"};
+let cur=null;
+function stag(s){return `<span class="tag ${s==="未対応"?"n":s==="連絡済み"?"u":"ok"}">${s}</span>`}
+function fmt(iso){const d=new Date(iso);return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,"0")}/${String(d.getDate()).padStart(2,"0")} ${String(d.getHours()).padStart(2,"0")}:${String(d.getMinutes()).padStart(2,"0")}`}
+function render(){
+ const l=load(), kw=document.getElementById("kw").value.trim(), st=document.getElementById("st").value, uo=document.getElementById("uo").checked;
+ document.getElementById("stats").innerHTML=`<div class="stat">受付件数<b>${l.length}</b></div><div class="stat r">未対応<b>${l.filter(r=>r.status==="未対応").length}</b></div><div class="stat r">要確認（緊急度）<b>${l.filter(r=>r.urgent&&r.status==="未対応").length}</b></div><div class="stat">予約確定<b>${l.filter(r=>r.status==="予約確定").length}</b></div>`;
+ const f=l.filter(r=>{const d=r.data;const name=`${d.name_sei||""}${d.name_mei||""}${d.kana_sei||""}${d.kana_mei||""}`;return (!kw||(name+r.id+(d.tel||"")).includes(kw))&&(!st||r.status===st)&&(!uo||r.urgent)});
+ if(!l.length){document.getElementById("list").innerHTML=`<div class="empty">まだ問診の受付はありません。<br><a href="monshin.html">オンライン問診</a>から送信するか、「サンプルを追加」を押してください。</div>`;return;}
+ document.getElementById("list").innerHTML=`<table><thead><tr><th>受付番号</th><th>受付日時</th><th>お名前</th><th>ご来院の目的</th><th>第一希望</th><th>連絡方法</th><th>状態</th></tr></thead><tbody>${f.map(r=>{const d=r.data;return `<tr class="row ${cur===r.id?"sel":""}" data-id="${r.id}"><td>${r.id}${r.urgent?`<br><span class="tag urg">要確認</span>`:""}</td><td>${fmt(r.createdAt)}</td><td><b>${esc((d.name_sei||"")+" "+(d.name_mei||""))}</b><br><small>${esc(d.tel||"")}</small></td><td>${(d.purposes||[]).map(k=>P[k]).join("、")}</td><td>${esc(d.date1||"-")}<br><small>${esc((d.time1||[]).join("・"))}</small></td><td>${esc(d.contact||"-")}</td><td>${stag(r.status)}</td></tr>`}).join("")}</tbody></table>`;
+ document.querySelectorAll("tr.row").forEach(tr=>tr.addEventListener("click",()=>{cur=tr.dataset.id;render();detail();}));
+}
+function detail(){const l=load(),r=l.find(x=>x.id===cur); const el=document.getElementById("detail"); if(!r){el.innerHTML="";return;}
+ const d=r.data;
+ el.innerHTML=`<h2>${esc((d.name_sei||"")+" "+(d.name_mei||""))} 様</h2><div class="meta">${r.id}　受付：${fmt(r.createdAt)}　${r.urgent?'<span class="tag urg">要確認（緊急度）</span>':""}</div>
+ <div class="ctl">状態：<select id="chg">${["未対応","連絡済み","予約確定"].map(s=>`<option ${s===r.status?"selected":""}>${s}</option>`).join("")}</select><button class="btn" id="print">印刷</button><button class="btn d" id="del">削除</button></div>
+ ${r.summary.map(([t,txt])=>`<div class="sec"><h3>${t}</h3><p>${esc(txt)}</p></div>`).join("")}
+ ${d.addendum?`<div class="sec"><h3>その他のご入力</h3><p>${esc(d.addendum)}</p></div>`:""}`;
+ document.getElementById("chg").addEventListener("change",e=>{r.status=e.target.value;store(l);render();});
+ document.getElementById("del").addEventListener("click",()=>{if(!confirm("この問診を削除しますか？"))return;store(l.filter(x=>x.id!==r.id));cur=null;render();el.innerHTML="";});
+ document.getElementById("print").addEventListener("click",()=>window.print());
+}
+document.getElementById("kw").addEventListener("input",render);document.getElementById("st").addEventListener("change",render);document.getElementById("uo").addEventListener("change",render);
+document.getElementById("csv").addEventListener("click",()=>{const l=load(); if(!l.length)return alert("データがありません");
+ const head=["受付番号","受付日時","状態","要確認","お名前","フリガナ","生年月日","性別","電話番号","メール","郵便番号","住所","ご来院の目的","第一希望日","第一希望時間","第二希望日","第三希望日","連絡方法","症状","緊急度","治療へのご希望","過去の治療歴","追加入力"];
+ const rows=l.map(r=>{const d=r.data,s=Object.fromEntries(r.summary);return [r.id,fmt(r.createdAt),r.status,r.urgent?"要確認":"",`${d.name_sei||""} ${d.name_mei||""}`,`${d.kana_sei||""} ${d.kana_mei||""}`,`${d.era||""}${d.birth_y||""}/${d.birth_m||""}/${d.birth_d||""}`,d.sex,d.tel,d.email,d.zip,`${d.addr1||""}${d.addr2||""}`,(d.purposes||[]).map(k=>P[k]).join("・"),d.date1,(d.time1||[]).join("・"),d.date2,d.date3,d.contact,s["現在の症状について"],s["緊急度チェック"],s["治療へのご希望"],s["過去の治療歴"],d.addendum]});
+ const csv="﻿"+[head,...rows].map(r=>r.map(c=>`"${String(c??"").replace(/"/g,'""')}"`).join(",")).join("\r\n");
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download=`monshin_${new Date().toISOString().slice(0,10)}.csv`;a.click();});
+document.getElementById("clear").addEventListener("click",()=>{if(confirm("すべての問診データを削除しますか？（このブラウザ内のデモデータのみ）")){localStorage.removeItem(DB);cur=null;render();document.getElementById("detail").innerHTML="";}});
+document.getElementById("sample").addEventListener("click",()=>{const l=load(); const d=new Date(); const ymd=d.toISOString().slice(0,10).replace(/-/g,"");
+ const id=`M-${ymd}-${String(l.filter(r=>r.id.includes(ymd)).length+1).padStart(3,"0")}`;
+ const data={purposes:["pain"],pain_since:"2〜3日前",pain_type:["ズキズキする","冷たいものがしみる"],pain_level:"7",urgent:["強い痛みで夜も眠れない"],course:"1〜2日前から",before:"はじめて",pain_pref:"痛みに弱いので、できるだけ麻酔などを使って無痛にしてほしい",cost_pref:"まずは相談して、説明を聞いてから決めたい",anes:"いいえ",disease:["高血圧"],meds:"ある（血液をサラサラにする薬、骨粗しょう症の薬など）",date1:new Date(Date.now()+864e5).toISOString().slice(0,10),time1:["夕方（18:00以降）"],contact:"電話",name_sei:"山田",name_mei:"太郎",kana_sei:"ヤマダ",kana_mei:"タロウ",era:"西暦",birth_y:"1990",birth_m:"01",birth_d:"01",sex:"男性",tel:"09012345678",email:"example@email.com",zip:"175-0094",addr1:"東京都板橋区成増",addr2:"3-12-1 成増ビル 2F",ins_type:"健康保険",ins_kigo:"123",ins_no:"456789"};
+ const summary=[["ご来院の目的","歯が痛い"],["現在の症状について","いつから：2〜3日前／痛みの種類：ズキズキする、冷たいものがしみる／痛みの強さ：7/10"],["緊急度チェック","該当：強い痛みで夜も眠れない\n症状の経過：1〜2日前から／以前にも：はじめて"],["治療へのご希望","痛みについて：痛みに弱いので、できるだけ麻酔などを使って無痛にしてほしい\n内容・費用：まずは相談して、説明を聞いてから決めたい"],["過去の治療歴","麻酔で気分が悪くなったこと：いいえ\n治療中のご病気：高血圧\n服用中のお薬：ある（血液をサラサラにする薬、骨粗しょう症の薬など）"],["ご予約希望",`第一希望：${data.date1.replace(/-/g,"/")} 夕方（18:00以降）\nご連絡方法：電話`],["患者さま情報","山田 太郎（ヤマダ タロウ）／1990年01月01日／男性\n電話番号：09012345678／メール：example@email.com\n住所：〒175-0094　東京都板橋区成増3-12-1 成増ビル 2F\n保険証：健康保険　記号123　番号456789"]];
+ l.unshift({id,createdAt:d.toISOString(),status:"未対応",urgent:true,data,summary});store(l);render();});
+render();
+</script>
+</body>
+</html>

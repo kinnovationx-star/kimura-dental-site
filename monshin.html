@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>オンライン問診｜成増歯科室キムラ</title>
+<meta name="description" content="成増歯科室キムラのオンライン問診。ご来院前に症状やご希望をお聞かせください。所要時間約5分。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--main:#1950c8;--main-d:#123c9c;--main-l:#eaf1fd;--main-ll:#f4f8fe;--ink:#1c2740;--text:#3c475a;--sub:#7b8597;--line:#dfe6f1;--bg:#f6f8fc;--red:#e5383b;--green:#2f9e44;--ok:#e9f6ec}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--text);font-family:"Noto Sans JP","Hiragino Sans",sans-serif;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+.app{display:grid;grid-template-columns:268px 1fr;min-height:100vh}
+/* ---------- side ---------- */
+.side{border-right:1px solid var(--line);padding:26px 22px 24px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;background:#fff}
+.side .logo img{width:200px;display:block;margin:0 auto}
+.side h1{font-size:21px;color:var(--main);text-align:center;margin:18px 0 6px;letter-spacing:.06em}
+.side .lead{font-size:12.5px;text-align:center;margin:0 0 20px;line-height:1.75}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.steps li{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;font-size:13.5px;font-weight:700;color:var(--ink);cursor:default}
+.steps li .n{width:22px;height:22px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:11.5px;color:#fff;background:#a7b0bf}
+.steps li .c{margin-left:auto;font-size:12px;font-weight:500;color:var(--sub)}
+.steps li.done .n{background:var(--main)}
+.steps li.done{cursor:pointer}
+.steps li.done:hover{background:var(--main-ll)}
+.steps li.cur{background:var(--main-l);color:var(--main)}
+.steps li.cur .n{background:var(--main)}
+.steps li.cur .c{color:var(--main)}
+.steps li.todo{color:#5e6878}
+.lock{margin-top:auto;background:var(--main-ll);border-radius:10px;padding:14px 16px;display:flex;gap:12px;align-items:center;font-size:12.5px;line-height:1.7;color:var(--ink)}
+.lock svg{flex:none;color:var(--main)}
+/* ---------- main ---------- */
+.main{display:grid;grid-template-columns:minmax(0,1fr) 196px;gap:26px;padding:26px 32px 40px;max-width:1220px}
+.top{grid-column:1/-1;display:flex;align-items:center;gap:22px;border-bottom:1px solid var(--line);padding-bottom:16px;position:relative}
+.top::after{content:"";position:absolute;left:0;bottom:-1px;width:300px;height:2px;background:var(--main)}
+.badge{background:var(--main);color:#fff;font-weight:700;font-size:13px;letter-spacing:.06em;padding:5px 12px;border-radius:5px;flex:none}
+.top h2{margin:0;font-size:20px;color:var(--ink);letter-spacing:.04em;flex:none}
+.dots{display:flex;align-items:center;margin-left:auto;flex:1;max-width:560px}
+.dots i{flex:1;height:2px;background:#d3dae6}
+.dots i.on{background:var(--main)}
+.dots b{width:22px;height:22px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;background:#c1c8d4}
+.dots b.on,.dots b.done{background:var(--main)}
+.dots b.cur{box-shadow:0 0 0 4px var(--main-l)}
+.content{min-width:0}
+.q-title{font-size:21px;color:var(--ink);margin:6px 0 4px;letter-spacing:.03em}
+.q-sub{margin:0 0 18px;font-size:14px}
+.box{border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:14px;background:#fff}
+.box h3{font-size:15px;color:var(--ink);margin:0 0 4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.box .cap{font-size:12px;color:var(--sub);margin:0 0 10px}
+.req{display:inline-block;border:1px solid var(--red);color:var(--red);font-size:11px;font-weight:700;padding:0 6px;border-radius:3px;line-height:1.6}
+.req.s{border:0;padding:0;color:var(--sub);font-weight:500;font-size:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid2>.box{margin:0}
+.row-gap{margin-bottom:14px}
+/* purpose cards */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pcard{position:relative;border:1.5px solid var(--line);border-radius:10px;min-height:110px;display:grid;grid-template-columns:96px 1fr;align-items:center;gap:6px;padding:14px 16px 14px 34px;cursor:pointer;background:#fff;transition:.15s}
+.pcard:hover{border-color:#b9c9ea}
+.pcard input{position:absolute;opacity:0;pointer-events:none}
+.pcard .ck{position:absolute;left:12px;top:12px;width:18px;height:18px;border:1.5px solid #c3cbd8;border-radius:3px;background:#fff}
+.pcard img{max-width:80px;max-height:72px;margin:0 auto;display:block}
+.pcard span.t{font-weight:700;font-size:15px;color:var(--ink);line-height:1.55}
+.pcard.on{border-color:var(--main);background:var(--main-ll)}
+.pcard.on .ck{background:var(--main);border-color:var(--main)}
+.pcard.on .ck::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+/* checks & radios */
+.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 18px}
+.opts.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.opts.c1{grid-template-columns:1fr}
+.opts.inline{display:flex;flex-wrap:wrap;gap:8px 34px}
+.opt{display:flex;align-items:flex-start;gap:9px;font-size:14px;cursor:pointer;line-height:1.55;color:var(--ink)}
+.opt input{margin:2px 0 0;width:17px;height:17px;accent-color:var(--main);flex:none}
+.inp{width:100%;border:1px solid #cfd8e6;border-radius:6px;padding:10px 12px;font-size:14px;background:#fff}
+.inp:focus{outline:2px solid var(--main-l);border-color:var(--main)}
+textarea.inp{min-height:84px;resize:vertical}
+.fl{display:grid;gap:12px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+.f4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.lbl{font-size:13px;font-weight:700;color:var(--ink);margin:0 0 5px;display:flex;gap:8px;align-items:center}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.birth{display:flex;gap:6px;align-items:center;font-size:13px}
+.birth .inp{padding:10px 8px}
+.btn-s{background:var(--main);color:#fff;border:0;border-radius:6px;padding:0 16px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.yn{display:grid;grid-template-columns:auto 20px 1fr;gap:14px;align-items:center}
+.yn .ar{color:var(--main)}
+/* scale */
+.scale{display:grid;grid-template-columns:repeat(11,1fr);border:1px solid #cfd8e6;border-radius:6px;overflow:hidden}
+.scale label{text-align:center;padding:9px 0;border-right:1px solid #e3e8f0;cursor:pointer;font-weight:700;font-size:14px}
+.scale label:last-child{border-right:0}
+.scale input{display:none}
+.scale label:has(input:checked){background:var(--main);color:#fff}
+/* teeth */
+.teeth{display:grid;grid-template-columns:24px 1fr 24px;align-items:center;gap:6px;margin:6px 0 10px;font-size:13px;font-weight:700}
+.teeth svg{width:100%;height:auto}
+.teeth .tooth{fill:#fff;stroke:#9aa6b8;stroke-width:1.3;cursor:pointer;transition:fill .15s}
+.teeth .tooth:hover{fill:#fde7e7}
+.teeth .tooth.on{fill:#f6a7a8;stroke:var(--red)}
+/* themed sections for purposes */
+.psec{border:1px solid var(--line);border-radius:12px;margin-bottom:18px;overflow:hidden}
+.psec>.hd{display:flex;align-items:center;gap:10px;padding:12px 18px;font-weight:700;font-size:16px;color:var(--c);background:color-mix(in srgb,var(--c) 7%,#fff);border-bottom:1px solid color-mix(in srgb,var(--c) 18%,#fff)}
+.psec>.hd .num{width:24px;height:24px;border-radius:50%;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12.5px}
+.psec>.hd img{height:30px}
+.psec>.bd{padding:16px 18px 6px}
+.psec .box{border-color:color-mix(in srgb,var(--c) 18%,#e4e9f1)}
+.chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.chips.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.chip{position:relative;display:flex;align-items:center;gap:8px;border:1.5px solid color-mix(in srgb,var(--c) 26%,#e2e7ef);background:color-mix(in srgb,var(--c) 5%,#fff);border-radius:8px;padding:10px 12px;font-size:14px;font-weight:500;cursor:pointer;color:var(--ink);line-height:1.45}
+.chip input{width:16px;height:16px;accent-color:var(--c);flex:none;margin:0}
+.chip:has(input:checked){border-color:var(--c);background:color-mix(in srgb,var(--c) 13%,#fff);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cards.c5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.cards.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ccard{border:1.5px solid #e2e7ef;border-radius:10px;padding:14px 10px 12px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--ink);background:#fff;line-height:1.45}
+.ccard .ic{font-size:30px;line-height:1.1}
+.ccard small{font-size:11.5px;font-weight:500;color:var(--sub)}
+.ccard input{width:16px;height:16px;accent-color:var(--c);margin:4px 0 0}
+.ccard:has(input:checked){border-color:var(--c);background:color-mix(in srgb,var(--c) 7%,#fff)}
+.tip{display:flex;gap:12px;align-items:flex-start;border:1px solid color-mix(in srgb,var(--c) 25%,#fff);background:color-mix(in srgb,var(--c) 5%,#fff);border-radius:10px;padding:12px 16px;font-size:13px;margin:4px 0 14px}
+.tip svg{flex:none;color:var(--c)}
+/* summary */
+.sum{display:grid;gap:10px}
+.srow{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:14px 18px}
+.srow .ic{color:var(--main)}
+.srow h4{margin:0 0 2px;font-size:15px;color:var(--ink)}
+.srow p{margin:0;font-size:13.5px;line-height:1.75;white-space:pre-line}
+.edit{border:1px solid #b9c9ea;color:var(--main);background:#fff;border-radius:6px;padding:7px 16px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.edit:hover{background:var(--main-ll)}
+/* done */
+.donehead{display:flex;gap:26px;align-items:center;padding:6px 0 20px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.donehead .ok{width:74px;height:74px;border-radius:50%;border:3px solid var(--main);display:flex;align-items:center;justify-content:center;color:var(--main);flex:none}
+.donehead h3{margin:0;font-size:28px;color:var(--ink);letter-spacing:.04em}
+.donehead p{margin:4px 0 0;font-size:13.5px}
+.notice{background:var(--main-ll);border-radius:10px;padding:18px 22px;display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:start;margin:14px 0 22px}
+.notice h4{margin:0 0 6px;color:var(--main);font-size:16px}
+.notice ul{margin:0;padding-left:1.2em;font-size:13px;line-height:1.9;color:var(--ink)}
+.ovw{width:100%;border-collapse:collapse;font-size:13.5px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.ovw th,.ovw td{border-bottom:1px solid var(--line);padding:9px 14px;text-align:left;vertical-align:top}
+.ovw th{width:160px;background:#fafbfd;color:var(--ink);font-weight:700}
+.ovw td{white-space:pre-line}
+.redline{color:var(--red);font-weight:700}
+.recno{display:inline-block;background:var(--main-l);color:var(--main);font-weight:700;border-radius:6px;padding:4px 12px;font-size:13.5px;margin-top:8px}
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:16px}
+.back{height:52px;min-width:144px;border:1px solid #cfd8e6;background:#fff;border-radius:6px;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;gap:12px;cursor:pointer;color:var(--ink)}
+.next{height:56px;min-width:340px;border:0;background:var(--main);color:#fff;border-radius:6px;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;gap:16px;cursor:pointer;letter-spacing:.04em}
+.next:hover{background:var(--main-d)}
+.err{color:var(--red);font-size:13px;font-weight:700;margin:10px 0 0;display:none}
+.err.show{display:block}
+.box.bad{border-color:var(--red);background:#fff8f8}
+/* aside */
+.aside{display:grid;gap:14px;align-content:start;padding-top:8px}
+.acard{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.acard h5{margin:0;padding:10px 14px;font-size:13px;color:var(--main);background:var(--main-ll)}
+.acard .bd{padding:12px 14px;font-size:12.5px;line-height:1.75;color:var(--ink)}
+.sel{display:grid;gap:8px}
+.sel div{display:flex;align-items:center;gap:10px;font-weight:700;font-size:13px}
+.sel img{width:36px;height:30px;object-fit:contain}
+.hintc{background:var(--main-ll);border:0}
+.hintc h5{background:none;display:flex;align-items:center;gap:6px}
+.hintc img{width:100%;display:block;mix-blend-mode:multiply}
+.warnc{background:#f4f7fc;border:0}
+.warnc h5{background:none;color:var(--main)}
+.mobilebar{display:none}
+@media (max-width:1120px){.main{grid-template-columns:1fr}.aside{display:none}}
+@media (max-width:860px){
+ .app{grid-template-columns:1fr}
+ .side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:12px 16px;flex-direction:row;align-items:center;gap:12px}
+ .side .logo img{width:120px}
+ .side h1{display:none}
+ .side .lead,.steps,.lock{display:none}
+ .mobilebar{display:block;white-space:nowrap;margin-left:auto;font-size:12px;font-weight:700;color:var(--main);background:var(--main-l);padding:4px 10px;border-radius:20px}
+ .main{padding:16px 14px 30px}
+ .top{flex-wrap:wrap;gap:10px}
+ .dots{max-width:none;width:100%;flex:none}
+ .dots b{width:18px;height:18px;font-size:9.5px}
+ .q-title{font-size:18px}
+ .pgrid{grid-template-columns:1fr 1fr;gap:8px}
+ .pcard{grid-template-columns:1fr;text-align:center;padding:30px 8px 12px;min-height:0}
+ .pcard img{max-width:54px;max-height:48px}
+ .pcard span.t{font-size:13px}
+ .grid2,.f2{grid-template-columns:1fr}
+ .opts,.opts.c4{grid-template-columns:1fr 1fr}
+ .opts.c2{grid-template-columns:1fr}
+ .f4{grid-template-columns:1fr 1fr}
+ .chips,.chips.c2{grid-template-columns:1fr}
+ .cards,.cards.c5{grid-template-columns:1fr 1fr}
+ .scale label{font-size:12px;padding:8px 0}
+ .yn{grid-template-columns:1fr}.yn .ar{display:none}
+ .srow{grid-template-columns:1fr;gap:6px}.srow .ic{display:none}
+ .donehead{gap:14px}.donehead h3{font-size:21px}.donehead .ok{width:54px;height:54px}
+ .notice{grid-template-columns:1fr}
+ .ovw th{width:110px}
+ .nav{position:sticky;bottom:0;background:#fff;padding:10px 0;margin:16px -14px 0;padding-left:14px;padding-right:14px;border-top:1px solid var(--line)}
+ .back{min-width:96px;height:48px;font-size:14px}
+ .next{min-width:0;flex:1;height:50px;font-size:15px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+ <aside class="side">
+  <a class="logo" href="index.html"><img src="img/logo.png" alt="成増歯科室キムラ"></a>
+  <h1>オンライン問診</h1>
+  <p class="lead">あなたに最適な治療のために、<br>いくつかの質問にお答えください。</p>
+  <ol class="steps" id="steps"></ol>
+  <span class="mobilebar" id="mstep"></span>
+  <div class="lock"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/><circle cx="12" cy="15.5" r="1.3" fill="currentColor"/></svg><span>入力いただいた内容は<br>当院の診療目的以外には<br>使用いたしません。</span></div>
+ </aside>
+ <div class="main">
+  <div class="top"><span class="badge" id="badge">STEP 1</span><h2 id="ttl">ご来院の目的</h2><div class="dots" id="dots"></div></div>
+  <form class="content" id="form" novalidate autocomplete="on"></form>
+  <aside class="aside" id="aside"></aside>
+ </div>
+</div>
+
+<script>
+/* =====================================================================
+   成増歯科室キムラ オンライン問診（デモ）
+   ・回答はブラウザ内（localStorage）に保存し、スタッフ用画面 monshin-admin.html で確認できます。
+   ・本番運用時は送信先をサーバー（予約システム・フォームサービス等）に差し替えてください。
+   ===================================================================== */
+const STEPS=["ご来院の目的","現在の症状について","緊急度チェック","治療へのご希望","過去の治療歴","ご予約希望","患者さま情報のご入力","内容のご確認","送信完了","その他のご入力"];
+const PURPOSES=[
+ ["pain","歯が痛い","#e5383b"],["gum","歯ぐきが<br>腫れている","#2f9e44"],["caries","むし歯が<br>気になる","#f08c00"],
+ ["whitening","歯を白くしたい","#1c7ed6"],["ortho","歯並びを<br>治したい","#7048e8"],["implant","インプラント相談","#0c8599"],
+ ["denture","入れ歯相談","#e8a400"],["cleaning","定期検診・<br>クリーニング","#1971c2"],["second","セカンド<br>オピニオン","#e64980"],
+ ["snoring","いびき・<br>睡眠時無呼吸症候群<br>の相談","#3b5bdb"],["breath","口臭の相談","#5c940d"],["other","その他","#6c6f93"]];
+const PNAME=k=>(PURPOSES.find(p=>p[0]===k)||["","" ,""])[1].replace(/<br>/g,"");
+const PCOL=k=>(PURPOSES.find(p=>p[0]===k)||["","","#1950c8"])[2];
+const KEY="kimura_monshin_draft", DB="kimura_monshin_records";
+let S={step:0,maxStep:0,d:{}};
+try{const s=JSON.parse(sessionStorage.getItem(KEY)||"null"); if(s&&s.d)S=s;}catch(e){}
+const q=new URLSearchParams(location.search).get("p");
+if(q&&PURPOSES.some(p=>p[0]===q)&&!(S.d.purposes||[]).length){S.d.purposes=[q];}
+const save=()=>{try{sessionStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const F=document.getElementById("form");
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const v=n=>S.d[n];
+const arr=n=>Array.isArray(S.d[n])?S.d[n]:(S.d[n]?[S.d[n]]:[]);
+
+/* ---------- small builders ---------- */
+const req='<span class="req">必須</span>';
+function checks(name,items,cls="",type="checkbox"){return `<div class="opts ${cls}">`+items.map(i=>`<label class="opt"><input type="${type}" name="${name}" value="${esc(i)}" ${(type==="radio"?v(name)===i:arr(name).includes(i))?"checked":""}><span>${i}</span></label>`).join("")+`</div>`;}
+function radios(name,items,cls="inline"){return checks(name,items,cls,"radio");}
+function chips(name,items,type="checkbox",cls=""){return `<div class="chips ${cls}">`+items.map(i=>`<label class="chip"><input type="${type}" name="${name}" value="${esc(i)}" ${(type==="radio"?v(name)===i:arr(name).includes(i))?"checked":""}>${i}</label>`).join("")+`</div>`;}
+function cards(name,items,type="checkbox",cls=""){return `<div class="cards ${cls}">`+items.map(([t,ic,sm])=>`<label class="ccard"><span class="ic">${ic||""}</span>${t}${sm?`<small>${sm}</small>`:""}<input type="${type}" name="${name}" value="${esc(t)}" ${(type==="radio"?v(name)===t:arr(name).includes(t))?"checked":""}></label>`).join("")+`</div>`;}
+function inp(name,ph="",type="text",extra=""){return `<input class="inp" type="${type}" name="${name}" placeholder="${esc(ph)}" value="${esc(v(name)||"")}" ${extra}>`;}
+function ta(name,ph="こちらにご記入ください"){return `<textarea class="inp" name="${name}" placeholder="${esc(ph)}">${esc(v(name)||"")}</textarea>`;}
+function box(title,inner,opt={}){return `<div class="box" ${opt.req?`data-req="${opt.req}"`:""}><h3>${title}${opt.req?req:""}${opt.note?`<span class="req s">${opt.note}</span>`:""}</h3>${opt.cap?`<p class="cap">${opt.cap}</p>`:""}${inner}</div>`;}
+const bulb='<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.4 1 1.1 1 1.8V16h5v-.3c0-.7.4-1.4 1-1.8A6 6 0 0012 3z"/><path d="M12 1v1M4 5l1 1M20 5l-1 1M2 12h1M21 12h1"/></svg>';
+const tip=t=>`<div class="tip">${bulb}<div>${t}</div></div>`;
+
+/* ---------- tooth chart ---------- */
+function teeth(name){
+ const sel=arr(name); let g="";
+ const lab=["8","7","6","5","4","3","2","1","1","2","3","4","5","6","7","8"];
+ for(let r=0;r<2;r++){for(let i=0;i<16;i++){
+   const id=(r?"下":"上")+(i<8?"右":"左")+lab[i];
+   const w=i<3||i>12?26:(i<5||i>10?22:19), x=i*30+(30-w)/2+8, y=r?62:6, h=r?44:48;
+   const d=r?`M${x} ${y+6} q0 -6 6 -6 h${w-12} q6 0 6 6 v${h-18} q0 12 -${w/2} 12 q-${w/2} 0 -${w/2} -12 z`:`M${x} ${y+12} q0 -12 ${w/2} -12 q${w/2} 0 ${w/2} 12 v${h-18} q0 6 -6 6 h-${w-12} q-6 0 -6 -6 z`;
+   g+=`<path class="tooth ${sel.includes(id)?"on":""}" data-t="${id}" d="${d}"><title>${id}</title></path>`;}}
+ return `<div class="teeth"><span>右</span><svg viewBox="0 0 496 112">${g}<line x1="248" y1="2" x2="248" y2="110" stroke="#e1e6ee" stroke-dasharray="3 3"/></svg><span>左</span></div><input type="hidden" name="${name}" value="${esc(sel.join(","))}">`;
+}
+
+/* ---------- step 2: purpose specific (イメージ集の色分けUI) ---------- */
+const PQ={
+ pain:()=>`<div class="grid2 row-gap">
+   ${box("どの歯が痛みますか？　（複数選択可）",teeth("pain_teeth")+checks("pain_teeth_unknown",["わからない"],"c1"),{cap:"※わからない場合は「わからない」を選択してください"})}
+   <div class="fl">${box("いつから痛みますか？",`<select class="inp" name="pain_since"><option value="">選択してください</option>${["今日（当日）","2〜3日前","1週間以内","1ヶ月以内","1ヶ月以上前"].map(o=>`<option ${v("pain_since")===o?"selected":""}>${o}</option>`).join("")}</select>`,{req:"pain_since"})}
+   ${box("痛みの種類はどれに近いですか？（複数選択可）",checks("pain_type",["ズキズキする","何もしなくても痛い","冷たいものがしみる","その他","噛むと痛い"],"c2"))}</div></div>
+   <div class="grid2 row-gap" style="grid-template-columns:1.5fr 1fr">${box("痛みの強さを教えてください",`<p class="cap">※0：痛みなし　10：耐えられないほどの激しい痛み</p><div class="scale">${[...Array(11).keys()].map(n=>`<label><input type="radio" name="pain_level" value="${n}" ${String(v("pain_level"))===String(n)?"checked":""}>${n}</label>`).join("")}</div>`,{req:"pain_level"})}
+   ${box("痛み止めを飲んでいますか？",radios("pain_med",["はい","いいえ"]))}</div>
+   ${box("どんな時に痛みますか？　（複数選択可）",cards("pain_when",[["冷たいものを<br>食べたり飲んだりした時","🧊"],["熱いものを<br>食べたり飲んだりした時","☕"],["甘いものを食べた時","🍰"],["噛んだ時（食事中など）","🍔"],["何もしなくても痛む","🦷"],["夜になると痛む","🌙"],["歯を磨いた時や<br>さわった時","🪥"],["その他","？","（自由入力）"]].map(([t,i,s])=>[t,i,s])),{cap:"当てはまるものが多いほど、原因の特定につながります。"})}
+   ${box("腫れはありますか？",cards("pain_swell",[["ある","😣"],["ない","😊"]],"radio","c2"),{cap:"腫れの有無は、原因や治療の緊急度を判断する重要な情報です。わかる範囲でご回答ください。"})}`,
+ gum:()=>box("気になる症状はありますか？（複数選択可）",chips("gum_sym",["歯ぐきの腫れ","歯ぐきの出血","歯がグラグラする","口臭が気になる","歯ぐきが下がってきた","歯が長くなった気がする","噛むと違和感がある","特に症状はない"],"checkbox","c2")),
+ caries:()=>box("気になる歯はありますか？",chips("caries_teeth",["ある（1本）","ある（2本以上）","複数ある","わからない","特に気になるところはない"],"radio","c2"))+box("当てはまるものはありますか？（複数選択可）",chips("caries_more",["詰め物・被せ物が取れた","黒い部分が見える","冷たいものがしみる","穴があいている気がする"],"checkbox","c2")),
+ whitening:()=>box("希望するホワイトニングは？",chips("wh_type",["オフィスホワイトニング（歯科医院で行う）","ホームホワイトニング（ご自宅で行う）","デュアルホワイトニング（両方を組み合わせる）","どれが良いかわからない"],"radio","c2"),{cap:"方法を選択してください"}),
+ ortho:()=>box("気になる歯並びは？（複数選択可）",chips("ortho_type",["出っ歯","受け口","すきっ歯","ガタガタ・乱ぐい歯","その他","わからない"])),
+ implant:()=>box("現在の状態を教えてください（複数選択可）",chips("imp_state",["歯が抜けている","抜歯予定がある","入れ歯を使用している","ブリッジを使用している","他院で相談中","特に決めていない","その他"],"checkbox","c2")),
+ denture:()=>box("現在の入れ歯の使用状況は？",chips("den_state",["使用している","新しく作りたい","調子が悪いので相談したい","部分入れ歯を検討したい","入れ歯は考えていない","その他"],"radio","c2")),
+ cleaning:()=>box("クリーニングの目的は？（複数選択可）",chips("cl_purpose",["歯石・歯垢を取りたい","着色・汚れを落としたい","口臭を改善したい","定期検診も希望","虫歯や歯周病のチェックをしたい","その他"],"checkbox","c2")),
+ second:()=>box("ご相談の内容は？（複数選択可）",chips("sec_topic",["治療内容について相談したい","治療費について相談したい","抜歯と言われたが残したい","インプラントについて相談したい","歯並び・矯正について相談したい","治療期間について知りたい","その他"],"checkbox","c2")),
+ snoring:()=>box("気になる症状はありますか？（複数選択可）",chips("sn_sym",["家族にいびきを指摘される","睡眠中に呼吸が止まっていると言われた","日中に強い眠気がある","起床時に口の乾き・頭痛がある","CPAP（シーパップ）治療中・治療歴がある","医科で睡眠検査を受けたことがある"],"checkbox","c2")),
+ breath:()=>box("気になる場面はありますか？（複数選択可）",chips("br_sym",["自分で気になる","家族や周囲に指摘された","朝起きた時に気になる","歯ぐきから出血がある","舌の汚れが気になる","その他"],"checkbox","c2")),
+ other:()=>box("ご来院の目的を教えてください",ta("other_text","ご自由にご入力ください（例：検診希望、歯の相談など）"),{req:"other_text"})
+};
+
+/* ---------- steps ---------- */
+const VIEWS=[
+ ()=>`<h3 class="q-title">ご来院の目的を教えてください</h3><p class="q-sub">あなたに合った診療内容をご案内します。（複数選択可）</p>
+   <div class="pgrid" data-req="purposes">${PURPOSES.map(([k,t])=>`<label class="pcard ${arr("purposes").includes(k)?"on":""}"><input type="checkbox" name="purposes" value="${k}" ${arr("purposes").includes(k)?"checked":""}><span class="ck"></span><img src="img/mq/${k}.png" alt=""><span class="t">${t}</span></label>`).join("")}</div>`,
+ ()=>{const ps=arr("purposes"); return `<h3 class="q-title">${ps.length===1?`「${PNAME(ps[0])}」についてお答えください`:"選択されたご来院目的についてお答えください"}</h3><p class="q-sub">当てはまるものを選択・ご入力ください。</p>`+
+   ps.map((k,i)=>`<section class="psec" style="--c:${PCOL(k)}"><div class="hd"><span class="num">${i+1}</span><img src="img/mq/${k}.png" alt="">${PNAME(k)}</div><div class="bd">${PQ[k]()}</div></section>`).join("")+
+   box("その他、気になる症状があればご記入ください（自由記述）",ta("sym_free"));},
+ ()=>`<p class="q-sub" style="margin-top:6px">当てはまるものをすべて選択してください。</p>
+   ${box("",checks("urgent",["顔や頬が腫れている","口が開きにくい","強い痛みで夜も眠れない","発熱がある","出血が止まらない","外傷（ぶつけた・転んだ等）がある","食事や水分がとれない","該当するものはない"],"c1"))}
+   ${box("症状の経過を教えてください",radios("course",["本日から","1〜2日前から","3日〜1週間前から","1週間以上前から"]),{req:"course"})}
+   ${box("今の症状は以前にもありましたか？",radios("before",["はじめて","時々ある","何度もある","慢性的にある"]),{req:"before"})}`,
+ ()=>`<p class="q-sub" style="margin-top:6px">当てはまるものをすべて選択してください。</p>
+   ${box("治療に対して重視することは何ですか？（複数選択可）",checks("prio",["痛みが少ない治療","見た目（審美性）","できるだけ早く治したい","できるだけ長持ちする治療","費用を抑えたい","再発しにくい治療","しっかり説明してほしい","その他"]))}
+   ${box("ご希望の治療方法について（当てはまるものをすべて選択してください）",checks("method",["保険診療を希望","自由診療（自費診療）も希望","どちらでもよい","できるだけ費用を抑えたい","最適な治療を提案してほしい"]))}
+   ${box("治療時の「痛み」についてのご希望",radios("pain_pref",["痛みに弱いので、できるだけ麻酔などを使って無痛にしてほしい","我慢できない時だけ麻酔をしてほしい","特に希望はない・お任せする"],"c1"),{req:"pain_pref"})}
+   ${box("治療内容・費用に関するご希望",radios("cost_pref",["保険診療の範囲内で治療したい","保険・自費（保険外）に関わらず、長持ちする最善の治療法を提案してほしい","まずは相談して、説明を聞いてから決めたい"],"c1"),{req:"cost_pref"})}
+   ${box("ご来院のきっかけを教えてください（複数選択可）",checks("trigger",["ホームページを見て","家族・知人の紹介","SNS・インターネットの口コミ","通りがかり・看板を見て","以前から通っている","その他"]))}
+   ${box("当院に期待することや、気になることがあればご記入ください（自由記述）",ta("expect"))}`,
+ ()=>`<p class="q-sub" style="margin-top:6px">当てはまるものをすべて選択してください。</p>
+   ${box("これまでに受けたことのある治療（複数選択可）",checks("hist",["虫歯の治療","歯周病の治療","抜歯","根の治療（根管治療）","入れ歯の治療","ブリッジの治療","インプラント治療","矯正治療","ホワイトニング","顎関節症の治療","口腔外科の治療","その他"]))}
+   ${box("過去に歯科治療で困ったこと・嫌だったことはありますか？（複数選択可）",checks("bad",["痛みが強かった","説明がわかりにくかった","治療後に不具合があった","治療期間が長かった","通院回数が多かった","その他","費用が高かった","特にない"]))}
+   ${box("今まで麻酔をして気分が悪くなったりしたことはありませんか？",radios("anes",["はい","いいえ"]),{req:"anes"})}
+   ${box("過去にアレルギーや副作用が出たことはありますか？",`<div class="yn">${radios("allergy",["はい","いいえ"])}<span class="ar">→</span><div><p class="lbl">「はい」とお答えの方は、内容をご記入ください</p>${inp("allergy_detail","例）薬の名前・症状など")}</div></div>`,{cap:"これまでに、お薬や麻酔でアレルギー・気分が悪くなったことはありますか？"})}
+   ${box("過去に大きな病気や入院・手術をしたことはありますか？",`<div class="yn">${radios("illness",["はい","いいえ"])}<span class="ar">→</span><div><p class="lbl">「はい」とお答えの方は、内容をご記入ください</p>${inp("illness_detail","例）病名・時期・治療内容など")}</div></div>`)}
+   ${box("現在、治療中のご病気はありますか？（複数選択可）",checks("disease",["ない","高血圧","糖尿病","心疾患（心筋梗塞・狭心症など）","脳血管疾患（脳梗塞など）","骨粗しょう症","肝臓・腎臓の病気","喘息・呼吸器の病気","その他（自由記述欄へ）"]),{req:"disease",cap:"全身の健康状態・既往歴（※安全な治療のために極めて重要です）"})}
+   ${box("現在、服用されているお薬はありますか？",radios("meds",["ない","ある（血液をサラサラにする薬、骨粗しょう症の薬など）"],"c1"),{req:"meds",cap:"※「ある」を選択された方は、ご来院時に必ず「お薬手帳」をお持ちください。"})}
+   ${box("（女性の方へ）現在、妊娠中・または授乳中ですか？",`<div class="yn">${radios("preg",["いいえ","妊娠中","授乳中"])}<span class="ar">→</span><div><p class="lbl">妊娠中の方は週数・月数をご記入ください</p>${inp("preg_month","例）妊娠〇ヶ月")}</div></div>`)}`,
+ ()=>{const row=(n,l)=>`<div class="f4" style="grid-template-columns:90px 170px 1fr;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line)"><span class="badge" style="text-align:center">${l}</span><div><p class="lbl">希望日</p>${inp("date"+n,"","date",`min="${new Date().toISOString().slice(0,10)}"`)}</div><div><p class="lbl">希望時間</p>${checks("time"+n,["午前（10:00〜13:30）","午後（15:00〜18:00）","夕方（18:00以降）","いつでも可"],"c4")}</div></div>`;
+   return `<p class="q-sub" style="margin-top:6px">ご希望の日時やご連絡方法についてご入力ください。</p>
+   <div class="box" data-req="date1">${row(1,"第一希望")}${row(2,"第二希望")}${row(3,"第三希望")}</div>
+   ${box("ご連絡方法",cards("contact",[["電話","📞"],["SMS","💬"],["メール","✉️"]],"radio","").replace('class="cards "','class="cards" style="grid-template-columns:repeat(3,1fr)"'),{req:"contact"})}
+   ${box("ご希望・ご要望（任意）",ta("wish","例）できるだけ早く診てほしい、女性医師希望 など"))}`;},
+ ()=>`<p class="q-sub" style="margin-top:6px">患者さまの情報をご入力ください。<br><small>※保険証情報は、受診の際に必要となります。</small></p>
+   <div class="box"><h3>基本情報</h3><div class="f2">
+    <div data-req="name_sei"><p class="lbl">お名前${req}</p><div class="duo">${inp("name_sei","例）山田","text",'autocomplete="family-name"')}${inp("name_mei","例）太郎","text",'autocomplete="given-name"')}</div></div>
+    <div data-req="kana_sei"><p class="lbl">フリガナ${req}</p><div class="duo">${inp("kana_sei","例）ヤマダ")}${inp("kana_mei","例）タロウ")}</div></div>
+    <div data-req="birth_y"><p class="lbl">生年月日${req}</p><div class="birth"><select class="inp" name="era" style="width:84px">${["西暦","昭和","平成","令和"].map(o=>`<option ${v("era")===o?"selected":""}>${o}</option>`).join("")}</select>${inp("birth_y","例）1990","text",'inputmode="numeric" style="width:90px"')}年${inp("birth_m","例）01","text",'inputmode="numeric" style="width:70px"')}月${inp("birth_d","例）01","text",'inputmode="numeric" style="width:70px"')}日</div></div>
+    <div data-req="sex"><p class="lbl">性別${req}</p>${radios("sex",["男性","女性","その他","回答しない"])}</div></div></div>
+   <div class="box" data-req="tel"><h3>ご連絡先${req}</h3><div class="f2"><div><p class="lbl">電話番号<span class="req s">※予約時と同じ番号</span></p>${inp("tel","例）09012345678","tel",'autocomplete="tel"')}</div><div><p class="lbl">メールアドレス</p>${inp("email","例）example@email.com","email",'autocomplete="email"')}</div></div></div>
+   <div class="box" data-req="addr1"><h3>ご住所${req}</h3><div class="f2"><div><p class="lbl">〒（郵便番号）</p><div style="display:flex;gap:8px">${inp("zip","例）175-0094","text",'inputmode="numeric" autocomplete="postal-code"')}<button type="button" class="btn-s" id="zipbtn">住所検索</button></div></div><div><p class="lbl">都道府県・市区町村</p>${inp("addr1","例）東京都板橋区成増")}</div></div><div style="margin-top:12px"><p class="lbl">番地・建物名</p>${inp("addr2","例）3-12-1 成増ビル 2F")}</div></div>
+   <div class="box" data-req="ins_type"><h3>保険証情報${req}</h3><div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:10px"><span class="lbl" style="margin:0">保険種別</span>${radios("ins_type",["健康保険","国民健康保険","後期高齢者医療","その他"])}</div>
+    <div class="f4"><div><p class="lbl">記号</p>${inp("ins_kigo","例）123")}</div><div><p class="lbl">番号</p>${inp("ins_no","例）456789")}</div><div><p class="lbl">保険者番号（わかる方のみ）</p>${inp("ins_hoken","例）06130012")}</div><div><p class="lbl">被保険者名（ご本人の場合は同上）</p>${inp("ins_name","例）山田 太郎")}</div></div><p class="cap" style="margin:8px 0 0">※保険証は受診時にご提示をお願いいたします。</p></div>`,
+ ()=>`<p class="q-sub" style="margin-top:6px">ご入力いただいた内容をご確認ください。修正がある場合は「修正する」ボタンを押してください。</p><div class="sum">${summary().map(([t,txt,st,ic])=>`<div class="srow"><span class="ic">${ic}</span><div><h4>${t}</h4><p>${esc(txt)}</p></div><button type="button" class="edit" data-go="${st}">✎ 修正する</button></div>`).join("")}</div>`,
+ ()=>doneView(false),
+ ()=>`<h3 class="q-title">その他のご入力</h3><p class="q-sub">追加でお伝えしたいことがあればご入力ください（任意）。入力がなければ、そのまま「問診を終了する」を押してください。</p>
+   ${box("その他、ドクターやスタッフに事前に伝えておきたいこと",ta("addendum","例：嘔吐反射が強い、〇〇日までに治療を終わらせたい、等"),{cap:"（例：嘔吐反射が強い、〇〇日までに治療を終わらせたい、等）"})}`,
+];
+const SIC={target:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM12 10v6M9 13h6"/></svg>',chat:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg>',alarm:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18v-5a6 6 0 0112 0v5M4 18h16M12 3v2M4.5 7l1.4 1.4M19.5 7l-1.4 1.4"/></svg>',heart:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg>',tooth:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3c-2.2 0-4 1.8-4 4.4 0 2.3 1 3.6 1.6 5.6.6 2 .6 8 2.9 8 1.7 0 1.6-5 4.5-5s2.8 5 4.5 5c2.3 0 2.3-6 2.9-8 .6-2 1.6-3.3 1.6-5.6C21 4.8 19.2 3 17 3c-2 0-3 1.2-5 1.2S9 3 7 3z"/></svg>',cal:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',user:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>'};
+const J=(a,s="、")=>(a||[]).filter(Boolean).join(s);
+function slot(n){const d=v("date"+n); if(!d) return ""; const dt=new Date(d+"T00:00"); const w="日月火水木金土"[dt.getDay()]; return `${d.replace(/-/g,"/")}（${w}）${J(arr("time"+n),"・")}`;}
+function sympText(){const ps=arr("purposes"),o=[];
+ if(ps.includes("pain")){const t=arr("pain_teeth").length?`痛む歯：${arr("pain_teeth").join("・")}`:(arr("pain_teeth_unknown").length?"痛む歯：わからない":""); o.push([t,v("pain_since")&&`いつから：${v("pain_since")}`,arr("pain_type").length&&`痛みの種類：${J(arr("pain_type"))}`,v("pain_level")!=null&&v("pain_level")!==""&&`痛みの強さ：${v("pain_level")}/10`,v("pain_med")&&`痛み止め：${v("pain_med")}`,arr("pain_when").length&&`痛む時：${J(arr("pain_when")).replace(/<br>/g,"")}`,v("pain_swell")&&`腫れ：${v("pain_swell")}`].filter(Boolean).join("／"));}
+ const m={gum:"gum_sym",caries:"caries_teeth",whitening:"wh_type",ortho:"ortho_type",implant:"imp_state",denture:"den_state",cleaning:"cl_purpose",second:"sec_topic",snoring:"sn_sym",breath:"br_sym"};
+ ps.forEach(k=>{if(m[k]&&arr(m[k]).length)o.push(`${PNAME(k)}：${J(arr(m[k]))}${k==="caries"&&arr("caries_more").length?"／"+J(arr("caries_more")):""}`); if(k==="other"&&v("other_text"))o.push(`その他：${v("other_text")}`);});
+ if(v("sym_free"))o.push(`自由記述：${v("sym_free")}`); return o.join("\n")||"（未入力）";}
+function urgentText(){const u=arr("urgent").filter(x=>x!=="該当するものはない"); return (u.length?`該当：${J(u)}`:"緊急度の高い症状はなし")+`\n症状の経過：${v("course")||"-"}／以前にも：${v("before")||"-"}`;}
+function isUrgent(){return arr("urgent").some(x=>x!=="該当するものはない")||Number(v("pain_level"))>=7;}
+function summary(){
+ return [["ご来院の目的",J(arr("purposes").map(PNAME)),0,SIC.target],["現在の症状について",sympText(),1,SIC.chat],["緊急度チェック",urgentText(),2,SIC.alarm],
+ ["治療へのご希望",[arr("prio").length&&`重視すること：${J(arr("prio"))}`,arr("method").length&&`治療方法：${J(arr("method"))}`,v("pain_pref")&&`痛みについて：${v("pain_pref")}`,v("cost_pref")&&`内容・費用：${v("cost_pref")}`,arr("trigger").length&&`きっかけ：${J(arr("trigger"))}`,v("expect")&&`期待すること：${v("expect")}`].filter(Boolean).join("\n")||"（未入力）",3,SIC.heart],
+ ["過去の治療歴",[`受けたことのある治療：${J(arr("hist"))||"-"}`,`困ったこと・嫌だったこと：${J(arr("bad"))||"-"}`,`麻酔で気分が悪くなったこと：${v("anes")||"-"}`,`アレルギー・副作用：${v("allergy")||"-"}${v("allergy_detail")?"（"+v("allergy_detail")+"）":""}`,`大きな病気・入院・手術歴：${v("illness")||"-"}${v("illness_detail")?"（"+v("illness_detail")+"）":""}`,`治療中のご病気：${J(arr("disease"))||"-"}`,`服用中のお薬：${v("meds")||"-"}`,v("preg")&&`妊娠・授乳：${v("preg")}${v("preg_month")?"（"+v("preg_month")+"）":""}`].filter(Boolean).join("\n"),4,SIC.tooth],
+ ["ご予約希望",[slot(1)&&`第一希望：${slot(1)}`,slot(2)&&`第二希望：${slot(2)}`,slot(3)&&`第三希望：${slot(3)}`,`ご連絡方法：${v("contact")||"-"}`,v("wish")&&`ご希望・ご要望：${v("wish")}`].filter(Boolean).join("\n"),5,SIC.cal],
+ ["患者さま情報",`${v("name_sei")||""} ${v("name_mei")||""}（${v("kana_sei")||""} ${v("kana_mei")||""}）／${v("era")&&v("era")!=="西暦"?v("era"):""}${v("birth_y")||""}年${v("birth_m")||""}月${v("birth_d")||""}日／${v("sex")||""}\n電話番号：${v("tel")||"-"}／メール：${v("email")||"-"}\n住所：〒${v("zip")||""}　${v("addr1")||""}${v("addr2")||""}\n保険証：${v("ins_type")||"-"}　記号${v("ins_kigo")||"-"}　番号${v("ins_no")||"-"}`,6,SIC.user]];}
+function doneView(final){const r=S.rec||{};
+ return `<div class="donehead"><span class="ok"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><h3>送信が完了しました</h3><p>オンライン問診${final?"へ":""}のご回答ありがとうございました。ご協力誠にありがとうございます。</p>${r.id?`<span class="recno">受付番号：${r.id}</span>`:""}</div></div>
+ <p>${final?"内容を受け付けました。確認のうえ、当院よりご連絡させていただきます。<br><span class='redline'>通常、翌診療日までにご連絡いたしますので、今しばらくお待ちください。</span>":"ご入力いただいた内容を受け付けました。<br>内容を確認のうえ、当院よりご連絡させていただきます。"}</p>
+ <div class="notice"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1950c8" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3 6l9 7 9-7"/></svg><div><h4>ご連絡について</h4><ul><li>通常、翌診療日までにご連絡いたします。</li><li>混雑状況によりご連絡が遅れる場合がございますので、ご了承ください。</li><li>緊急の場合は、直接お電話にてご連絡ください。（<b>03-3975-6888</b>）</li><li>当日は、マイナンバーカード（または健康保険証）とお薬手帳（お持ちの方）をご持参の上、お気をつけてご来院ください。スタッフ一同、お待ちしております。</li></ul></div></div>
+ <h4 style="display:flex;gap:8px;align-items:center;color:var(--ink);margin:0 0 10px">📄 ご入力内容の概要</h4>
+ <table class="ovw">${[["ご来院の目的",J(arr("purposes").map(PNAME))],["現在の症状について",sympText()],["緊急度チェック",urgentText()],["治療へのご希望",[v("pain_pref"),v("cost_pref")].filter(Boolean).join("\n")||J(arr("prio"))],["ご予約希望",[slot(1)&&"第一希望："+slot(1),slot(2)&&"第二希望："+slot(2)].filter(Boolean).join("　／")||"-"],["患者さま情報",`${v("name_sei")||""} ${v("name_mei")||""}（${v("kana_sei")||""} ${v("kana_mei")||""}）／${v("birth_y")||""}年${v("birth_m")||""}月${v("birth_d")||""}日／${v("sex")||""}`],["ご連絡方法",v("contact")||"-"]].map(([a,b])=>`<tr><th>${a}</th><td>${esc(b)}</td></tr>`).join("")}</table>
+ <p class="cap" style="margin-top:6px">※内容の詳細は当院にて確認いたします。</p>`;}
+
+/* ---------- aside (right) ---------- */
+const HINTS=["当てはまるものをすべて選んでください。複数選択できます。","できるだけ詳しくご入力いただくと、より適切なご案内が可能になります。","できるだけ詳しくご入力いただくと、より適切なご案内が可能になります。","ご希望を詳しくご記入いただくと、より適切なご案内が可能になります。","過去の治療歴は、適切な診断や治療計画を立てるうえで重要な情報です。","ご希望の日時は、できるだけ複数ご入力いただくとご案内がスムーズになります。","お名前・生年月日などは、保険証と同じ内容をご入力ください。","内容に誤りがないかご確認ください。修正が必要な場合は、各項目の「修正する」ボタンから戻れます。","ご入力いただいた内容をもとに、患者さまに最適な診療をご案内いたします。","ご入力内容の変更や追加がある場合は、お電話にてご連絡いただけますようお願いいたします。"];
+const WARN={5:"当院からのご連絡は、診療時間内にご連絡させていただきます。あらかじめご了承ください。",6:"住所検索をご利用いただくと、市区町村まで自動で入力されます。番地の入力漏れにご注意ください。",7:"まだ送信は完了しておりません。「送信する」を押すと送信されます。",8:"この画面を閉じても、すでに送信は完了しています。続けて追加のご入力もできます。",9:"この画面を閉じても、すでに送信は完了しています。ブラウザを閉じて終了して問題ありません。"};
+function renderAside(){const ps=arr("purposes");
+ document.getElementById("aside").innerHTML=`<div class="acard"><h5>選択中のご来院目的</h5><div class="bd sel">${ps.length?ps.map(k=>`<div><img src="img/mq/${k}.png" alt="">${PNAME(k)}</div>`).join(""):"<span style='color:var(--sub)'>まだ選択されていません</span>"}</div></div>
+ <div class="acard hintc"><h5>🕑 ご入力のヒント</h5><div class="bd">${HINTS[S.step]}<img src="img/mq/hint.png" alt="" style="margin-top:8px"></div></div>
+ ${WARN[S.step]?`<div class="acard warnc"><h5>ご注意</h5><div class="bd">${WARN[S.step]}</div></div>`:""}`;}
+
+/* ---------- render ---------- */
+let final=false;
+function render(){
+ const st=S.step;
+ document.getElementById("badge").textContent="STEP "+(st+1);
+ document.getElementById("ttl").textContent=STEPS[st];
+ document.getElementById("mstep").textContent=`オンライン問診　STEP ${st+1}/10`;
+ document.getElementById("steps").innerHTML=STEPS.map((t,i)=>`<li class="${i===st?"cur":(i<=S.maxStep&&i<st?"done":(i<=S.maxStep?"done":"todo"))}" data-i="${i}"><span class="n">${i+1}</span>${t}<span class="c">${i+1}/10</span></li>`).join("");
+ document.getElementById("dots").innerHTML=STEPS.map((t,i)=>`${i?`<i class="${i<=st?"on":""}"></i>`:""}<b class="${i<st?"done":(i===st?"on cur":"")}">${i<st?"✓":i+1}</b>`).join("");
+ if(final){F.innerHTML=doneView(true)+`<div class="nav"><button type="button" class="back" id="prev">← 戻る</button><a class="next" href="index.html" style="text-decoration:none">トップページへ戻る →</a></div>`;}
+ else{
+  const nextLabel=st===7?"この内容で送信する":(st===9?"問診を終了する":"次へ進む");
+  F.innerHTML=VIEWS[st]()+`<p class="err" id="err">未入力の必須項目があります。赤枠の項目をご確認ください。</p><div class="nav"><button type="button" class="back" id="prev" ${st===0?'onclick="location.href=\'questionnaire.html\'"':""}>← 戻る</button><button type="submit" class="next">${nextLabel} →</button></div>`;
+ }
+ renderAside(); bind(); scrollTo({top:0,behavior:"smooth"});
+}
+function collect(){
+ const fd=new FormData(F), names=new Set([...F.elements].map(e=>e.name).filter(Boolean));
+ names.forEach(n=>{const els=[...F.querySelectorAll(`[name="${n}"]`)]; const t=els[0].type;
+  if(t==="checkbox") S.d[n]=fd.getAll(n);
+  else if(t==="radio") S.d[n]=fd.get(n)||"";
+  else S.d[n]=fd.get(n)||"";});
+ if(S.d.pain_teeth!==undefined&&typeof S.d.pain_teeth==="string") S.d.pain_teeth=S.d.pain_teeth?S.d.pain_teeth.split(","):[];
+ save();
+}
+function validate(){
+ let ok=true; F.querySelectorAll("[data-req]").forEach(b=>{const n=b.dataset.req; const val=S.d[n]; const empty=Array.isArray(val)?!val.length:(val===undefined||val===null||String(val).trim()==="");
+  let bad=empty;
+  if(n==="name_sei") bad=!(S.d.name_sei&&S.d.name_mei); if(n==="kana_sei") bad=!(S.d.kana_sei&&S.d.kana_mei);
+  if(n==="birth_y") bad=!(S.d.birth_y&&S.d.birth_m&&S.d.birth_d); if(n==="tel") bad=!/^[0-9\-]{10,13}$/.test(S.d.tel||"");
+  b.classList.toggle("bad",bad); if(bad) ok=false;});
+ document.getElementById("err").classList.toggle("show",!ok);
+ if(!ok){const f=F.querySelector(".bad"); if(f) f.scrollIntoView({behavior:"smooth",block:"center"});}
+ return ok;
+}
+function submitRecord(){
+ let list=[]; try{list=JSON.parse(localStorage.getItem(DB)||"[]")}catch(e){}
+ const d=new Date(), ymd=d.toISOString().slice(0,10).replace(/-/g,"");
+ const id=`M-${ymd}-${String(list.filter(r=>r.id.includes(ymd)).length+1).padStart(3,"0")}`;
+ const rec={id,createdAt:d.toISOString(),status:"未対応",urgent:isUrgent(),data:JSON.parse(JSON.stringify(S.d)),summary:summary().map(([t,txt])=>[t,txt])};
+ list.unshift(rec); try{localStorage.setItem(DB,JSON.stringify(list))}catch(e){}
+ S.rec={id}; save();
+}
+function bind(){
+ document.getElementById("prev").addEventListener("click",()=>{if(final){final=false;render();return;} if(S.step===0) return; if(S.step===8) return; S.step--; render();});
+ F.querySelectorAll(".pcard input").forEach(i=>i.addEventListener("change",()=>{i.closest(".pcard").classList.toggle("on",i.checked); collect(); renderAside();}));
+ F.querySelectorAll(".tooth").forEach(t=>t.addEventListener("click",()=>{t.classList.toggle("on"); const h=F.querySelector('[name="pain_teeth"]'); h.value=[...F.querySelectorAll(".tooth.on")].map(x=>x.dataset.t).join(",");}));
+ F.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>{S.step=+b.dataset.go; render();}));
+ const zb=document.getElementById("zipbtn"); if(zb) zb.addEventListener("click",()=>{const z=(F.zip.value||"").replace(/\D/g,""); if(z.length!==7){alert("郵便番号を7桁で入力してください");return;}
+  window.__zip=r=>{if(r&&r.results){const x=r.results[0]; F.addr1.value=x.address1+x.address2+x.address3; F.addr2.focus();} else alert("住所が見つかりませんでした");};
+  const s=document.createElement("script"); s.src=`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${z}&callback=__zip`; document.body.appendChild(s);});
+ document.querySelectorAll("#steps li.done").forEach(li=>li.addEventListener("click",()=>{if(S.step>=8)return; collect(); S.step=+li.dataset.i; render();}));
+}
+F.addEventListener("submit",e=>{e.preventDefault(); if(final) return; collect();
+ if(S.step<8&&!validate()) return;
+ if(S.step===0&&!arr("purposes").length) return;
+ if(S.step===7) submitRecord();
+ if(S.step===9){ // addendum
+  let list=[]; try{list=JSON.parse(localStorage.getItem(DB)||"[]")}catch(e){} const r=list.find(x=>S.rec&&x.id===S.rec.id); if(r&&v("addendum")){r.data.addendum=v("addendum"); localStorage.setItem(DB,JSON.stringify(list));}
+  final=true; sessionStorage.removeItem(KEY); render(); return;}
+ S.step++; S.maxStep=Math.max(S.maxStep,S.step); save(); render();});
+render();
+</script>
+</body>
+</html>
