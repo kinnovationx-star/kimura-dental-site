@@ -749,7 +749,7 @@ a:hover .arw{background:var(--ink);color:#fff;border-color:var(--ink)}
 .efv-card{position:absolute;left:150px;bottom:34px;width:min(560px,46vw);background:var(--paper);padding:40px 48px 36px;z-index:2}
 .efv-card .loc{font-family:var(--min);font-size:15px;letter-spacing:.14em;margin:0 0 6px;color:var(--ink)}
 .efv-card h1{font-family:var(--min);font-weight:400;font-size:30px;line-height:1.75;letter-spacing:.1em;color:var(--ink);margin:0}
-.efv-card h1 em{font-style:normal;color:var(--ink);background:linear-gradient(transparent 78%,rgba(179,154,104,.35) 78%)}
+.efv-card h1 em{font-style:normal;color:var(--ink);background:linear-gradient(transparent 78%,rgba(25,66,168,.18) 78%)}
 .efv-card .walk{display:flex;align-items:baseline;gap:10px;font-family:var(--min);color:var(--ink);margin:22px 0 0;padding-top:20px;border-top:1px solid var(--gold)}
 .efv-card .walk span{font-size:16px;letter-spacing:.12em}
 .efv-card .walk b{font-family:var(--en);font-weight:400;font-size:84px;line-height:.9;margin:0 4px}
@@ -1318,7 +1318,7 @@ a:hover .arw{background:var(--ink);color:#fff;border-color:var(--ink)}
 .fv-bg{opacity:.35;filter:grayscale(.5)}
 .fv-bg::after{background:linear-gradient(90deg,rgba(249,249,246,.98) 0%,rgba(249,249,246,.92) 40%,rgba(249,249,246,.35) 72%,rgba(249,249,246,.1) 100%)}
 .fv-catch{font-weight:400;font-size:40px;letter-spacing:.14em;color:var(--ink)}
-.fv-catch em,.fv-catch em.g{color:var(--ink);background:linear-gradient(transparent 80%,rgba(179,154,104,.4) 80%)}
+.fv-catch em,.fv-catch em.g{color:var(--ink);background:linear-gradient(transparent 80%,rgba(25,66,168,.18) 80%)}
 .fv-rule{background:var(--gold);opacity:1;width:220px}
 .fv-sub{font-weight:400;color:var(--txt);font-size:15px;line-height:2.1}
 .fv-cta{gap:8px}
@@ -1366,6 +1366,31 @@ a:hover .arw{background:var(--ink);color:#fff;border-color:var(--ink)}
 .fv-badge b,.fv-badge svg{color:var(--mc)}
 .fv-news .go{color:var(--mc)}
 .e-case .ba .photo:last-child b{background:var(--gold)}
+
+/* ---------- 10/31 修正：差し色も青に統一（金→青）／FVの特徴帯とお知らせを分離／症状をカード化 ---------- */
+:root{--gold:#1942a8;--gold-l:#a9b9e0;--gold2:#1942a8;--noteb:#1942a8;--note:#f1f4fb}
+.e-case .ba .photo:last-child b{background:#fff;color:var(--mc)}
+.e-case dt{color:#a9b9e0}
+/* FV：特徴帯とお知らせを別々の箱に */
+.fv-foot{display:flex;flex-direction:column;gap:16px}
+.fv-strip{border:1px solid var(--hair);border-top:2px solid var(--mc);background:rgba(255,255,255,.97);box-shadow:0 10px 30px rgba(15,42,110,.08)}
+.fv-news{margin-top:0!important;border:1px solid var(--hair);background:rgba(255,255,255,.97);box-shadow:0 10px 30px rgba(15,42,110,.08)}
+.fv-news .rows a:last-child{border-bottom:0}
+/* お悩み・症状：しっかりしたカード */
+.e-sym{gap:24px}
+.e-sym a,.e-sym a:nth-child(n+4),.e-sym a:nth-child(-n+3){background:#fff;border:1px solid var(--hair);border-top:3px solid var(--mc);padding:34px 34px 70px;box-shadow:0 6px 24px rgba(15,42,110,.06);transition:transform .3s,box-shadow .3s,background .3s}
+.e-sym a:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(15,42,110,.14)}
+.e-sym .no{align-items:baseline;gap:12px;color:var(--gray);margin:0 0 18px;padding-bottom:16px;border-bottom:1px solid var(--hair)}
+.e-sym .no b{font-size:30px;line-height:1;color:var(--mc);font-weight:400}
+.e-sym h3{font-size:20px;color:var(--ink);margin:0 0 10px;padding-right:0}
+.e-sym p{font-size:13.5px}
+.e-sym a::after{content:"→";top:auto;bottom:26px;right:26px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--mc);color:#fff;font-size:14px;transition:background .3s}
+.e-sym a:hover::after{background:var(--mc-d)}
+.e-sym a:hover h3{color:var(--mc)}
+@media (max-width:900px){.e-sym{gap:14px}.e-sym a,.e-sym a:nth-child(n+4),.e-sym a:nth-child(-n+3){padding:24px 22px 60px}.fv-foot{gap:10px}}
+
+.sec:has(.e-sym){background:#eef2fa}
+.sec:has(.e-sym) .e-sym a{border-color:#d6deef;border-top-color:var(--mc)}
 </style></head>
 <body class=""><header class="ehd"><div class="ehd-in"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"><span class="tx"><b>NARIMASU DENTAL</b><small>成増駅北口 徒歩0分・完全予約制</small></span></a>
 <nav class="enav"><a href="index.html" class="">ホーム</a><div class="hm"><a href="services.html" class="">診療案内</a><div class="emega"><div class="emega-in"><div class="side"><p class="ey">Service</p><h3>診療案内</h3><p>突然の痛みから、一生涯の噛める喜び、そして美しい口元まで。専門治療のページをご覧ください。</p><a href="services.html">診療案内一覧を見る<span>↗</span></a></div><div class="grid"><a href="lp-implant.html"><div class="photo "><img src="img/implant.jpg" alt="" loading="lazy"></div><span class="en">Implant</span><span class="t">インプラント</span><span class="d">しっかり噛めて、自然な見た目を取り戻す</span></a><a href="lp-snoring.html"><div class="photo "><img src="img/snoring.jpg" alt="" loading="lazy"></div><span class="en">Sleep Dentistry</span><span class="t">いびき治療（睡眠歯科）</span><span class="d">専用マウスピースで、いびき・無呼吸を改善</span></a><a href="lp-whitening.html"><div class="photo "><img src="img/whitening.jpg" alt="" loading="lazy"></div><span class="en">Whitening</span><span class="t">ホワイトニング</span><span class="d">ライフスタイルで選べる医療ホワイトニング</span></a><a href="lp-denture.html"><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><span class="en">Denture</span><span class="t">入れ歯（義歯）</span><span class="d">「痛い」「噛めない」「外れやすい」を解決</span></a><a href="lp-ortho.html"><div class="photo "><img src="img/ortho.jpg" alt="" loading="lazy"></div><span class="en">Orthodontics</span><span class="t">矯正歯科</span><span class="d">目立たないマウスピース矯正・部分矯正</span></a></div></div></div></div><a href="about.html" class="">クリニック紹介</a><a href="reservation.html" class="">初めての方へ</a><a href="column.html" class="on">コラム</a><a href="access.html" class="">アクセス・診療時間</a></nav>
