@@ -1,5 +1,5 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>入れ歯治療｜成増歯科室キムラ</title><meta name="description" content="「痛い」「噛めない」「外れやすい」を過去のものに。お口にピタリと吸い付く、精密な「最新入れ歯治療」"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"><style>
+<title>入れ歯治療｜成増歯科室キムラ</title><meta name="description" content="「痛い」「噛めない」「外れやすい」を過去のものに。お口にピタリと吸い付く、精密な「最新入れ歯治療」"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet"><style>
 :root{
  --bg:#f7f9fc; --bg2:#ecf1f8; --white:#fff; --main:#1942a8; --main-d:#12317f; --main-l:#e6edf8;
  --text:#46505f; --ink:#1c2a44; --sub:#7d8796; --line:#d9e1ec; --green:#06c755; --green2:#248b28;
@@ -616,629 +616,730 @@ textarea.inp{min-height:120px}
  .static .fv,.static .lphero{height:auto}
 }
 
-/* ======================================================================
-   v4 SBC風 上書き
-   ====================================================================== */
-:root{--go:"Noto Sans JP","Hiragino Sans",sans-serif;--inter:"Inter","Noto Sans JP",sans-serif;
- --tint:#f4f7fc;--tint2:#e4ebf7;--tint3:#eef3fb;--bd:#dbe2ee;--txt:#333;--hdh:122px}
-body{background:#fff;color:#333;font-size:15px;letter-spacing:.02em;line-height:1.85}
-.sec{padding:96px 0}
-.sec.bg2,.sec.tint{background:var(--tint)}
-.wave{display:none!important}
-.wrap{max-width:1160px}
+:root{
+ --paper:#f9f9f6; --paper2:#f1f0ea; --muted:#e7e5dd; --ink:#171d26; --ink2:#262e3b; --txt:#3b414b; --gray:#7c8189;
+ --hair:#d4d2c9; --gold:#b39a68; --gold-l:#d8c39a; --dark:#11151c; --blue:#1942a8;
+ --bg:var(--paper); --bg2:var(--paper2); --main:var(--ink); --main-d:#000; --main-l:#ecebe4; --navy:var(--dark); --navy2:#1a202b;
+ --text:var(--txt); --sub:var(--gray); --line:var(--hair); --green:var(--ink); --green2:var(--ink);
+ --pale:var(--paper2); --bd:var(--hair); --gold2:var(--gold); --tint:var(--paper2); --tint2:var(--muted); --sub3:var(--ink);
+ --note:#fbf8f0; --noteb:var(--gold); --inter:"Cormorant Garamond",serif;
+ --en:"Cormorant Garamond","Times New Roman",serif; --min:"Noto Serif JP","Yu Mincho","YuMincho","Hiragino Mincho ProN",serif; --go:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+ --ehh:76px;
+}
+body{background:var(--paper);color:var(--txt);font-family:var(--go);font-size:15px;line-height:2;letter-spacing:.05em;padding-bottom:64px}
+::selection{background:var(--gold-l)}
+main{padding-top:var(--ehh)}
+.wrap{max-width:1200px;padding:0 48px}
+.wrap-s{max-width:920px;padding:0 48px}
+.sec{padding:140px 0}
+.sec.bg2,.sec.tint,.lp .sec.tint{background:var(--paper2)}
+.sec+.sec:not(.bg2):not(.tint){border-top:1px solid var(--hair)}
+.num,time,.tel,.price,.n{font-family:var(--min)}
+h1,h2,h3{font-weight:400}
+main *:not(.lp-emblems div):not(.fv-dot){border-radius:0!important}
+main *:not(.lp-emblems div){box-shadow:none!important}
+.photo{background:var(--muted)}
+.photo .cap{background:rgba(17,21,28,.72);font-size:10.5px;letter-spacing:.08em}
+.tbd{background:linear-gradient(transparent 60%,#efe3c4 60%)}
 
-/* ---------- header (2段) ---------- */
-.hd{height:var(--hdh);padding:0;display:block;background:#fff;box-shadow:0 1px 0 var(--bd)}
-.hd.solid{background:#fff}
-.hd-top{background:var(--main);height:64px}
-.hd-top-in{max-width:1240px;height:100%;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:22px}
-.hd .logo{background:#fff;border-radius:8px;padding:5px 12px;height:52px;display:flex;align-items:center}
-.hd .logo img{height:42px;width:auto}
-.hd-info{margin:0;color:#fff;font-size:12.5px;letter-spacing:.06em;opacity:.92}
-.hd-info b{font-weight:700}
-.hd-icons{margin-left:auto;display:flex;align-items:stretch;gap:4px;height:100%}
-.hd-icons a,.hd-icons .burger{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:70px;padding:0 8px;color:#fff;font-size:10.5px;font-weight:500;letter-spacing:.02em;line-height:1.2;background:none;border:0;cursor:pointer;font-family:var(--go);position:static;width:auto;height:auto;border-radius:0}
-.hd-icons a:hover,.hd-icons .burger:hover{background:rgba(255,255,255,.1)}
-.hd-icons svg{width:24px;height:24px}
-.hd-icons .tel b{font-family:var(--min);font-size:16px;font-weight:600;letter-spacing:.04em}
-.hd-icons .burger{display:none}
-.hd-icons .burger i{display:block;width:26px;height:2px;background:#fff;margin:3px 0;transition:.3s}
-body.menu-open .hd-icons .burger i:nth-child(1){transform:translateY(5px) rotate(45deg)}
-body.menu-open .hd-icons .burger i:nth-child(2){opacity:0}
-body.menu-open .hd-icons .burger i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
-.gnav{display:block;margin:0;height:58px;background:#fff}
-.gnav-in{max-width:1080px;height:100%;margin:0 auto;display:flex;justify-content:space-between}
-.gnav-in>a,.gnav-in>.has-mega>a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:58px;padding:0 6px;font-family:var(--go);font-weight:500;font-size:14px;color:#333;letter-spacing:.04em;line-height:1.3;position:relative}
-.gnav-in>.has-mega{flex:1}
-.gnav-in>.has-mega>a{width:100%}
-.gnav a small{display:none}
-.gnav-in>a::after,.gnav-in>.has-mega>a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--main);transform:scaleX(0);transition:transform .25s}
-.gnav-in>a.on,.gnav-in>.has-mega>a.on{color:var(--main)}
-.gnav-in>a.on::after,.gnav-in>.has-mega>a.on::after,.gnav-in>a:hover::after,.gnav-in>.has-mega:hover>a::after{transform:none}
-.gnav a.on::after{bottom:0}
-.mega{top:var(--hdh)}
-@media (max-width:1380px){.mega{top:var(--hdh)}}
-.hd-btns{display:none}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.rv.vis{opacity:1;transform:none}
 
-/* ---------- right side tabs ---------- */
-.sidetabs{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:40;background:#fff;border-radius:10px 0 0 10px;box-shadow:0 4px 18px rgba(20,40,90,.16);display:flex;flex-direction:column;overflow:hidden}
-.sidetabs a{width:76px;padding:12px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10.5px;color:#333;border-bottom:1px solid var(--bd);line-height:1.3;text-align:center}
-.sidetabs a:last-child{border-bottom:0}
-.sidetabs a svg{width:28px;height:28px;color:#333}
-.sidetabs a.web{color:var(--main)}.sidetabs a.web svg{color:var(--main)}
-.sidetabs a.ln svg{color:var(--green)}
-.sidetabs a:hover{background:var(--tint)}
+/* ---------- header ---------- */
+.ehd{position:fixed;inset:0 0 auto 0;z-index:60;height:var(--ehh);background:rgba(249,249,246,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--ink)}
+.ehd-in{height:100%;display:flex;align-items:center;gap:26px;padding:0 0 0 40px}
+.ehd .logo{display:flex;align-items:center;gap:18px}
+.ehd .logo img{height:46px;width:auto}
+.ehd .logo .tx{border-left:1px solid var(--hair);padding-left:18px;line-height:1.35}
+.ehd .logo .tx b{display:block;font-family:var(--en);font-weight:500;font-size:16px;letter-spacing:.14em;color:var(--ink)}
+.ehd .logo .tx small{font-size:10px;letter-spacing:.14em;color:var(--gray)}
+.enav{display:flex;align-items:stretch;gap:0;margin-left:auto;height:100%}
+.enav>a,.enav .hm>a{display:flex;align-items:center;height:100%;padding:0 16px;font-family:var(--min);font-size:13.5px;color:var(--ink);letter-spacing:.1em;position:relative;white-space:nowrap}
+.enav>a::after,.enav .hm>a::after{content:"";position:absolute;left:16px;right:16px;bottom:22px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.enav>a:hover::after,.enav>a.on::after,.enav .hm>a.on::after,.enav .hm:hover>a::after{transform:scaleX(1)}
+.enav .hm{position:relative;height:100%}
+.emega{position:fixed;left:0;right:0;top:var(--ehh);background:var(--paper);border-bottom:1px solid var(--ink);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.35s;z-index:59}
+.enav .hm:hover .emega,.enav .hm:focus-within .emega{opacity:1;visibility:visible;transform:none}
+.emega-in{max-width:1200px;margin:0 auto;padding:40px 48px 46px;display:grid;grid-template-columns:240px 1fr;gap:48px}
+.emega .side .ey{font-family:var(--en);font-size:13px;letter-spacing:.24em;color:var(--gold);margin:0}
+.emega .side h3{font-family:var(--min);font-size:24px;letter-spacing:.12em;color:var(--ink);margin:4px 0 12px}
+.emega .side p{font-size:12.5px;line-height:1.9;color:var(--gray);margin:0 0 18px}
+.emega .side a{display:inline-flex;gap:12px;font-family:var(--min);font-size:13px;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:4px}
+.emega .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.emega .grid a{display:block;color:var(--ink)}
+.emega .grid .photo{aspect-ratio:4/3;margin-bottom:12px}
+.emega .grid .photo img{transition:transform 1.2s}
+.emega .grid a:hover .photo img{transform:scale(1.05)}
+.emega .grid .en{display:block;font-family:var(--en);font-size:12px;letter-spacing:.16em;color:var(--gold)}
+.emega .grid .t{display:block;font-family:var(--min);font-size:15px;letter-spacing:.08em;line-height:1.6}
+.emega .grid .d{display:block;font-size:11.5px;color:var(--gray);line-height:1.7;margin-top:4px}
+.ehd .etel{display:flex;flex-direction:column;align-items:flex-end;line-height:1.2;padding:0 6px 0 10px;border-left:1px solid var(--hair);height:44px;justify-content:center}
+.ehd .etel b{font-family:var(--min);font-weight:400;font-size:19px;letter-spacing:.06em;color:var(--ink)}
+.ehd .etel small{font-size:10px;color:var(--gray);letter-spacing:.1em}
+.eburger{flex:none;width:var(--ehh);height:var(--ehh);border:0;border-left:1px solid var(--ink);background:transparent;cursor:pointer;position:relative}
+.eburger i{position:absolute;left:24px;right:24px;height:1px;background:var(--ink);transition:.3s}
+.eburger i:nth-child(1){top:32px}.eburger i:nth-child(2){top:42px}
+body.menu-open .eburger i:nth-child(1){top:37px;transform:rotate(30deg)}
+body.menu-open .eburger i:nth-child(2){top:37px;transform:rotate(-30deg)}
+.spmenu{z-index:55;background:var(--paper);padding:calc(var(--ehh) + 30px) 0 120px}
+.spmenu .sm-in{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1fr;gap:20px 80px}
+.spmenu .cap{font-family:var(--en);font-weight:400;color:var(--gold);font-size:13px;letter-spacing:.24em;margin:0 0 6px}
+.spmenu .cap::before{display:none}
+.spmenu a.l{font-family:var(--min);font-weight:400;font-size:16px;letter-spacing:.1em;padding:16px 0;border-bottom:1px solid var(--hair)}
+.spmenu a.l::after{content:"↗";color:var(--ink);font-family:var(--go)}
+.spmenu .sm-btns{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ink);margin-top:20px}
+.spmenu .sm-btns a{padding:18px;text-align:center;font-family:var(--min);font-size:14px;letter-spacing:.1em;color:var(--ink);border-left:1px solid var(--ink)}
+.spmenu .sm-btns a:first-child{border-left:0;background:var(--ink);color:#fff}
 
-/* ---------- section title (c-ttl) ---------- */
-.hdg{margin:0 0 48px;text-align:center}
-.hdg .pill{display:block;position:static;background:none;color:#555;font-family:var(--go);font-weight:400;font-size:14px;letter-spacing:.04em;padding:0;margin:12px 0 0;border-radius:0;order:3}
-.hdg .pill::before,.hdg .pill::after{display:none}
-.hdg{display:flex;flex-direction:column;align-items:center}
-.hdg .en{order:1;font-family:var(--inter);font-weight:500;font-size:16px;line-height:1.4;color:var(--main);letter-spacing:.02em;margin:0 0 6px;text-transform:none}
-.hdg h2,.hdg h1{order:2;font-family:var(--min);font-weight:500;font-size:32px;line-height:1.5;color:#333;letter-spacing:.06em;margin:0}
-.hdg.w .en{color:#cfe0ff}.hdg.w h2{color:#fff}.hdg.w .pill{color:#e3ebff}
-.h-s{justify-content:center;font-family:var(--inter);font-weight:500;font-size:15px;color:var(--main);letter-spacing:.02em}
-.h-s::before{display:none}
-.h-m{font-weight:500;color:#333}
-.lp .hdg .en{font-size:15px}.lp .hdg h2{font-size:26px}
+/* ---------- fixed bottom bar ---------- */
+.ebar{position:fixed;left:0;right:0;bottom:0;z-index:58;background:rgba(249,249,246,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--hair);padding:8px 0}
+.ebar-in{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:10px}
+.ebar a{display:flex;align-items:center;justify-content:space-between;height:48px;padding:0 22px;font-family:var(--min);font-size:14px;letter-spacing:.12em;color:var(--ink);border-left:1px solid var(--hair)}
+.ebar a:first-child{background:var(--ink);color:#fff;border:0}
+.ebar a::after{content:"↗";font-family:var(--go);font-size:13px}
+.ebar a small{font-family:var(--go);font-size:10.5px;color:var(--gray);letter-spacing:.06em;margin-left:10px}
+.ebar a:first-child small{color:#aab0bb}
+.ebar a .num{font-size:17px}
+.pagetop{display:none!important}
+.spbar,.sidetabs{display:none!important}
 
-/* ---------- buttons (pill) ---------- */
-.btn{border-radius:999px;min-height:58px;padding:0 44px;font-family:var(--go);font-weight:700;font-size:16px;letter-spacing:.04em}
-.btn.web{background:var(--main)}
-.btn.out{border:2px solid var(--main);color:var(--main);background:#fff}
-.btn.out:hover{background:var(--main);color:#fff;opacity:1}
-.btn.dark{background:var(--main)}
-.fv-cta .btn{border-radius:6px;padding:0 24px;min-height:48px;font-size:14px}
-.more{display:inline-flex;justify-content:center;align-items:center;gap:10px;min-width:300px;min-height:56px;padding:0 36px;border:2px solid var(--main);border-radius:999px;color:var(--main);font-weight:700;font-size:15px;background:#fff;transition:.2s}
-.more:hover{background:var(--main);color:#fff}
+/* ---------- headings ---------- */
+.ehdg{margin:0 0 64px;position:relative}
+.ehdg .ey{display:flex;align-items:center;gap:16px;font-family:var(--en);font-size:14px;letter-spacing:.26em;color:var(--gold);margin:0 0 18px;text-transform:uppercase}
+.ehdg .ey::after{content:"";width:56px;height:1px;background:var(--gold)}
+.ehdg h2,.ehdg h1{font-family:var(--min);font-weight:400;font-size:38px;line-height:1.75;letter-spacing:.1em;color:var(--ink);margin:0}
+.ehdg .sb{margin:14px 0 0;font-size:13px;letter-spacing:.14em;color:var(--gray)}
+.ehdg.c{text-align:center}.ehdg.c .ey{justify-content:center}.ehdg.c .ey::before{content:"";width:56px;height:1px;background:var(--gold)}
+.ehdg.w h2,.ehdg.w h1{color:#fff}.ehdg.w .sb{color:#aab0bb}
+.lp .ehdg h2{font-size:32px}
+.h-s{font-family:var(--min);font-weight:400;font-size:15px;color:var(--ink);letter-spacing:.14em;gap:14px}
+.h-s::before{width:28px;height:1px;border-radius:0;background:var(--gold)}
+.h-m{font-family:var(--min);font-weight:400;font-size:28px;color:var(--ink);letter-spacing:.1em;line-height:1.8}
+.lead{font-size:15.5px;line-height:2.2}
+
+/* ---------- buttons / links ---------- */
+.btn{min-height:58px;padding:0 30px;font-family:var(--min);font-weight:400;font-size:14.5px;letter-spacing:.14em;border:1px solid var(--ink);justify-content:space-between;gap:30px;transition:background .3s,color .3s}
+.btn::after{content:"↗";font-family:var(--go);font-size:13px}
+.btn:hover{opacity:1}
+.btn.web,.btn.dark{background:var(--ink);color:#fff}
+.btn.web:hover,.btn.dark:hover{background:#000}
+.btn.line,.btn.out{background:transparent;color:var(--ink)}
+.btn.line:hover,.btn.out:hover{background:var(--ink);color:#fff}
+.btn.wout{border-color:rgba(255,255,255,.5)}
+.more{font-family:var(--min);font-size:14px;letter-spacing:.12em;color:var(--ink);gap:16px;border-bottom:1px solid var(--ink);padding-bottom:6px}
 .more .arw{display:none}
+.more::after{content:"↗";font-family:var(--go);font-size:12px}
 .more .ul{background:none;padding:0}
-.btnrow{display:flex;justify-content:center;margin-top:44px}
-.headrow{display:block;text-align:center}
-.headrow>.more{display:none}
-.arw{border-radius:50%;width:30px;height:30px;font-size:12px;background:var(--main);color:#fff}
-a:hover .arw{background:var(--main-d);color:#fff}
-.tag{border-radius:4px;font-weight:500;padding:1px 8px}
-.ul{background:none;padding:0}
+.btnrow{display:flex;justify-content:flex-end;margin-top:44px}
+.arw{width:34px;height:34px;background:transparent;border:1px solid var(--hair);color:var(--ink);font-size:12px}
+a:hover .arw{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tag{border-color:var(--hair);color:var(--txt);background:transparent;font-weight:400;font-size:11.5px;padding:2px 10px;letter-spacing:.08em}
+.tag.fill{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tag.g{color:var(--gold);border-color:var(--gold)}
+.note{font-size:12px;color:var(--gray);line-height:1.9}
 
-/* ---------- quick links box (l-link) ---------- */
-.qlink{max-width:1000px;margin:56px auto 0;background:var(--tint);border-radius:12px;padding:34px 30px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
-.qlink a{display:flex;flex-direction:column;align-items:center;gap:12px;font-size:13.5px;color:#333;text-align:center;line-height:1.4}
-.qlink a span.c{width:80px;height:80px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--main);transition:.2s}
-.qlink a:hover span.c{background:var(--main);color:#fff}
-.qlink svg{width:34px;height:34px}
+/* ---------- FV ---------- */
+.efv{position:relative;height:calc(100vh - var(--ehh) - 64px);min-height:640px;max-height:860px;display:grid;grid-template-columns:150px 1fr;padding:34px 48px 34px 0}
+.efv-v{font-family:var(--en);font-size:30px;line-height:1.9;letter-spacing:.42em;color:var(--ink);padding:16px 0 0 44px;margin:0}
+.efv-v span{display:block}
+.efv-ph{position:relative;overflow:hidden;background:var(--muted)}
+.efv-ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:efvz 9s ease-out forwards}
+@keyframes efvz{to{transform:scale(1)}}
+.efv-card{position:absolute;left:150px;bottom:34px;width:min(560px,46vw);background:var(--paper);padding:40px 48px 36px;z-index:2}
+.efv-card .loc{font-family:var(--min);font-size:15px;letter-spacing:.14em;margin:0 0 6px;color:var(--ink)}
+.efv-card h1{font-family:var(--min);font-weight:400;font-size:30px;line-height:1.75;letter-spacing:.1em;color:var(--ink);margin:0}
+.efv-card h1 em{font-style:normal;color:var(--ink);background:linear-gradient(transparent 78%,rgba(179,154,104,.35) 78%)}
+.efv-card .walk{display:flex;align-items:baseline;gap:10px;font-family:var(--min);color:var(--ink);margin:22px 0 0;padding-top:20px;border-top:1px solid var(--gold)}
+.efv-card .walk span{font-size:16px;letter-spacing:.12em}
+.efv-card .walk b{font-family:var(--en);font-weight:400;font-size:84px;line-height:.9;margin:0 4px}
+.efv-card .walk i{font-style:normal;font-size:12px;color:var(--gray);margin-left:auto;letter-spacing:.06em;text-align:right;line-height:1.8}
+.efv-card .sub{font-size:13px;line-height:2;color:var(--txt);margin:14px 0 20px}
+.efv-card .ctas{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.efv-card .ctas .btn{min-height:52px;font-size:13px;padding:0 18px;letter-spacing:.08em}
+.efv-badge{position:absolute;right:48px;top:34px;z-index:2;display:flex;align-items:center;gap:14px;background:rgba(249,249,246,.94);padding:16px 22px;color:var(--ink);font-family:var(--min);font-size:13px;line-height:1.7;letter-spacing:.08em}
+.efv-badge svg{color:var(--gold)}
+.efv-badge b{font-weight:500}
+.efv-badge::after{content:"↗";font-family:var(--go);margin-left:6px}
+.efv-scroll{position:absolute;left:44px;bottom:40px;font-family:var(--en);font-size:12px;letter-spacing:.3em;color:var(--gray);writing-mode:vertical-rl}
+.efv-scroll::after{content:"";display:block;width:1px;height:70px;background:var(--ink);margin:14px auto 0;animation:sc 2.4s infinite}
+@keyframes sc{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
-/* ---------- featured (新導入・新価格 風) ---------- */
-.feat-sec{background:var(--tint)}
-.fslide{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.fitem{display:flex;flex-direction:column;color:#000}
-.fitem .photo{aspect-ratio:282/200;border-radius:12px}
-.fitem h3{font-family:var(--go);font-weight:700;font-size:20px;line-height:1.5;margin:14px 0 2px;color:#000;letter-spacing:.02em}
-.fitem .sub{font-size:13.5px;font-weight:700;color:#333;margin:0 0 10px}
-.fitem .tg{display:inline-block;align-self:flex-start;border:1px solid var(--main);color:var(--main);border-radius:4px;font-size:12.5px;padding:1px 8px;background:#fff;margin-bottom:6px}
-.fitem .pr{display:flex;align-items:baseline;gap:6px;margin-top:auto}
-.fitem .pr b{font-family:var(--min);font-weight:700;font-size:30px;line-height:1.2;color:#000;letter-spacing:.02em}
-.fitem .pr small{font-size:12.5px;color:#333}
-.fitem .nt{font-size:12px;color:#666;margin:2px 0 0;min-height:1.6em}
-.fitem:hover h3{color:var(--main)}
-.sdots{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:40px}
-.sdots .bar{width:68px;height:6px;border-radius:3px;background:var(--tint2);position:relative;margin-right:6px}
-.sdots .bar::before{content:"";position:absolute;left:0;top:0;bottom:0;width:30%;border-radius:3px;background:var(--main)}
-.sdots i{width:6px;height:6px;border-radius:50%;background:var(--tint2)}
-.sdots i.on{background:var(--main)}
-.sdots .ar{margin-left:56px;display:flex;gap:30px;font-size:22px;color:#333}
+/* intro: strip + news */
+.e-intro{padding:110px 0 120px}
+.e-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0 56px;border-top:1px solid var(--ink)}
+.e-strip>div{padding:26px 0 0}
+.e-strip .no{font-family:var(--en);font-size:13px;letter-spacing:.2em;color:var(--gold)}
+.e-strip .no span{color:var(--gray);margin-left:6px}
+.e-strip h3{font-family:var(--min);font-size:20px;letter-spacing:.1em;color:var(--ink);margin:6px 0 8px}
+.e-strip p{font-size:13.5px;line-height:2;margin:0}
+.e-news{display:grid;grid-template-columns:200px 1fr;gap:40px;margin-top:90px}
+.e-news .lab{font-family:var(--min);font-size:18px;letter-spacing:.12em;color:var(--ink)}
+.e-news .lab small{display:block;font-family:var(--en);font-size:12px;letter-spacing:.26em;color:var(--gold)}
+.e-news .rows a{display:grid;grid-template-columns:120px 90px 1fr 24px;gap:20px;align-items:center;padding:20px 0;border-top:1px solid var(--hair);font-size:14px;color:var(--ink)}
+.e-news .rows a:last-child{border-bottom:1px solid var(--hair)}
+.e-news .rows time{font-family:var(--en);font-size:16px;letter-spacing:.08em;color:var(--gray)}
+.e-news .rows .go{text-align:right}
 
-/* ---------- big tinted box (SBCの5つの約束 風) ---------- */
-.bigbox{background:var(--tint);border-radius:12px;padding:56px 60px}
-.bigbox>.bx-t{text-align:center;font-family:var(--go);font-weight:400;font-size:26px;color:#333;margin:0 0 40px;letter-spacing:.04em}
-.srows{gap:28px}
-.srow{background:#fff;border-radius:12px;padding:30px;gap:44px;grid-template-columns:1fr 1fr}
-.srow .photo{border-radius:10px}
-.srow .no{font-family:var(--inter);font-size:13px;color:var(--main);font-weight:600;margin:0 0 6px}
-.srow h3{font-family:var(--go);font-weight:700;font-size:22px;color:#333;border-bottom:0;padding-bottom:0;margin:0 0 18px;position:relative}
-.srow h3::after{content:"";display:block;width:24px;height:3px;background:var(--main);margin-top:12px}
-.srow .lb{font-size:14px;color:var(--main)}
-.srow .tx>p:not(.no):not(.lb){font-size:14.5px;line-height:2}
-.srow .go{position:static}
-.lp .srow h3{font-size:20px}
+/* statement */
+.e-state{display:grid;grid-template-columns:1.15fr 1fr;gap:90px;align-items:center}
+.e-state .photo{aspect-ratio:4/5}
+.e-state h2{font-family:var(--min);font-weight:400;font-size:40px;line-height:1.9;letter-spacing:.14em;color:var(--ink);margin:0 0 30px}
 
-/* ---------- body-part style (お悩みから探す) ---------- */
-.bp-band{position:relative;height:280px;overflow:hidden;margin-top:-1px}
-.bp-band img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.bp-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,247,252,.95) 0%,rgba(244,247,252,.75) 38%,rgba(244,247,252,0) 70%)}
-.bp-band .t{position:absolute;left:max(40px,calc((100% - 1000px)/2));top:50%;transform:translateY(-50%);z-index:2}
-.bp-band .t p{margin:0;font-family:var(--inter);font-size:15px;color:var(--main)}
-.bp-band .t h3{margin:4px 0 0;font-family:var(--min);font-weight:500;font-size:28px;color:#333;letter-spacing:.06em}
-.bp-box{max-width:1000px;margin:-30px auto 0;position:relative;z-index:3;background:var(--tint);border-radius:12px;padding:30px 40px 40px}
-.bp-box .cap{font-weight:700;font-size:16px;color:#333;margin:0 0 14px}
-.bp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.bp-btn{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--bd);border-radius:13px;min-height:72px;padding:8px 14px 8px 12px;color:#000;font-size:14.5px;line-height:1.45;transition:.2s}
-.bp-btn:hover{border-color:var(--main);color:var(--main)}
-.bp-btn .ci{width:48px;height:48px;flex:none;border-radius:50%;background:var(--tint);display:flex;align-items:center;justify-content:center}
-.bp-btn .ci img{width:32px;height:32px;object-fit:contain}
-.bp-btn small{display:block;font-size:11.5px;color:#777}
-.bp-btn::after{content:"";margin-left:auto;width:8px;height:8px;border-top:2px solid var(--main);border-right:2px solid var(--main);transform:rotate(45deg);flex:none}
+/* featured menu */
+.e-feat{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.e-feat a{display:flex;flex-direction:column;padding:28px 26px 30px;border-left:1px solid var(--hair);color:var(--ink);transition:background .4s}
+.e-feat a:first-child{border-left:0}
+.e-feat a:hover{background:var(--paper2)}
+.e-feat .no{font-family:var(--en);font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 14px}
+.e-feat .photo{aspect-ratio:4/5;margin:0 0 22px}
+.e-feat .photo img{transition:transform 1.4s}
+.e-feat a:hover .photo img{transform:scale(1.05)}
+.e-feat h3{font-family:var(--min);font-size:18px;letter-spacing:.08em;line-height:1.6;margin:0 0 6px}
+.e-feat .d{font-size:12.5px;line-height:1.85;color:var(--txt);margin:0 0 18px;min-height:46px}
+.e-feat .pr{margin-top:auto;padding-top:16px;border-top:1px solid var(--hair);display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.e-feat .pr .lb{font-size:11px;letter-spacing:.1em;color:var(--gray);width:100%}
+.e-feat .pr b{font-family:var(--min);font-weight:400;font-size:40px;letter-spacing:.02em;line-height:1}
+.e-feat .pr small{font-size:12px}
+.e-feat .nt{font-size:11.5px;color:var(--gray);margin:6px 0 0;min-height:20px}
 
-/* ---------- recommend cards (おすすめ治療 風) ---------- */
-.mcards{gap:22px}
-.mcard{background:none;border-radius:0;overflow:visible}
-.mcard .photo{border-radius:12px;aspect-ratio:282/190}
-.mcard .bd{padding:14px 0 0}
-.mcard .lbl{font-family:var(--inter);font-size:12px;letter-spacing:.04em}
-.mcard h3{font-family:var(--go);font-weight:700;font-size:18px;color:#000}
-.mcard:hover h3{color:var(--main)}
-.mcard .ft{justify-content:flex-start;gap:10px;color:var(--main);font-weight:700}
-.mcard .ft .arw{width:22px;height:22px;font-size:10px}
+/* reasons (alternating) */
+.e-rows{display:grid;gap:130px}
+.e-row{display:grid;grid-template-columns:1fr 1.25fr;gap:90px;align-items:center}
+.e-row .photo{aspect-ratio:5/4;order:2}
+.e-row.flip{grid-template-columns:1.25fr 1fr}
+.e-row.flip .photo{order:0}
+.e-row .no{font-family:var(--en);font-size:96px;line-height:1;color:var(--gold-l);margin:0 0 8px;font-weight:400}
+.e-row .lb{font-size:13px;letter-spacing:.12em;color:var(--gray);margin:0 0 6px}
+.e-row h3{font-family:var(--min);font-size:30px;letter-spacing:.12em;line-height:1.7;color:var(--ink);margin:0 0 22px}
+.e-row p{font-size:14.5px;line-height:2.2}
+.e-row .tags{margin-top:18px}
 
-/* ---------- card w/ header band (今週の症例・マップから探す 風) ---------- */
-.hbox{background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden}
-.hbox>.hb-h{background:var(--tint2);text-align:center;font-weight:700;font-size:18px;color:#333;padding:14px 10px;letter-spacing:.04em}
-.hbox>.hb-h.fill{background:var(--main);color:#fff}
-.hbox>.hb-b{padding:24px}
-.casewrap{max-width:760px;margin:0 auto}
-.casewrap .casebox{gap:0;grid-template-columns:1fr}
-.casewrap .casebox .photo{aspect-ratio:16/7;border-radius:0}
-.casewrap .casebox .photo b{left:auto;right:12px;background:none;color:#fff;font-family:var(--inter);text-shadow:0 1px 3px rgba(0,0,0,.4)}
-.casewrap .dl{background:var(--tint);border-radius:8px;padding:6px 18px;margin:0}
-.casewrap .dl dt,.casewrap .dl dd{border-bottom:1px solid #fff;font-size:13.5px}
-.casechips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:14px;background:var(--tint3)}
-.casechips span{border:1px solid var(--bd);background:#fff;border-radius:999px;padding:3px 14px;font-size:12.5px}
-.casechips span.on{background:var(--main);border-color:var(--main);color:#fff}
+/* route */
+.e-route{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:20px}
+.e-route a{color:var(--ink)}
+.e-route .photo{aspect-ratio:3/2;margin-bottom:14px}
+.e-route p{display:flex;gap:14px;align-items:baseline;font-family:var(--min);font-size:15px;letter-spacing:.08em;border-top:1px solid var(--hair);padding-top:14px;margin:0}
+.e-route .n{font-family:var(--en);font-size:22px;color:var(--gold)}
 
-/* ---------- message box (トップメッセージ 風) ---------- */
-.msgbox{border:1px solid var(--bd);border-radius:12px;padding:44px 56px;display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center;background:#fff}
-.msgbox .photo{aspect-ratio:3/3.6;border-radius:10px;background:#e9edf3}
-.msgbox h3{text-align:left;font-family:var(--go);font-weight:500;font-size:24px;color:#333;margin:0 0 6px}
-.msgbox h3::after{content:"";display:block;width:28px;height:3px;background:var(--main);margin:12px 0 18px}
-.msgbox p{font-size:14.5px;line-height:2}
-.msgbox .sign{text-align:right;font-size:13px;color:#333;margin-top:10px}
-.msgbox .sign b{display:block;font-family:var(--min);font-weight:600;font-size:18px}
+/* standards */
+.e-std{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:130px;padding-top:110px;border-top:1px solid var(--hair)}
+.e-std .photo{aspect-ratio:4/3}
 
-/* ---------- column list / news (お知らせ 風) ---------- */
-.ncards{gap:22px}
-.ncard{background:none;border-radius:0}
-.ncard::before{display:none}
-.ncard .photo{border-radius:12px}
-.ncard .bd{padding:14px 0 0}
-.ncard h3{font-family:var(--go);font-weight:700;font-size:16px;color:#000}
-.ncard:hover h3{color:var(--main)}
-.ncard .pr b{font-family:var(--min)}
-.newslist{border-top:1px solid var(--bd)}
-.newslist a{display:grid;grid-template-columns:120px 130px 1fr;gap:16px;align-items:center;padding:20px 16px;border-bottom:1px solid var(--bd);font-size:14.5px;color:#000}
-.newslist a:hover{background:var(--tint)}
-.newslist time{font-family:var(--min);color:#555}
-.newslist .tag{justify-self:start}
-.tabs button{border-radius:999px;padding:6px 18px;font-weight:500;font-size:13.5px}
-.tabs button.on,.tabs button:hover{background:var(--main);color:#fff;border-color:var(--main)}
+/* symptoms (possibilities style) */
+.e-sym{display:grid;grid-template-columns:repeat(3,1fr);gap:0 56px}
+.e-sym a{display:block;padding:28px 0 32px;border-top:1px solid var(--ink);color:var(--ink);position:relative}
+.e-sym a:nth-child(n+4){border-top-color:var(--hair)}
+.e-sym .no{font-size:12px;letter-spacing:.12em;color:var(--gray);margin:0 0 10px;display:flex;gap:8px}
+.e-sym .no b{font-family:var(--en);font-weight:500;color:var(--gold)}
+.e-sym h3{font-family:var(--min);font-size:19px;letter-spacing:.08em;margin:0 0 6px;padding-right:30px}
+.e-sym p{font-size:13px;color:var(--txt);margin:0}
+.e-sym a::after{content:"↗";position:absolute;right:0;top:30px;font-size:13px}
+.e-sym-cap{font-size:14px;margin:-20px 0 44px}
 
-/* ---------- access (クリニック一覧 風) ---------- */
-.access{gap:28px}
-.access>.rv:not(.hbox) .map{border-radius:12px}
-.acc details{border-radius:0;margin:0;border-bottom:1px solid var(--bd);background:#fff}
-.acc details:first-child{border-top:1px solid var(--bd)}
-.acc summary{font-family:var(--go);font-weight:500;font-size:16px;padding:20px 64px 20px 18px}
-.acc summary::after{content:"+";border-radius:50%;width:24px;height:24px;margin-top:-12px;background:var(--tint2);color:var(--main);font-size:16px}
+/* menu (cards) */
+.e-menu{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+.e-menu a{display:block;color:var(--ink)}
+.e-menu .photo{aspect-ratio:3/4;margin-bottom:20px}
+.e-menu .photo img{transition:transform 1.4s}
+.e-menu a:hover .photo img{transform:scale(1.05)}
+.e-menu .lbl{font-family:var(--en);font-size:12.5px;letter-spacing:.2em;color:var(--gold);margin:0 0 4px}
+.e-menu h3{font-family:var(--min);font-size:19px;letter-spacing:.08em;margin:0 0 10px}
+.e-menu p{font-size:13px;line-height:2;margin:0 0 14px}
+.e-menu .go{font-family:var(--min);font-size:13px;border-bottom:1px solid var(--ink);padding-bottom:4px;display:inline-flex;gap:12px}
+.e-menu .go::after{content:"↗";font-family:var(--go)}
+
+/* case (large) */
+.e-case{background:var(--dark);color:#d9dce2;padding:150px 0}
+.e-case .ehdg h2{color:#fff}.e-case .ehdg .sb{color:#9aa1ad}
+.e-case .chips{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2);margin:0 0 34px;overflow-x:auto}
+.e-case .chips span{flex:1;text-align:center;padding:16px 10px;font-family:var(--min);font-size:14px;letter-spacing:.1em;color:#9aa1ad;border-left:1px solid rgba(255,255,255,.12);cursor:pointer;white-space:nowrap}
+.e-case .chips span:first-child{border-left:0}
+.e-case .chips span.on{color:#fff;background:rgba(255,255,255,.06);box-shadow:inset 0 -1px 0 var(--gold)!important}
+.e-case .ba{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.e-case .ba .photo{aspect-ratio:4/3;background:#222}
+.e-case .ba .photo b{position:absolute;left:0;top:0;background:var(--paper);color:var(--ink);font-family:var(--en);font-weight:500;font-size:15px;letter-spacing:.24em;padding:8px 20px;z-index:2}
+.e-case .ba .photo:last-child b{background:var(--gold);color:#fff}
+.e-case dl{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:34px 0 0;border-top:1px solid rgba(255,255,255,.2)}
+.e-case dl>div{padding:22px 22px 4px 0;border-right:1px solid rgba(255,255,255,.12);margin-right:22px}
+.e-case dl>div:last-child{border-right:0;margin-right:0}
+.e-case dt{font-size:11.5px;letter-spacing:.14em;color:var(--gold-l);margin:0 0 8px}
+.e-case dd{margin:0;font-family:var(--min);font-size:14.5px;line-height:1.9;color:#fff}
+.e-case .note{color:#8a919c;margin-top:26px}
+.e-case .sl{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
+.e-case .sl .dots{display:flex;gap:10px}
+.e-case .sl .dots i{width:36px;height:1px;background:rgba(255,255,255,.3)}
+.e-case .sl .dots i.on{background:#fff}
+.e-case .sl .ar{display:flex;gap:6px}
+.e-case .sl .ar span{width:44px;height:44px;border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
+
+/* message */
+.e-msg{display:grid;grid-template-columns:1fr 1.1fr;gap:90px;align-items:end}
+.e-msg .photo{aspect-ratio:4/5}
+.e-msg h3{font-family:var(--min);font-size:30px;line-height:1.8;letter-spacing:.12em;color:var(--ink);margin:0 0 30px}
+.e-msg p{font-size:14.5px;line-height:2.25}
+.e-msg .sign{text-align:right;font-family:var(--min);font-size:13px;margin-top:30px;color:var(--ink)}
+.e-msg .sign b{display:block;font-weight:400;font-size:22px;letter-spacing:.2em}
+
+/* column */
+.e-col{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.e-col a{display:block;color:var(--ink)}
+.e-col .photo{aspect-ratio:3/2;margin-bottom:18px}
+.e-col time{font-family:var(--en);font-size:15px;letter-spacing:.1em;color:var(--gray)}
+.e-col h3{font-family:var(--min);font-size:16px;line-height:1.9;letter-spacing:.06em;margin:4px 0 14px}
+
+/* access */
+.e-acc{display:grid;grid-template-columns:1.1fr 1fr;gap:70px}
+.map{border-radius:0;filter:grayscale(.6) contrast(1.02)}
+.map iframe{border:0}
+.e-acc .addr{font-family:var(--min);font-size:16px;letter-spacing:.08em;color:var(--ink);margin:0 0 4px}
+.e-acc .tel{display:block;font-family:var(--en);font-size:46px;letter-spacing:.06em;color:var(--ink);margin:22px 0 14px;line-height:1}
+.hours{border-collapse:collapse;width:100%;font-size:13.5px;background:transparent}
+.hours th,.hours td{border:0;border-bottom:1px solid var(--hair);padding:12px 8px;text-align:center;background:transparent!important;color:var(--ink);font-weight:400}
+.hours thead th{border-bottom:1px solid var(--ink);font-family:var(--min);font-size:13px;letter-spacing:.08em;color:var(--ink)}
+.hours td:first-child{text-align:left;font-family:var(--min)}
+.hours .o{color:var(--gold)}
+.hours .x{color:#b9b9b2}
+
+/* ---------- CTA zone (PRIVATE ACCESS 風) ---------- */
+.ecta{background:var(--dark);color:#e8e6e0;padding:140px 0 150px;position:relative;overflow:hidden}
+.ecta .wrap{max-width:1040px}
+.ecta .big{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:30px;margin:0 0 50px}
+.ecta .big .l1,.ecta .big .l2{font-family:var(--en);font-weight:400;font-size:96px;line-height:.95;letter-spacing:.04em;color:#f1eee8;margin:0}
+.ecta .big .l2{grid-column:3;text-align:right}
+.ecta .big .ln{grid-column:2;height:1px;background:rgba(255,255,255,.35);margin-bottom:22px}
+.ecta .big .l1{grid-column:1/-1}
+.ecta .row{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:end;margin:0 0 50px}
+.ecta h2{font-family:var(--min);font-weight:400;font-size:20px;line-height:1.9;letter-spacing:.1em;color:#fff;margin:0}
+.ecta p{font-size:13px;line-height:2.1;color:#aeb3bd;margin:0}
+.ecta .boxes{display:grid;gap:12px}
+.ecta .bx{display:grid;grid-template-columns:1fr 92px;border:1px solid rgba(255,255,255,.28);color:#fff;transition:background .35s}
+.ecta .bx:hover{background:rgba(255,255,255,.06)}
+.ecta .bx .t{padding:26px 34px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.ecta .bx h3{font-family:var(--min);font-weight:400;font-size:20px;letter-spacing:.14em;margin:0}
+.ecta .bx .tel{font-family:var(--en);font-size:30px;letter-spacing:.06em;margin:0;line-height:1}
+.ecta .bx p{font-size:12.5px;color:#9aa1ad;margin:0}
+.ecta .bx .a{border-left:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:18px}
+
+/* ---------- footer ---------- */
+.eft{background:var(--paper);padding:70px 0 40px;border-top:1px solid var(--ink)}
+.eft .top{display:grid;grid-template-columns:320px 1fr;gap:60px}
+.eft .logo img{height:54px}
+.eft .addr{font-size:12.5px;line-height:2.1;color:var(--txt);margin-top:18px}
+.eft .links{display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px}
+.eft .links a{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--hair);font-size:13px;color:var(--ink)}
+.eft .links a::after{content:"↗";font-size:11px;color:var(--gray)}
+.eft .copy{display:flex;justify-content:space-between;margin-top:60px;font-family:var(--en);font-size:12px;letter-spacing:.2em;color:var(--gray)}
+
+/* ---------- 下層ヒーロー ---------- */
+.ephero{padding:70px 0 0}
+.ephero .in{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center}
+.ephero .en{font-family:var(--en);font-size:15px;letter-spacing:.3em;color:var(--gold);margin:0 0 14px;text-transform:uppercase;display:flex;align-items:center;gap:16px}
+.ephero .en::after{content:"";width:56px;height:1px;background:var(--gold)}
+.ephero .pill{font-size:12.5px;letter-spacing:.14em;color:var(--gray);margin:0 0 6px}
+.ephero h1{font-family:var(--min);font-weight:400;font-size:36px;line-height:1.75;letter-spacing:.1em;color:var(--ink);margin:0 0 26px}
+.ephero .ld{font-size:14.5px;line-height:2.2;margin:0}
+.ephero .photo{aspect-ratio:4/3;margin-right:-48px}
+.crumb{max-width:1200px;margin:0 auto;padding:40px 48px 0;font-size:12px;color:var(--gray);letter-spacing:.08em;display:flex;gap:10px;background:none;border:0}
+.crumb::before{display:none!important}
+.crumb a{color:var(--gray)}.crumb i{font-style:normal}
+.ephero+.crumb+.sec,.ephero+.crumb+section{border-top:0}
+
+/* ---------- 下層の共通部品 再スキン ---------- */
+.hdg{margin-bottom:56px}
+.hdg .en{font-family:var(--en);font-size:14px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;line-height:1.4}
+.hdg h2,.hdg h1{font-family:var(--min);font-weight:400;font-size:34px;letter-spacing:.1em;color:var(--ink)}
+.hdg .pill{background:none;color:var(--gray);font-family:var(--go);font-weight:400;font-size:12.5px;letter-spacing:.14em;padding:0;margin:0 0 8px}
+.hdg .pill::before,.hdg .pill::after{display:none}
+.srows{display:grid;gap:110px}
+.srow{gap:80px;background:transparent;border:0;padding:0}
+.srow .photo{aspect-ratio:5/4}
+.srow .no{font-family:var(--en);font-size:64px;line-height:1;color:var(--gold-l);font-weight:400;background:none;padding:0}
+.srow .no span{font-family:var(--go);font-size:12px;color:var(--gray);letter-spacing:.14em;margin-left:12px}
+.srow h3{font-family:var(--min);font-weight:400;font-size:26px;letter-spacing:.1em;color:var(--ink);line-height:1.7}
+.srow .lb{font-size:13px;color:var(--gray);letter-spacing:.1em}
+.feat .big{aspect-ratio:4/5}
+.hcard,.mcard,.ncard,.pcard{background:transparent;border:0;color:var(--ink)}
+.hcard{border-top:1px solid var(--hair);padding:22px 0}
+.hcard h3,.mcard h3,.ncard h3,.pcard h3{font-family:var(--min);font-weight:400;letter-spacing:.08em;color:var(--ink)}
+.mcard .bd,.ncard .bd,.pcard .bd{padding:18px 0 0;background:transparent}
+.mcard .lbl,.pcard .lbl,.hcard .lbl{font-family:var(--en);font-size:12.5px;letter-spacing:.2em;color:var(--gold);font-weight:400}
+.mcard .ft,.ncard .ft{border-top:1px solid var(--hair);padding-top:12px}
+.ncard time{font-family:var(--en);color:var(--gray);font-size:15px}
+.mcards,.ncards,.cards3{gap:40px}
+.dl dt,.tbl th{font-family:var(--min);font-weight:400;color:var(--ink);background:transparent}
+.dl dt,.dl dd{border-color:var(--hair)!important}
+.tbl{border-collapse:collapse;background:transparent}
+.tbl th,.tbl td{border:0;border-bottom:1px solid var(--hair);background:transparent;padding:18px 12px}
+.tbl tr:first-child th,.tbl tr:first-child td{border-top:1px solid var(--ink)}
+.timeline .it{border-color:var(--hair)}
+.timeline .it .y,.timeline .y{font-family:var(--en);color:var(--gold);font-weight:400}
+.timeline .it h3{font-family:var(--min);font-weight:400;color:var(--ink)}
+.acc details,.acc.qa details{background:transparent;border:0;border-top:1px solid var(--hair)}
+.acc details:last-child{border-bottom:1px solid var(--hair)}
+.acc summary{font-family:var(--min);font-weight:400;font-size:16px;letter-spacing:.08em;color:var(--ink);padding:24px 50px 24px 0;list-style:none;position:relative;background:transparent}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-family:var(--go);font-weight:300;font-size:22px;color:var(--ink);background:none;width:auto;height:auto}
 .acc details[open] summary::after{content:"−"}
+.acc summary::before{background:none!important;color:var(--gold)!important;font-family:var(--en)!important;font-weight:500}
+.acc .bd{padding:0 50px 26px 0;background:transparent;font-size:14px;line-height:2.1}
+.step,.steps .step,.steps4>*{background:transparent;border:0;border-top:1px solid var(--ink);padding:24px 0 0}
+.step .n,.steps4 .n{font-family:var(--en);font-size:40px;color:var(--gold);background:none;width:auto;height:auto;line-height:1}
+.step h3,.steps4 h3{font-family:var(--min);font-weight:400;color:var(--ink)}
+.form,.thanks{background:transparent;border:0;border-top:1px solid var(--ink);padding:40px 0}
+.frow{border-color:var(--hair)}
+.frow .l,.fgroup>h3{font-family:var(--min);font-weight:400;color:var(--ink)}
+.req{background:var(--gold)!important;color:#fff;font-weight:400}
+.opt{background:var(--muted)!important;color:var(--txt)}
+.inp,.form input[type=text],.form input[type=tel],.form input[type=email],.form input[type=date],.form select,.form textarea{background:#fff;border:1px solid var(--hair);font-family:var(--go)}
+.choices label{background:#fff;border:1px solid var(--hair)}
+.notice,.notice>div,.attention{background:#fff;border:1px solid var(--hair)}
+.access{gap:60px}
+.access .tel{font-family:var(--en);font-size:40px;color:var(--ink);letter-spacing:.06em}
+.tabs button{background:transparent;border:0;border-bottom:1px solid var(--hair);font-family:var(--min);color:var(--gray);letter-spacing:.1em}
+.tabs button.on{color:var(--ink);border-bottom-color:var(--ink);background:transparent}
+.pager a,.pager span{border:1px solid var(--hair);background:transparent;font-family:var(--en)}
+.pager .on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.std .photo,.fac .photo{aspect-ratio:4/3}
+.guar th{background:transparent;font-family:var(--min);font-weight:400}
+.guar th,.guar td{border-color:var(--hair)}
+.mqhero{background:var(--paper2)}
+.mqhero h1{font-family:var(--min);font-weight:400;letter-spacing:.12em;color:var(--ink)}
+.mq{background:#fff;border:1px solid var(--hair)}
+.mqsel{background:transparent}
+.bubble{background:var(--paper);color:var(--ink);font-family:var(--min)}
+.legal{font-size:11.5px;color:var(--gray)}
+.midcta{background:var(--paper2);border:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.midcta p{font-family:var(--min);font-size:18px;letter-spacing:.08em;color:var(--ink);margin:0}
+.midcta .b{display:flex;gap:10px;flex-wrap:wrap}
+.cmpw{overflow-x:auto}
+.cmp{border-collapse:collapse;width:100%;background:transparent;font-size:13.5px}
+.cmp th,.cmp td{border:0;border-bottom:1px solid var(--hair);padding:16px 14px;background:transparent;color:var(--txt);font-weight:400}
+.cmp thead th{border-bottom:1px solid var(--ink);font-family:var(--min);color:var(--ink)}
+.cmp tbody th{font-family:var(--min);color:var(--ink);text-align:left}
+.cmp .me{background:rgba(179,154,104,.1)!important;color:var(--ink)}
+.cmp thead th.me{background:var(--ink)!important;color:#fff}
 
-/* ---------- misc reskins ---------- */
-.std{background:var(--tint);border-radius:12px;padding:40px}
-.std .h-m{text-align:left}
-.cards3 .pcard,.pcard{border:1px solid var(--bd);border-radius:12px}
-.pcard h3{font-family:var(--go);font-weight:700}
-.pcard h3::after{content:"";display:block;width:24px;height:3px;background:var(--main);margin-top:10px}
-.hcard{border:1px solid var(--bd);border-radius:13px}
-.hcard h3{font-family:var(--go);font-weight:700;color:#000;font-size:17px}
-.step,.steps4>div,.flow>div,.notice>div{border:1px solid var(--bd);border-radius:12px}
-.step .n,.steps4 .n,.flow .n{font-family:var(--min)}
-.tbl,.ptbl,.cmp,.hours{border:1px solid var(--bd)}
-.tbl th{background:var(--tint)}
-.hours thead th{background:var(--main)}
-.timeline .it::before{border-color:var(--main)}
-.phero{background:var(--tint);padding:calc(var(--hdh) + 50px) 0 60px}
-.phero .hdg{align-items:flex-start;text-align:left}
-.phero .hdg h1{font-size:34px}
-.phero .photo{border-radius:12px}
-.crumb{max-width:1160px;padding:14px 40px;font-size:12.5px}
-.lphero{padding-top:var(--hdh)}
-.lpnav{top:var(--hdh)}
-.lphero h1{font-family:var(--min);font-weight:500}
-.probs li{border:1px solid var(--bd)}
-.midcta{background:var(--tint);color:#333;border-radius:12px}
-.midcta p{color:#333}
-.nbox{border:1px solid var(--bd);border-radius:12px}
-.box2,.form,.thanks{border:1px solid var(--bd);border-radius:12px}
-.mqhero{padding-top:var(--hdh)}
-.mqsel{border:1px solid var(--bd)}
-.mqflow>div{border:1px solid var(--bd)}
-
-/* ---------- footer (SBC: 単色ブロック) ---------- */
-.ctazone{background:var(--tint);padding:80px 0 90px}
-.ctazone .cta-in{text-align:center;margin-bottom:34px}
-.ctazone .cta-in h2{font-family:var(--min);font-weight:500;font-size:26px;color:#333;margin:0 0 10px;letter-spacing:.04em;line-height:1.6}
-.ctazone .cta-in p{font-size:14px;color:#555;margin:0}
-.ctazone .ccards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.ctazone .ccard{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:hidden;color:#333;transition:transform .2s}
-.ctazone .ccard:hover{transform:translateY(-3px)}
-.ctazone .ccard .photo{aspect-ratio:16/8}
-.ctazone .ccard>div:not(.photo){padding:18px 70px 20px 20px}
-.ctazone .ccard h3{font-family:var(--go);font-weight:700;font-size:17px;color:var(--main);margin:0 0 4px}
-.ctazone .ccard p{margin:0;font-size:13px;color:#555;line-height:1.7}
-.ctazone .ccard .tel{font-family:var(--min);font-size:22px;color:#333;margin:2px 0 4px}
-.ctazone .ccard .arw{position:absolute;right:18px;bottom:20px}
-.gft{background:var(--main);color:#fff;border-radius:0;margin:0;padding:56px 0 24px}
-.gft .flinks{display:grid;grid-template-columns:repeat(3,1fr);column-gap:28px;margin-bottom:46px}
-.gft .flinks a{display:flex;justify-content:space-between;align-items:center;padding:20px 8px;border-bottom:1px solid rgba(255,255,255,.55);font-weight:700;font-size:14.5px;color:#fff}
-.gft .flinks a::after{content:"→";font-weight:400}
-.gft .flinks a:hover{background:rgba(255,255,255,.08)}
-.gft .fbot{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
-.gft .fbot .logo{display:inline-flex;background:#fff;border-radius:8px;padding:8px 14px}
-.gft .fbot .logo img{height:50px}
-.gft .fbot p{margin:0;font-size:13px;line-height:1.9;color:#fff}
-.gft .copy{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.3);font-size:11.5px;color:#fff;opacity:.85;display:flex;justify-content:space-between;letter-spacing:.06em}
-.pagetop{border-radius:50%;bottom:24px;right:96px}
-
-/* =================== SP =================== */
-@media (max-width:1100px){.hd-info{display:none}}
-@media (max-width:1024px){
- .gnav{display:none}
- :root{--hdh:64px}
- .hd-icons .burger{display:flex}
- .sidetabs{display:none}
-}
-@media (max-width:767px){
- :root{--hdh:58px}
- .hd{height:var(--hdh)}
- .hd-top{height:58px}
- .hd-top-in{padding:0 10px;gap:6px}
- .hd .logo{height:44px;padding:4px 8px}.hd .logo img{height:34px}
- .hd-icons a{display:none}
- .hd-icons .burger{min-width:58px}
- .sec{padding:64px 0}
- .hdg{margin-bottom:30px}
- .hdg h2,.hdg h1{font-size:23px}
- .hdg .en{font-size:13px}
- .qlink{grid-template-columns:repeat(3,1fr);margin:30px 16px 0;padding:22px 10px;gap:16px 4px}
- .qlink a{font-size:11.5px;gap:8px}.qlink a span.c{width:58px;height:58px}.qlink svg{width:26px;height:26px}
- .fslide{grid-template-columns:repeat(4,72%);overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:6px}
- .fitem{scroll-snap-align:start}
- .fitem h3{font-size:17px}.fitem .pr b{font-size:26px}
- .sdots .ar{display:none}
- .bigbox{padding:24px 14px;border-radius:10px}
- .bigbox>.bx-t{font-size:20px;margin-bottom:22px}
- .srow{padding:18px;gap:16px}
- .srow h3{font-size:19px}
- .bp-band{height:180px}
- .bp-band .t h3{font-size:21px}
- .bp-box{margin:-20px 12px 0;padding:20px 14px 24px}
- .bp-grid{grid-template-columns:1fr}
- .more{min-width:0;width:100%}
- .msgbox{grid-template-columns:1fr;padding:24px 18px;gap:20px}
- .msgbox .photo{aspect-ratio:4/3}
- .newslist a{grid-template-columns:auto 1fr;gap:6px 12px;padding:14px 6px}
- .newslist a span:last-child{grid-column:1/-1}
- .ctazone{padding:54px 0 60px}
- .ctazone .cta-in h2{font-size:19px}
- .ctazone .ccards{grid-template-columns:1fr;gap:12px}
- .ctazone .ccard{flex-direction:row;align-items:center}
- .ctazone .ccard .photo{width:96px;flex:none;aspect-ratio:1/1;align-self:stretch}
- .ctazone .ccard>div:not(.photo){padding:12px 54px 12px 14px}
- .ctazone .ccard .arw{bottom:auto;top:50%;transform:translateY(-50%);right:12px}
- .gft{padding:40px 0 110px}
- .gft .flinks{grid-template-columns:1fr;margin-bottom:30px}
- .gft .flinks a{padding:16px 6px}
- .gft .fbot{grid-template-columns:1fr;gap:16px}
- .gft .copy{flex-direction:column;gap:4px}
- .phero{padding:calc(var(--hdh) + 26px) 0 34px}
- .phero .hdg h1{font-size:24px}
- .pagetop{display:none}
- .lpnav{top:var(--hdh)}
-}
-
-.fv{padding-top:var(--hdh)}
-.fv-main{max-width:1240px}
-
-.h-s{justify-content:flex-start}
-.casewrap{max-width:680px}
-.casewrap .casebox{grid-template-columns:1fr 1fr}
-.casewrap .casebox .photo{aspect-ratio:1/1}
-
-.phero .hdg .en{font-size:16px;line-height:1.4;margin-bottom:6px}
-.srow{border:1px solid var(--bd)}
-.bigbox .srow{border-color:#fff}
-@media (max-width:767px){.phero .hdg .en{font-size:13px}}
-
-@media (max-width:767px){.srow,.srow.flip{grid-template-columns:1fr}.srow .photo,.srow.flip .photo{order:-1}.access{grid-template-columns:1fr}.std{grid-template-columns:1fr;padding:20px}}
-
-@media (max-width:767px){.bp-band::after{background:linear-gradient(90deg,rgba(244,247,252,.96) 0%,rgba(244,247,252,.85) 60%,rgba(244,247,252,.35) 100%)}}
-
-/* ======================================================================
-   v5 仕上げ（湘南LP準拠）
-   ====================================================================== */
-:root{--navy:#0f2a6b;--navy2:#0b2158;--gold:#c8a65a;--gold2:#e4cf96;--sub3:#2d5bd1;--note:#fffbd6;--noteb:#d74d4d;--pale:#eef3fb}
-.wrap{max-width:1060px}
-.lp .wrap{max-width:1020px}
-
-/* ---------- TOP: 症例を大きく ---------- */
-.casewrap{max-width:1020px}
-.casewrap .casebox{grid-template-columns:1fr 1fr;gap:0}
-.casewrap .casebox .photo{aspect-ratio:4/3}
-.casewrap .hb-b{padding:28px 36px}
-.casewrap .dl{grid-template-columns:150px 1fr;font-size:15px}
-.casewrap .dl dt,.casewrap .dl dd{padding:14px 0}
-.casechips{padding:18px}
-.casechips span{font-size:13.5px;padding:5px 18px}
-
-/* ---------- 予約カード帯（共通・高級感） ---------- */
-.ctazone{position:relative;background:linear-gradient(160deg,#102c70 0%,#0f2a6b 45%,#0a1d4c 100%);padding:88px 0 96px;overflow:hidden}
-.ctazone::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 85% 20%,rgba(255,255,255,.08),transparent 60%),radial-gradient(ellipse 50% 60% at 10% 90%,rgba(200,166,90,.12),transparent 60%)}
-.ctazone::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
-.ctazone .wrap{position:relative;z-index:1}
-.ctazone .cta-in{margin-bottom:38px}
-.ctazone .cta-in h2{color:#fff;font-size:28px;font-weight:500;letter-spacing:.06em}
-.ctazone .cta-in h2::after{content:"";display:block;width:48px;height:1px;background:var(--gold2);margin:18px auto 0}
-.ctazone .cta-in p{color:rgba(255,255,255,.78);font-size:13.5px;margin-top:16px}
-.ctazone .ccard{border:1px solid rgba(255,255,255,.12);background:#fff;box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
-.ctazone .ccard .photo{aspect-ratio:16/9}
-.ctazone .ccard h3{color:var(--navy)}
-.ctazone .ccard .arw{background:var(--navy)}
-.gft{background:var(--navy2)}
-.gft .flinks a{border-bottom-color:rgba(255,255,255,.28)}
-.gft .copy{border-top-color:rgba(255,255,255,.18)}
-
-/* ---------- 下層ヒーロー（湘南 s-mv 風：全幅写真＋帯） ---------- */
-.phero{padding:var(--hdh) 0 0;background:#fff}
-.phero .in{max-width:none;padding:0;grid-template-columns:1fr;gap:0;position:relative}
-.phero .photo{aspect-ratio:1440/420;border-radius:0;position:relative}
-.phero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,42,107,.72) 0%,rgba(15,42,107,.45) 45%,rgba(15,42,107,.05) 100%)}
-.phero .in>div:first-child{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:2;max-width:1060px;margin:0 auto;padding:0 40px;color:#fff}
-.phero .hdg{margin:0;align-items:flex-start;text-align:left}
-.phero .hdg .en{color:#dce6ff;font-size:14px;letter-spacing:.2em}
-.phero .hdg h1{color:#fff;font-size:38px;font-weight:500;letter-spacing:.1em;text-shadow:0 2px 12px rgba(0,0,0,.25)}
-.phero .hdg .pill{color:#fff;opacity:.9}
-.phero .ld{color:#fff;max-width:620px;font-size:14.5px;line-height:2;margin-top:14px;text-shadow:0 1px 8px rgba(0,0,0,.3)}
-.crumb{background:var(--pale);max-width:none;padding:10px 0}
-.crumb a,.crumb i{color:#555}
-.crumb::before{content:"";display:inline-block;width:calc((100% - 1060px)/2 + 40px);vertical-align:middle}
-@media (max-width:1140px){.crumb::before{width:40px}}
-
-/* ---------- LP ヒーロー（湘南 s-mv 風：全幅写真の右に見出し） ---------- */
-.lphero{display:block;position:relative;height:auto;min-height:0;max-height:none;padding-top:var(--hdh);background:#fff}
-.lphero .photo{height:560px;border-radius:0;position:relative}
-.lphero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,0) 35%,rgba(236,241,250,.92) 62%,rgba(236,241,250,.96) 100%)}
-.lphero .tx{position:absolute;left:0;right:0;top:var(--hdh);height:560px;max-width:1060px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right;z-index:2}
-.lphero .tx>*{max-width:520px}
-.lphero .cat{justify-content:flex-end;font-family:var(--inter);font-size:13px;letter-spacing:.2em;color:var(--main)}
+/* ---------- LP ---------- */
+.lphero{display:block;position:relative;height:auto;min-height:0;max-height:none;padding:0;background:var(--paper)}
+.lphero .photo{height:640px;margin:34px 48px 0 150px;border-radius:0}
+.lphero .photo::after{display:none}
+.lphero .photo img{object-position:center 40%}
+.lphero .vt{position:absolute;left:44px;top:50px;font-family:var(--en);font-size:24px;letter-spacing:.38em;line-height:1.9;color:var(--ink);text-transform:uppercase;writing-mode:vertical-rl}
+.lphero .tx{position:relative;margin:-260px 0 0 150px;width:min(640px,60vw);background:var(--paper);padding:44px 52px 40px;z-index:2;display:block;height:auto}
+.lphero .tx>*{max-width:none}
+.lphero .cat{font-family:var(--en);font-size:14px;letter-spacing:.3em;color:var(--gold);margin:0 0 12px;display:flex;align-items:center;gap:14px;text-transform:uppercase;justify-content:flex-start}
 .lphero .cat::before{display:none}
-.lphero h1{font-family:var(--min);font-weight:500;font-size:30px;line-height:1.65;color:#1c2740;letter-spacing:.06em;margin:0 0 16px}
-.lphero .tags{justify-content:flex-end}
-.lphero .tags .tag{background:#fff;border-color:var(--main);font-size:12px}
-.lphero p{font-size:14px;color:#333}
-.lphero .ctas{justify-content:flex-end;gap:10px}
-.lphero .ctas .btn{min-height:50px;padding:0 26px;font-size:14px;border-radius:999px}
-.lphero .telrow{font-size:12px}
-.lp-emblems{display:flex;justify-content:flex-end;gap:10px;margin:0 0 18px}
-.lp-emblems div{width:118px;height:118px;border-radius:50%;background:#fff;border:1px solid var(--gold2);box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 5px var(--gold2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.3}
-.lp-emblems small{font-size:10.5px;color:#555}
-.lp-emblems b{font-family:var(--min);font-size:22px;color:var(--navy);font-weight:600;letter-spacing:.02em}
-.lp-emblems b em{font-style:normal;font-size:12px;margin-left:1px}
+.lphero .cat::after{content:"";width:56px;height:1px;background:var(--gold)}
+.lphero h1{font-family:var(--min);font-weight:400;font-size:28px;line-height:1.8;letter-spacing:.1em;color:var(--ink);margin:0 0 22px}
+.lphero p{font-size:13.5px;line-height:2.1;color:var(--txt);margin:0 0 22px}
+.lphero .tags{justify-content:flex-start;margin:0 0 16px}
+.lphero .ctas{display:grid;grid-template-columns:1fr 1fr;gap:8px;justify-content:flex-start}
+.lphero .ctas .btn{min-height:54px;font-size:13px;padding:0 20px;letter-spacing:.08em;border-radius:0}
+.lphero .telrow{margin:16px 0 0;font-size:12px;color:var(--gray);display:flex;align-items:baseline;gap:14px}
+.lphero .telrow b{font-family:var(--en);font-weight:400;font-size:28px;color:var(--ink);letter-spacing:.06em;margin:0}
+.lp-emblems{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0 0 22px;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair)}
+.lp-emblems div{width:auto;height:auto;border:0;border-left:1px solid var(--hair);border-radius:0!important;box-shadow:none!important;background:transparent;padding:14px 6px;display:flex;flex-direction:column;align-items:center;text-align:center;line-height:1.35}
+.lp-emblems div:first-child{border-left:0}
+.lp-emblems b{font-family:var(--min);font-weight:400;font-size:17px;color:var(--ink);letter-spacing:.02em}
+.lp-emblems small{font-size:10.5px;color:var(--gray);margin-top:2px}
+.lpnav{position:sticky;top:var(--ehh);z-index:30;background:rgba(249,249,246,.95);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);display:flex;justify-content:center;gap:0;padding:0 20px;margin-top:80px;overflow-x:auto}
+.lpnav a{display:flex;flex-direction:column;align-items:center;gap:0;padding:12px 18px;font-family:var(--min);font-size:13px;font-weight:400;color:var(--ink);letter-spacing:.08em;white-space:nowrap;border-radius:0;background:transparent!important}
+.lpnav a small{font-family:var(--en);font-size:12px;color:var(--gold);letter-spacing:.14em}
+.lpnav a:hover{color:var(--gold)}
+.lp-lead{text-align:left;font-size:15px;margin:0 0 30px}
+.lp-probs{display:grid;grid-template-columns:repeat(3,1fr);gap:0 48px}
+.lp-prob{border:0;border-top:1px solid var(--ink);background:transparent;display:block;padding:24px 0 30px}
+.lp-prob .ph{background:none;color:var(--gold);font-family:var(--en);font-size:14px;letter-spacing:.2em;text-align:left;padding:0;margin:0 0 10px;font-weight:400}
+.lp-prob .bd{padding:0;font-family:var(--min);font-size:17px;line-height:1.85;letter-spacing:.06em;color:var(--ink);display:block}
+.lp-prob .bd::before{display:none}
+.arrowbanner{clip-path:none;background:none;color:var(--ink);font-family:var(--min);font-weight:400;font-size:24px;letter-spacing:.12em;line-height:1.9;text-align:center;padding:60px 0 0;margin:30px 0 0;position:relative}
+.arrowbanner::before{content:"";display:block;width:1px;height:50px;background:var(--gold);margin:0 auto 26px}
+.row2{display:grid;grid-template-columns:1.1fr 1fr!important;gap:80px!important;align-items:center}
+.row2 .photo{aspect-ratio:4/5}
+.row2 p{font-size:15px;line-height:2.3}
+.lp-types{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.lp-type{border:0;border-left:1px solid var(--hair);background:transparent;display:flex;flex-direction:column;padding:30px 28px 34px}
+.lp-type:first-child{border-left:0}
+.lp-type .th{order:2;background:none;color:var(--ink);font-family:var(--min);font-weight:400;font-size:19px;letter-spacing:.08em;line-height:1.7;text-align:left;padding:0;margin:0 0 12px;min-height:0;display:block}
+.lp-type .photo{order:1;aspect-ratio:4/3;margin:0 0 22px}
+.lp-type .bd{order:3;padding:0;font-size:13.5px;line-height:2.05}
+.lp-type .bd .n{font-family:var(--en);color:var(--gold);font-size:13px;letter-spacing:.2em;margin:0 0 6px}
+.lp-reason{text-align:left}
+.lp-reason h2{font-family:var(--min);font-weight:400;font-size:32px;color:var(--ink);letter-spacing:.12em;margin:0 0 44px;padding:0;display:block}
+.lp-reason h2::before{content:"REASON";position:static;display:flex;width:auto;height:auto;background:none;font-family:var(--en);font-size:14px;letter-spacing:.26em;color:var(--gold);margin:0 0 16px}
+.lp-reason h2::after{display:none}
+.lp-reason ul{gap:0;border-top:1px solid var(--ink)}
+.lp-reason li{grid-template-columns:140px 1fr;border:0;border-bottom:1px solid var(--hair);background:transparent;padding:34px 0}
+.lp-reason li .no{font-family:var(--min);font-weight:400;color:var(--gold);font-size:16px;letter-spacing:.14em;text-align:left}
+.lp-reason li h3{font-family:var(--min);font-weight:400;font-size:21px;color:var(--ink);letter-spacing:.08em;margin:0 0 8px}
+.lp-reason li p{font-size:14px}
+.pricecard{border:0;border-top:1px solid var(--ink);background:transparent;margin-bottom:36px}
+.pricecard .th{background:none;color:var(--gold);font-family:var(--min);font-weight:400;font-size:13px;letter-spacing:.14em;padding:22px 0 0}
+.pricecard .bd{padding:6px 0 0}
+.pricecard .nm{font-family:var(--min);font-weight:400;font-size:28px;color:var(--ink);letter-spacing:.1em}
+.pricecard .row{grid-template-columns:1fr 1fr;gap:40px}
+.pricecard .rec{background:var(--paper2);padding:24px 28px}
+.pricecard .rec .t{font-family:var(--min);font-weight:400;text-align:left;border-bottom:1px solid var(--hair);font-size:14px}
+.pricecard .rec ul{color:var(--ink);font-weight:400;font-size:13.5px;gap:6px}
+.pricecard .rec li::before{content:"—";color:var(--gold)}
+.pricecard .pr span{color:var(--gray);font-size:12.5px}
+.pricecard .pr b{font-family:var(--min);font-weight:400;font-size:52px;color:var(--ink);letter-spacing:.02em}
+.pricecard .pr .jp{font-family:var(--min);font-size:22px}
+.ptable2{border:0;background:transparent;font-size:14px}
+.ptable2 th{background:none;color:var(--ink);font-family:var(--min);font-weight:400;border-bottom:1px solid var(--ink);padding:12px 0;letter-spacing:.1em}
+.ptable2 td{padding:18px 0;border-bottom:1px solid var(--hair)}
+.ptable2 td:last-child{font-family:var(--min);font-weight:400;font-size:22px;color:var(--ink)}
+.ptable2 td.jp{font-family:var(--min);font-size:14.5px}
+.notebox{background:transparent;border:0;border-left:2px solid var(--gold);padding:6px 0 6px 24px;font-size:14px;line-height:2;margin:28px 0 0;color:var(--txt)}
+.paylist{justify-content:flex-start;gap:8px}
+.paylist span{border-color:var(--hair);color:var(--ink);border-radius:0;font-size:12.5px;background:transparent;padding:6px 16px}
+.bandh{background:none;color:var(--ink);font-family:var(--min);font-size:20px;font-weight:400;letter-spacing:.1em;padding:0 0 14px;margin:0 0 6px;border-bottom:1px solid var(--ink)}
+.lp-case{border:0;background:transparent}
+.lp-case .ba{grid-template-columns:1fr 1fr;gap:12px;padding:0}
+.lp-case .ba .photo{aspect-ratio:4/3}
+.lp-case .ba .photo b{left:0;top:0;background:var(--paper);color:var(--ink);font-family:var(--en);font-weight:500;font-size:14px;letter-spacing:.24em;padding:8px 18px}
+.lp-case .ba .photo:last-child b{background:var(--ink);color:#fff}
+.lp-case table{margin-top:24px;border-top:1px solid var(--ink)}
+.lp-case th,.lp-case td{border-top:0;border-bottom:1px solid var(--hair);padding:16px 0;font-size:14px}
+.lp-case th{width:180px;background:transparent;font-family:var(--min);font-weight:400;color:var(--ink)}
+.lp-steps{display:grid;gap:80px}
+.lp-step{grid-template-columns:1fr 1fr;gap:80px}
+.lp-step .photo{aspect-ratio:3/2}
+.lp-step .tx .sh{background:none;color:var(--gold);font-family:var(--en);font-size:16px;letter-spacing:.24em;text-align:left!important;padding:0 0 12px;border-bottom:1px solid var(--hair)}
+.lp-step .tx h3{font-family:var(--min);font-weight:400;font-size:22px;color:var(--ink);letter-spacing:.08em;margin:18px 0 10px}
+.lp-step .tx p{font-size:14px;line-height:2.1}
+.risk ul{padding-left:1.2em;font-size:15px}
+.risk ul li::marker{color:var(--gold)}
+.hbox{background:transparent;border:0;border-top:1px solid var(--ink)}
+.hbox>.hb-h,.lp .hbox>.hb-h{background:none!important;color:var(--ink)!important;text-align:left;font-family:var(--min);font-weight:400;font-size:17px;letter-spacing:.12em;padding:20px 0 0}
+.hbox>.hb-b{padding:22px 0 0}
+.msgbox{border:0;background:transparent;padding:0;grid-template-columns:320px 1fr;gap:60px}
+.msgbox .photo{aspect-ratio:4/5;background:var(--muted)}
+.msgbox h3{font-family:var(--min)!important;font-weight:400!important;font-size:22px;letter-spacing:.1em;color:var(--ink)}
+.msgbox h3::after{background:var(--gold);width:40px;height:1px}
+.msgbox .sign b{font-family:var(--min);font-weight:400;letter-spacing:.16em}
+.lp .sec{padding:130px 0}
+.lp .access{display:grid;grid-template-columns:1fr 1fr;gap:60px}
 
-/* ---------- LP ページ内タブ（Type/Plan/Reason…） ---------- */
-.lpnav{position:sticky;top:var(--hdh);background:#fff;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);display:flex;justify-content:center;gap:0;padding:0 20px;box-shadow:0 6px 14px -12px rgba(0,0,0,.25)}
-.lpnav a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 18px;border-radius:0;font-size:14px;font-weight:500;color:#333;letter-spacing:.04em}
-.lpnav a small{font-family:var(--inter);font-size:11px;color:var(--main);letter-spacing:.04em}
-.lpnav a:hover{background:var(--pale);color:var(--main)}
-
-/* ---------- LP 見出し（下線付き h2 / 帯見出し） ---------- */
-.lp .hdg{align-items:center;margin-bottom:34px;padding-bottom:12px;border-bottom:2px solid var(--main);width:100%}
-.lp .hdg .en{display:none}
-.lp .hdg h2{font-family:var(--go);font-weight:700;font-size:28px;color:#000;letter-spacing:.04em}
-.lp .hdg .pill{margin-top:6px;font-size:14px;color:#333}
-.lp .sec{padding:64px 0}
-.lp .sec.tint{background:var(--pale)}
-.lp p{font-size:16px;line-height:1.75;color:#000}
-.bandh{background:var(--main);color:#fff;font-size:16px;font-weight:400;padding:6px 16px;margin:0 0 14px;letter-spacing:.04em}
-.bandh.g{background:#6d6d6d}
-.lp-lead{text-align:center;font-size:16px;margin:0 0 28px}
-
-/* ---------- お悩み（3列カード・写真帯見出し） ---------- */
-.lp-probs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.lp-prob{border:1px solid var(--main);background:#fff;display:flex;flex-direction:column}
-.lp-prob .ph{background:var(--main);color:#fff;font-weight:700;font-size:17px;text-align:center;padding:10px 12px;line-height:1.45}
-.lp-prob .bd{padding:16px 16px 18px;font-size:14.5px;line-height:1.75;display:flex;gap:10px;align-items:flex-start}
-.lp-prob .bd::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border:1.5px solid var(--main);border-radius:3px;background:var(--main) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12.5l4.5 4.5L19 7.5'/></svg>") center/14px no-repeat}
-.arrowbanner{position:relative;background:var(--main);color:#fff;text-align:center;font-weight:700;font-size:22px;line-height:1.7;padding:26px 24px 44px;margin:28px 0 0;clip-path:polygon(0 0,100% 0,100% calc(100% - 32px),50% 100%,0 calc(100% - 32px))}
-
-/* ---------- 3つの特徴（type_cont 風：上帯＋写真＋本文） ---------- */
-.lp-types{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.lp-type{border:1px solid var(--main);background:#fff;display:flex;flex-direction:column}
-.lp-type .th{background:var(--main);color:#fff;font-size:18px;font-weight:700;text-align:center;padding:9px 12px;line-height:1.4;min-height:66px;display:flex;align-items:center;justify-content:center}
-.lp-type .photo{aspect-ratio:4/3;border-radius:0;margin:12px}
-.lp-type .bd{padding:0 16px 18px;font-size:14.5px;line-height:1.75}
-.lp-type .bd .n{font-family:var(--inter);color:var(--main);font-weight:600;font-size:12px;letter-spacing:.14em;margin:0 0 6px}
-
-/* ---------- 選ばれる理由（金×明朝） ---------- */
-.lp-reason{text-align:center}
-.lp-reason h2{font-family:var(--min);font-weight:600;font-size:36px;color:#9c7c3a;letter-spacing:.08em;margin:0 0 30px;position:relative;display:inline-block;padding:0 56px}
-.lp-reason h2::before,.lp-reason h2::after{content:"";position:absolute;top:50%;width:40px;height:1px;background:var(--gold)}
-.lp-reason h2::before{left:0}.lp-reason h2::after{right:0}
-.lp-reason ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;text-align:left}
-.lp-reason li{display:grid;grid-template-columns:96px 1fr;align-items:center;border:1px solid #d9c8a2;border-radius:8px;background:#fff;padding:26px 28px 26px 0}
-.lp-reason li .no{font-family:var(--min);font-weight:600;color:#9c7c3a;font-size:18px;text-align:center}
-.lp-reason li h3{font-family:var(--min);font-weight:600;font-size:24px;color:var(--main);margin:0 0 6px;line-height:1.5}
-.lp-reason li p{margin:0;font-size:15px}
-
-/* ---------- 料金ボックス（湘南 content-mod01 風） ---------- */
-.pricecard{border:1px solid var(--main);background:#fff;margin-bottom:16px}
-.pricecard .th{background:#6d6d6d;color:#fff;font-weight:700;font-size:15px;padding:8px 16px}
-.pricecard .bd{padding:20px 24px}
-.pricecard .nm{font-size:26px;font-weight:700;color:var(--main);margin:0 0 10px;letter-spacing:.02em}
-.pricecard .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
-.pricecard .rec{background:var(--pale);padding:14px 22px}
-.pricecard .rec .t{text-align:center;font-weight:700;font-size:15px;margin:0 0 8px;border-bottom:1px dashed #b5c3dd;padding-bottom:6px}
-.pricecard .rec ul{list-style:none;margin:0;padding:0;font-size:14px;font-weight:700;color:var(--main);display:grid;gap:4px}
-.pricecard .rec li::before{content:"✔";margin-right:8px}
-.pricecard .pr{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;text-align:right}
-.pricecard .pr b{font-family:var(--min);font-weight:700;font-size:38px;color:var(--sub3);line-height:1.2;letter-spacing:.02em}
-.pricecard .pr b small{font-size:16px;margin-left:4px}
-.pricecard .pr span{font-size:13px;color:#555}
-.pricecard .pr .jp{font-family:var(--go);font-size:20px;font-weight:700;color:var(--sub3)}
-.ptable2{width:100%;border-collapse:collapse;font-size:15px;background:#fff;border:1px solid var(--main)}
-.ptable2 th{background:var(--main);color:#fff;font-weight:700;padding:10px 16px;text-align:left}
-.ptable2 td{padding:14px 16px;border-bottom:1px solid var(--bd)}
-.ptable2 td:last-child{text-align:right;font-family:var(--min);font-weight:700;font-size:22px;color:var(--sub3);white-space:nowrap}
-.ptable2 td.jp{font-family:var(--go);font-size:15px}
-.notebox{background:var(--note);border:4px solid var(--noteb);padding:22px 40px;font-size:18px;line-height:1.8;margin:22px 0 0;color:#000}
-.notebox b{color:var(--noteb)}
-.guar{width:100%;border-collapse:collapse;font-size:14px;text-align:center;background:#fff}
-.guar th,.guar td{border:1px solid var(--bd);padding:10px 8px}
-.guar th{background:var(--pale);font-weight:700}
-.paylist{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
-.paylist span{border:1px solid var(--main);color:var(--main);border-radius:4px;padding:4px 14px;font-size:13.5px;background:#fff}
-
-/* ---------- 症例（Before/After 横並び＋表） ---------- */
-.lp-case{border:1px solid var(--bd);background:#fff}
-.lp-case .ba{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;background:#fff}
-.lp-case .ba .photo{aspect-ratio:4/3;border-radius:0}
-.lp-case .ba .photo b{left:10px;top:10px;background:var(--main);color:#fff;font-family:var(--inter);font-size:12px;padding:3px 10px;border-radius:3px}
-.lp-case table{width:100%;border-collapse:collapse;font-size:14px}
-.lp-case th,.lp-case td{border-top:1px solid var(--bd);padding:12px 16px;text-align:left;vertical-align:top}
-.lp-case th{width:150px;background:var(--pale);font-weight:700;white-space:nowrap}
-
-/* ---------- 流れ（写真と帯見出しを左右交互） ---------- */
-.lp-steps{display:grid;gap:34px}
-.lp-step{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
-.lp-step .photo{aspect-ratio:16/10;border-radius:0}
-.lp-step .tx .sh{background:var(--main);color:#fff;font-family:var(--inter);font-size:21px;font-weight:500;text-align:center;padding:6px;letter-spacing:.06em}
-.lp-step .tx h3{font-size:20px;font-weight:700;color:var(--main);margin:14px 0 8px}
-.lp-step .tx p{margin:0;font-size:15px}
-.lp-step.flip .photo{order:2}
-.lp-step.flip .tx .sh{text-align:center}
-
-/* ---------- 比較・リスク・Q&A ---------- */
-.lp .cmp{border:1px solid var(--main)}
-.lp .cmp thead th{background:#fff;color:var(--main);border-bottom:2px solid var(--main)}
-.lp .cmp thead th.me{background:var(--main);color:#fff}
-.risk ul{margin:10px 0 14px;padding-left:1.4em;font-size:16px}
-.lp .acc{border:1px solid var(--bd)}
-.lp .acc details{border-bottom:1px solid var(--bd)}
-.lp .acc details:last-child{border-bottom:0}
-.lp .acc summary{font-size:16px;font-weight:700}
-.lp .acc summary::before{color:var(--main)}
-.lp .acc .bd::before{color:var(--sub3)}
-.lp .msgbox{border-color:var(--main)}
-.lp .hbox>.hb-h{background:var(--main);color:#fff}
-
-/* ---------- 下層ページ共通の仕上げ ---------- */
-.std{border:1px solid var(--bd);background:#fff}
-.pcard{box-shadow:0 10px 26px -20px rgba(20,40,90,.35)}
-.srow{box-shadow:0 10px 26px -20px rgba(20,40,90,.3)}
-.timeline .it h3{font-family:var(--go);font-weight:700}
-.tbl th{font-family:var(--go);font-weight:700}
-.hours thead th{font-family:var(--go)}
-.step h3,.steps4 h3{font-family:var(--go);font-weight:700}
-.h-m{font-family:var(--go);font-weight:700;font-size:24px;color:#000;letter-spacing:.04em}
-.hdg h2,.hdg h1{font-family:var(--min)}
-.step{box-shadow:0 10px 26px -20px rgba(20,40,90,.3)}
-.notice>div{border-top-color:var(--main);box-shadow:0 10px 26px -20px rgba(20,40,90,.3)}
-.form,.thanks{box-shadow:0 10px 26px -20px rgba(20,40,90,.3)}
-.fgroup>h3{font-family:var(--go)}
-.msgbox h3{font-family:var(--go);font-weight:700}
-.bigbox>.bx-t{font-family:var(--go);font-weight:700;font-size:24px}
-
-/* =================== SP =================== */
-@media (max-width:767px){
- .casewrap .casebox{grid-template-columns:1fr 1fr}
- .casewrap .hb-b{padding:16px}
- .casewrap .dl{grid-template-columns:100px 1fr;font-size:13px}
- .ctazone{padding:56px 0 64px}
- .ctazone .cta-in h2{font-size:20px}
- .phero .photo{aspect-ratio:4/3}
- .phero .in>div:first-child{padding:0 20px}
- .phero .hdg h1{font-size:24px}
- .phero .ld{font-size:13px;line-height:1.8;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
- .crumb::before{width:20px}
- .lphero .photo{height:auto;aspect-ratio:4/3}
- .lphero .photo::after{background:linear-gradient(180deg,rgba(255,255,255,0) 30%,rgba(236,241,250,.95) 100%)}
- .lphero .tx{position:static;height:auto;padding:18px 20px 30px;align-items:stretch;text-align:left;background:var(--pale)}
- .lphero .tx>*{max-width:none}
- .lphero .cat,.lphero .tags,.lphero .ctas,.lp-emblems{justify-content:flex-start}
- .lphero h1{font-size:22px}
- .lp-emblems div{width:92px;height:92px}.lp-emblems b{font-size:17px}.lp-emblems small{font-size:9.5px}
- .lpnav{justify-content:flex-start;padding:0 8px}.lpnav a{padding:8px 12px;font-size:12.5px}
- .lp .hdg h2{font-size:21px}
- .lp .sec{padding:44px 0}
- .lp p{font-size:14.5px}
- .lp-probs,.lp-types{grid-template-columns:1fr}
- .arrowbanner{font-size:17px;padding:20px 16px 36px}
- .lp-reason h2{font-size:26px;padding:0 36px}.lp-reason h2::before,.lp-reason h2::after{width:26px}
- .lp-reason li{grid-template-columns:60px 1fr;padding:18px 16px 18px 0}.lp-reason li h3{font-size:18px}
- .pricecard .row{grid-template-columns:1fr}.pricecard .pr{align-items:flex-start;text-align:left;padding-top:10px}.pricecard .pr b{font-size:30px}.pricecard .nm{font-size:20px}
- .notebox{padding:16px 18px;font-size:15px}
- .ptable2 td:last-child{font-size:18px}
- .lp-step,.lp-step.flip{grid-template-columns:1fr}.lp-step.flip .photo{order:0}
- .lp-case th{width:100px}
+/* ---------- SP ---------- */
+@media (max-width:1180px){
+ .enav{display:none}
+ .ehd .etel{margin-left:auto}
 }
+@media (max-width:900px){
+ :root{--ehh:60px}
+ body{padding-bottom:62px}
+ .wrap,.wrap-s{padding:0 20px}
+ .sec{padding:84px 0}
+ .ehd-in{padding-left:16px;gap:12px}
+ .ehd .logo img{height:34px}
+ .ehd .logo .tx{display:none}
+ .ehd .etel{display:none}
+ .eburger{margin-left:auto}
+ .eburger i{left:18px;right:18px}.eburger i:nth-child(1){top:25px}.eburger i:nth-child(2){top:33px}
+ body.menu-open .eburger i:nth-child(1),body.menu-open .eburger i:nth-child(2){top:29px}
+ .spmenu .sm-in{grid-template-columns:1fr;padding:0 20px}
+ .spmenu .sm-btns{grid-template-columns:1fr}
+ .spmenu .sm-btns a{border-left:0;border-top:1px solid var(--ink)}
+ .spmenu .sm-btns a:first-child{border-top:0}
+ .ebar{padding:6px 0}
+ .ebar-in{padding:0 8px;gap:6px;grid-template-columns:1.2fr 1fr .8fr}
+ .ebar a{height:48px;padding:0 10px;font-size:12px;letter-spacing:.04em;justify-content:center;gap:6px}
+ .ebar a small{display:none}
+ .ebar a::after{display:none}
+ .ebar a .num{display:none}
+ .ehdg{margin-bottom:40px}
+ .ehdg h2,.ehdg h1{font-size:24px}
+ .lp .ehdg h2{font-size:22px}
+ .h-m{font-size:21px}
+ .efv{height:auto;min-height:0;max-height:none;grid-template-columns:1fr;padding:0}
+ .efv-v{position:absolute;left:16px;top:18px;z-index:2;font-size:20px;padding:0;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.25)}
+ .efv-ph{height:62vh;min-height:380px}
+ .efv-card{position:relative;left:auto;bottom:auto;width:auto;margin:-80px 16px 0;padding:26px 22px 24px}
+ .efv-card h1{font-size:21px}
+ .efv-card .walk b{font-size:64px}
+ .efv-card .ctas{grid-template-columns:1fr}
+ .efv-badge{position:static;margin:14px 16px 0;justify-content:center}
+ .efv-scroll{display:none}
+ .e-intro{padding:70px 0}
+ .e-strip{grid-template-columns:1fr}
+ .e-strip>div{padding:22px 0;border-bottom:1px solid var(--hair)}
+ .e-news{grid-template-columns:1fr;gap:16px;margin-top:56px}
+ .e-news .rows a{grid-template-columns:1fr auto;gap:4px 12px}
+ .e-news .rows a span:nth-of-type(2){grid-column:1/-1}
+ .e-news .rows .go{display:none}
+ .e-state{grid-template-columns:1fr;gap:34px}
+ .e-state h2{font-size:26px}
+ .e-feat{grid-template-columns:1fr 1fr}
+ .e-feat a{padding:20px 14px 22px}
+ .e-feat a:nth-child(3){border-left:0}
+ .e-feat a:nth-child(n+3){border-top:1px solid var(--hair)}
+ .e-feat h3{font-size:15px}
+ .e-feat .pr b{font-size:30px}
+ .e-rows{gap:70px}
+ .e-row,.e-row.flip{grid-template-columns:1fr;gap:26px}
+ .e-row .photo,.e-row.flip .photo{order:0}
+ .e-row .no{font-size:64px}
+ .e-row h3{font-size:22px}
+ .e-route{grid-template-columns:1fr;gap:24px}
+ .e-std{grid-template-columns:1fr;gap:30px;margin-top:70px;padding-top:60px}
+ .e-sym{grid-template-columns:1fr}
+ .e-sym a:nth-child(n+2){border-top-color:var(--hair)}
+ .e-menu{grid-template-columns:1fr 1fr;gap:30px 16px}
+ .e-menu h3{font-size:16px}
+ .e-case{padding:84px 0}
+ .e-case .ba{grid-template-columns:1fr;gap:8px}
+ .e-case dl{grid-template-columns:1fr}
+ .e-case dl>div{border-right:0;margin-right:0;border-bottom:1px solid rgba(255,255,255,.12);padding:16px 0}
+ .e-msg{grid-template-columns:1fr;gap:30px}
+ .e-msg h3{font-size:22px}
+ .e-col{grid-template-columns:1fr;gap:34px}
+ .e-acc{grid-template-columns:1fr;gap:34px}
+ .e-acc .tel{font-size:36px}
+ .hours{font-size:12px}
+ .hours th,.hours td{padding:9px 3px}
+ .ecta{padding:84px 0 90px}
+ .ecta .big .l1,.ecta .big .l2{font-size:50px}
+ .ecta .big{gap:14px;margin-bottom:34px}
+ .ecta .row{grid-template-columns:1fr;gap:16px}
+ .ecta .bx{grid-template-columns:1fr 60px}
+ .ecta .bx .t{padding:20px 18px;gap:6px 14px}
+ .ecta .bx h3{font-size:16px}
+ .ecta .bx .tel{font-size:24px}
+ .eft .top{grid-template-columns:1fr;gap:30px}
+ .eft .links{grid-template-columns:1fr 1fr;gap:0 20px}
+ .eft .copy{flex-direction:column;gap:6px}
+ .ephero{padding:30px 0 0}
+ .ephero .in{grid-template-columns:1fr;gap:26px;padding:0 20px}
+ .ephero .photo{margin:0 -20px;order:-1}
+ .ephero h1{font-size:24px}
+ .crumb{padding:24px 20px 0}
+ .hdg h2,.hdg h1{font-size:22px}
+ .srows{gap:60px}
+ .srow{gap:22px}
+ .srow h3{font-size:20px}
+ .srow .no{font-size:46px}
+ .midcta{padding:26px 20px}
+ .midcta p{font-size:16px}
+ .midcta .b{width:100%}
+ .midcta .b .btn{width:100%}
+ .lphero .photo{height:56vh;min-height:320px;margin:0}
+ .lphero .vt{left:14px;top:18px;font-size:16px;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.3)}
+ .lphero .tx{margin:-70px 16px 0;width:auto;padding:26px 20px 24px}
+ .lphero h1{font-size:20px}
+ .lphero .ctas{grid-template-columns:1fr}
+ .lp-emblems{grid-template-columns:repeat(2,1fr)}
+ .lp-emblems div:nth-child(3){border-left:0}
+ .lp-emblems div:nth-child(n+3){border-top:1px solid var(--hair)}
+ .lpnav{justify-content:flex-start;margin-top:56px;padding:0 4px}
+ .lpnav a{padding:9px 12px;font-size:12px}
+ .lp-probs{grid-template-columns:1fr}
+ .lp-prob{padding:18px 0 20px}
+ .lp-prob .bd{font-size:15.5px}
+ .arrowbanner{font-size:18px;padding-top:40px}
+ .row2{grid-template-columns:1fr!important;gap:30px!important}
+ .lp-types{grid-template-columns:1fr}
+ .lp-type{border-left:0;border-top:1px solid var(--hair);padding:24px 0 28px}
+ .lp-type:first-child{border-top:0}
+ .lp-reason h2{font-size:24px}
+ .lp-reason li{grid-template-columns:1fr;padding:24px 0;gap:4px}
+ .lp-reason li h3{font-size:18px}
+ .pricecard .row{grid-template-columns:1fr;gap:20px}
+ .pricecard .pr{align-items:flex-start;text-align:left}
+ .pricecard .pr b{font-size:38px}
+ .pricecard .nm{font-size:22px}
+ .ptable2 td:last-child{font-size:17px}
+ .lp-case .ba{grid-template-columns:1fr;gap:8px}
+ .lp-case th{width:96px}
+ .lp-steps{gap:50px}
+ .lp-step,.lp-step.flip{grid-template-columns:1fr;gap:20px}
+ .lp-step.flip .photo{order:0}
+ .msgbox{grid-template-columns:1fr;gap:26px}
+ .lp .sec{padding:80px 0}
+ .lp .access{grid-template-columns:1fr;gap:34px}
+}
+.static .rv{opacity:1;transform:none}
+.static .efv{height:820px}
+.static .efv-ph img{animation:none;transform:none}
 
-.lp .midcta{grid-template-columns:1fr auto;gap:28px}
-.lp .midcta p{font-size:17px;white-space:normal;min-width:0}
-.lp .midcta .b{flex-direction:column;gap:10px;flex:none}
-.lp .midcta .b .btn{min-width:300px}
-.lphero .photo img{object-position:center 35%}
-.lphero .tx>*{max-width:560px}
-.lphero h1{font-size:28px}
-.lp .wrap{max-width:1060px}
-.row2 p{font-size:15.5px}
-@media (max-width:767px){.row2{grid-template-columns:1fr!important}.lp .midcta .b .btn{min-width:0;width:100%}}
+/* 数字は明朝（ユーザー指定） */
+.efv-card .walk b,.e-row .no,.srow .no,.e-route .n,.e-news .rows time,.e-col time,.e-acc .tel,.ecta .bx .tel,.lphero .telrow b,.step .n,.steps4 .n,.ncard time,.access .tel,.e-feat .no,.e-strip .no,.e-sym .no b,.lp-type .bd .n,.lp-step .tx .sh,.ebar .num{font-family:var(--min);font-feature-settings:"palt";letter-spacing:.04em}
+.efv-card .walk b{font-weight:300;font-size:76px}
+.e-row .no{font-weight:300;font-size:80px;color:var(--gold-l)}
+.srow .no{font-weight:300}
+.e-acc .tel,.access .tel{font-weight:300;font-size:40px}
+.ecta .bx .tel{font-weight:300;font-size:26px}
+.e-route .n{font-size:20px;font-weight:300}
+.e-news .rows time,.e-col time,.ncard time{font-size:13px}
+.efv-card .ctas{grid-template-columns:1fr}
+.efv-card .ctas .btn{min-height:50px;font-size:13.5px;letter-spacing:.12em}
+.efv-ph img{object-position:center 62%}
+@media (max-width:900px){.efv-card .walk b{font-size:58px}.e-row .no{font-size:56px}}
 
-.lphero .photo{height:640px}
-.lphero .photo img{object-position:left center}
-.lphero .photo::after{background:linear-gradient(90deg,rgba(255,255,255,0) 28%,rgba(238,243,251,.9) 50%,rgba(238,243,251,1) 62%,rgba(238,243,251,1) 100%)}
-.lphero .tx{height:640px;padding:30px 40px 0}
-.lphero .tx>*{max-width:520px}
-.lphero h1{font-size:27px;line-height:1.7;margin-bottom:14px}
-.lp-emblems{margin-bottom:14px}
-.lp-emblems div{width:108px;height:108px}
-.lp-emblems b{font-size:19px}
-.lphero .ctas{flex-direction:column;align-items:flex-end;gap:8px}
-.lphero .telrow{margin-top:10px}
-@media (max-width:767px){.lphero .photo{height:auto}.lphero .tx{height:auto;padding:18px 20px 30px}.lphero .ctas{align-items:stretch}}
+.ecta .row{grid-template-columns:1fr 1fr;gap:60px}
+.ecta h2{font-size:21px}
 
-.mqhero{padding-top:var(--hdh);background:linear-gradient(180deg,var(--pale),#fff)}
-.mqhero .in{max-width:1060px}
-.mqhero .ph .photo{border-radius:12px}
-.mqsel{box-shadow:0 10px 26px -20px rgba(20,40,90,.3)}
+/* LP 構造（v5で持っていた骨組み） */
+.lphero,.static .lphero{height:auto;overflow:visible}
+.lp-reason ul{list-style:none;margin:0;padding:0;display:grid}
+.lp-reason li{display:grid;align-items:center}
+.pricecard .row{display:grid;align-items:stretch}
+.pricecard .pr{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;text-align:right}
+.pricecard .rec ul{list-style:none;margin:0;padding:0;display:grid}
+.ptable2{width:100%;border-collapse:collapse}
+.ptable2 td:last-child{text-align:right}
+.paylist{display:flex;flex-wrap:wrap;margin-top:18px}
+.lp-case table{width:100%;border-collapse:collapse}
+.lp-case th,.lp-case td{text-align:left;vertical-align:top}
+.lp-steps,.lp-step{display:grid}
+.lp-step{align-items:center}
+.lp-step.flip .photo{order:2}
+.lp-types,.lp-probs{display:grid}
+.risk ul{margin:14px 0 18px}
+.msgbox{display:grid;align-items:center}
+.msgbox h3::after{content:"";display:block;margin:14px 0 18px}
+.msgbox .sign{text-align:right}
+.msgbox .sign b{display:block;font-size:20px}
+.hbox>.hb-h{display:block}
+@media (max-width:900px){.lp-step.flip .photo{order:0}.pricecard .pr{align-items:flex-start;text-align:left}}
 
-@media (max-width:767px){.ptable2{table-layout:fixed}.ptable2 td:last-child{white-space:normal;font-size:16px;width:40%}.ptable2 td{word-break:break-word}.pricecard .pr b{white-space:normal;word-break:break-word}}
+.lp-case .ba{display:grid}
+.lphero .ctas{grid-template-columns:1fr}
+@media (max-width:900px){.lp-case .ba{grid-template-columns:1fr}}
 
-.lp-emblems b{font-size:17px;letter-spacing:0;line-height:1.2;padding:0 6px}
-@media (max-width:767px){.lp-emblems{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.lp-emblems div{width:auto;height:auto;aspect-ratio:1;max-width:84px}.lp-emblems b{font-size:13px}.lp-emblems small{font-size:8.5px}}
+@media (max-width:900px){
+ .efv-v,.lphero .vt{display:none}
+ .btn{letter-spacing:.06em;font-size:13.5px;padding:0 18px;gap:14px}
+}
 </style></head>
-<body class="lp"><header class="hd" data-solid="1"><div class="hd-top"><div class="hd-top-in"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"></a>
-<p class="hd-info">東武東上線「成増駅」北口 <b>徒歩0分</b>｜平日夜21時・土日診療｜完全予約制</p>
-<div class="hd-icons"><a class="tel" href="tel:0339756888"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg><b>03-3975-6888</b></a><a href="monshin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M7.5 14h2M11 14h2M14.5 14h2M7.5 17.5h2M11 17.5h2"/></svg>WEB予約</a><a href="#line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4C7 4 3 7.2 3 11.2c0 3.6 3.2 6.6 7.5 7.1-.2.9-.6 2.2-.7 2.5 0 .4.2.4.5.2.3-.1 3.9-2.6 5.4-3.9 3.3-1 6.3-3.3 6.3-5.9C22 7.2 17 4 12 4z"/></svg>LINE予約</a><a href="access.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>アクセス</a><button class="burger" aria-label="メニュー"><i></i><i></i><i></i>MENU</button></div></div></div>
-<nav class="gnav"><div class="gnav-in"><a href="index.html" class="">ホーム<small>HOME</small></a><div class="has-mega"><a href="services.html" class="on">診療案内<small>SERVICE</small></a><div class="mega"><div class="mg-in"><div class="mg-side"><p class="mg-cap">SERVICE</p><p class="mg-h">診療案内</p><p class="mg-txt">突然の痛みから、一生涯の噛める喜び、そして美しい口元まで。専門治療のページをご覧ください。</p><a class="mg-all" href="services.html"><span>診療案内一覧を見る</span><span class="arw">→</span></a></div><div class="mg-grid"><a class="mg-card" href="lp-implant.html"><span class="mg-ph"><img src="img/implant.jpg" alt="" loading="lazy"></span><span class="mg-lbl">IMPLANT</span><span class="mg-t">インプラント</span><span class="mg-d">しっかり噛めて、自然な見た目を取り戻す</span></a><a class="mg-card" href="lp-snoring.html"><span class="mg-ph"><img src="img/snoring.jpg" alt="" loading="lazy"></span><span class="mg-lbl">SLEEP DENTISTRY</span><span class="mg-t">いびき治療（睡眠歯科）</span><span class="mg-d">専用マウスピースで、いびき・無呼吸を改善</span></a><a class="mg-card" href="lp-whitening.html"><span class="mg-ph"><img src="img/whitening.jpg" alt="" loading="lazy"></span><span class="mg-lbl">WHITENING</span><span class="mg-t">ホワイトニング</span><span class="mg-d">ライフスタイルで選べる医療ホワイトニング</span></a><a class="mg-card" href="lp-denture.html"><span class="mg-ph"><img src="img/seniors.jpg" alt="" loading="lazy"></span><span class="mg-lbl">DENTURE</span><span class="mg-t">入れ歯（義歯）</span><span class="mg-d">「痛い」「噛めない」「外れやすい」を解決</span></a><a class="mg-card" href="lp-ortho.html"><span class="mg-ph"><img src="img/ortho.jpg" alt="" loading="lazy"></span><span class="mg-lbl">ORTHODONTICS</span><span class="mg-t">矯正歯科</span><span class="mg-d">目立たないマウスピース矯正・部分矯正</span></a></div></div></div></div><a href="about.html" class="">クリニック紹介<small>CLINIC</small></a><a href="reservation.html" class="">初めての方へ<small>FIRST</small></a><a href="column.html" class="">コラム<small>COLUMN</small></a><a href="access.html" class="">アクセス・診療時間<small>ACCESS</small></a></div></nav></header>
-<div class="sidetabs"><a href="services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M4 11h7M4 16h6"/><circle cx="16.5" cy="14.5" r="3.5"/><path d="M19 17l2.5 2.5"/></svg>診療案内</a><a href="tel:0339756888"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>電話予約</a><a class="web" href="monshin.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M7.5 14h2M11 14h2M14.5 14h2M7.5 17.5h2M11 17.5h2"/></svg>WEB予約</a><a href="questionnaire.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM8.5 11h7M8.5 14.5h4"/></svg>事前問診</a><a class="ln" href="#line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4C7 4 3 7.2 3 11.2c0 3.6 3.2 6.6 7.5 7.1-.2.9-.6 2.2-.7 2.5 0 .4.2.4.5.2.3-.1 3.9-2.6 5.4-3.9 3.3-1 6.3-3.3 6.3-5.9C22 7.2 17 4 12 4z"/></svg>LINE予約</a></div>
-<div class="spmenu"><p class="cap">メニュー</p><a class="l" href="index.html">ホーム</a><a class="l" href="services.html">診療案内</a><a class="l" href="about.html">クリニック紹介</a><a class="l" href="reservation.html">初めての方へ</a><a class="l" href="column.html">コラム</a><a class="l" href="access.html">アクセス・診療時間</a><p class="cap">専門治療</p><a class="l" href="lp-implant.html">インプラント</a><a class="l" href="lp-snoring.html">いびき治療（睡眠歯科）</a><a class="l" href="lp-whitening.html">ホワイトニング</a><a class="l" href="lp-denture.html">入れ歯（義歯）</a><a class="l" href="lp-ortho.html">矯正歯科</a><div style="display:grid;gap:8px;margin-top:26px"><a class="btn web" href="monshin.html">24時間WEB予約</a><a class="btn line" href="#line">LINEで予約・事前問診</a><a class="btn out" href="tel:0339756888">電話 <span class="num">03-3975-6888</span></a></div></div><main><section class="lphero"><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><div class="tx"><p class="cat">Denture</p><h1>「痛い」「噛めない」「外れやすい」を過去のものに。<br>お口にピタリと吸い付く、精密な「最新入れ歯治療」</h1><div class="lp-emblems"><div><b>バネなし</b><small>義歯に対応</small></div><div><b>他院製</b><small>調整も歓迎</small></div><div><b>夜21時</b><small>平日診療</small></div><div><b>土日</b><small>診療</small></div></div><div class="tags"><span class="tag">バネのない目立たない入れ歯</span><span class="tag">噛み合わせの徹底追求</span><span class="tag">他院の入れ歯調整も歓迎</span></div><p>成増駅徒歩0分・土日も診療で、こまめな「微調整」も無理なく通えます。</p><div class="ctas"><a class="btn web" href="reservation.html">まずはWEBから無料相談（入れ歯のお悩み）をご予約</a><a class="btn line" href="#line">LINEでカンタン事前問診・ご予約</a></div><p class="telrow">お電話でのご相談<b>03-3975-6888</b></p></div></section><nav class="lpnav"><a href="#problem"><small>Trouble</small>お悩み</a><a href="#about"><small>About</small>治療について</a><a href="#type"><small>Feature</small>3つの特徴</a><a href="#reason"><small>Reason</small>選ばれる理由</a><a href="#price"><small>Price</small>料金</a><a href="#photo"><small>Photo</small>症例写真</a><a href="#flow"><small>Flow</small>治療の流れ</a><a href="#risk"><small>Risk</small>リスク</a><a href="#faq"><small>Q&amp;A</small>よくある質問</a></nav><section class="sec" id="problem"><div class="wrap"><div class="hdg rv"><h2>現在の入れ歯や歯の欠損について、こんなお悩みはありませんか？</h2></div><div class="lp-probs"><div class="lp-prob"><div class="ph">お悩み 1</div><div class="bd">今の入れ歯が歯ぐきに当たって痛く、硬いものが噛めない</div></div><div class="lp-prob"><div class="ph">お悩み 2</div><div class="bd">食事中や会話中に外れやすく、ストレスを感じる</div></div><div class="lp-prob"><div class="ph">お悩み 3</div><div class="bd">笑った時に「金属のバネ」が見えるのが恥ずかしい</div></div><div class="lp-prob"><div class="ph">お悩み 4</div><div class="bd">他の歯医者で作った入れ歯がどうしても合わない</div></div><div class="lp-prob"><div class="ph">お悩み 5</div><div class="bd">歯を失ったが、インプラントの手術には抵抗（恐怖感や費用面）がある</div></div></div><div class="arrowbanner">ひとつでも当てはまる方は、<br>成増歯科室キムラの入れ歯治療でお悩みを解決しましょう。</div></div></section><section class="sec tint" id="about"><div class="wrap"><div class="hdg rv"><h2>入れ歯治療について</h2></div><div style="display:grid;grid-template-columns:1fr 380px;gap:30px;align-items:center" class="row2"><div><p>「入れ歯は痛くて当たり前」「合わないから外して食事をしている」…そんなふうに諦めていませんか？ 合わない入れ歯を使い続けることは、食事の楽しみを奪うだけでなく、残っている健康な歯に過度な負担をかけたり、顎の関節や全身のゆがみ（肩こり・頭痛）を引き起こす原因にもなります。</p><p>お口の形や顎の動きは、患者様一人ひとりで全く異なります。成増歯科室キムラでは、単に「型を取って作る」だけでなく、根本的な「噛み合わせ」から見直すことで、ご自身の体の一部のように自然に機能する精密な入れ歯をご提供します。</p></div><div class="photo "><img src="img/seniors2.jpg" alt="" loading="lazy"></div></div></div></section><section class="sec" id="type"><div class="wrap"><div class="hdg rv"><h2>成増歯科室キムラの入れ歯治療 3つの特徴</h2></div><div class="lp-types"><div class="lp-type"><div class="th">金属のバネがない、目立たない「ノンクラスプデンチャー」</div><div class="photo "><img src="img/denture.jpg" alt="" loading="lazy"><span class="cap">写真：ノンクラスプデンチャー</span></div><div class="bd"><p class="n">POINT 01</p>「入れ歯だと気づかれたくない」という方には、金属の留め具（クラスプ）を一切使用しない自費の入れ歯をご提案します。歯ぐきと同じピンク色の特殊な樹脂で作られているため、大きく口を開けて笑っても入れ歯だとほとんど分かりません。</div></div><div class="lp-type"><div class="th">「噛み合わせ」のバランスを重視した精密な設計</div><div class="photo "><img src="img/consult2.jpg" alt="" loading="lazy"><span class="cap">写真：噛み合わせの記録・型取り</span></div><div class="bd"><p class="n">POINT 02</p>どんなに良い素材を使っても、上下の歯の噛み合わせがズレていれば「痛い・噛めない」入れ歯になってしまいます。当院では、顎の動きや筋肉のバランスまでを総合的に考慮した精密な型取りを行い、しっかりと噛み砕ける機能的な入れ歯を設計します。</div></div><div class="lp-type"><div class="th">他院で作った入れ歯の「調整・修理」にも対応</div><div class="photo "><img src="img/hygienist2.jpg" alt="" loading="lazy"><span class="cap">写真：入れ歯の調整</span></div><div class="bd"><p class="n">POINT 03</p>「いきなり新しく作り直すのは費用が不安…」という方もご安心ください。当院では、現在お使いの入れ歯をお持ちいただき、少し削ったり裏打ち（フィット感の改善）をするだけで快適に使えるようになるかの診断・調整も積極的に行っております。</div></div></div><div class="midcta" style="margin-top:30px"><p>「新しい入れ歯の相談がしたい」「今の入れ歯を直せるか見てほしい」など、まずは今お使いの入れ歯をお持ちになって、お気軽にご来院ください。</p><div class="b"><a class="btn web" href="reservation.html">24時間WEB予約（入れ歯の相談・調整）はこちら</a><a class="btn line" href="#line">LINEでカンタン事前問診・ご予約</a></div></div></div></section><section class="sec tint" id="reason"><div class="wrap lp-reason"><h2>成増歯科室キムラが選ばれる理由</h2><ul><li><span class="no">その1</span><div><h3>駅徒歩0分・平日夜21時・土日診療で、無理なく通い続けられます</h3><p>成増駅北口を出てすぐの好立地で、通勤・通学帰りや休日のお買い物ついでにも通院いただけます。</p></div></li><li><span class="no">その2</span><div><h3>50年の歴史と信頼。親子3代で通える「かかりつけ医」</h3><p>医療法人社団守佳会として、新宿・銀座・成増で培った技術とノウハウを活かし、誠実な治療をお約束します。</p></div></li><li><span class="no">その3</span><div><h3>歯科用CT・拡大鏡による精密な診断と、クラスB滅菌器による世界基準の感染対策</h3><p>厚生労働省が定める施設基準をクリアした、清潔で安心できる医療環境を整えています。</p></div></li><li><span class="no">その4</span><div><h3>入れ歯は「完成してから」が本番。夜間・土日診療で徹底サポート</h3><p>入れ歯は、お渡ししたその日がゴールではありません。実際に食事をしてみると、お口の中の粘膜が押されて「少し痛い」「ここが当たる」といった部分が必ず出てきます。</p></div></li></ul></div></section><section class="sec" id="price"><div class="wrap"><div class="hdg rv"><p class=pill>入れ歯治療の料金</p><h2>治療実績・ご希望に合わせた料金プラン</h2></div><p class="lp-lead">保険適用の入れ歯から、より快適性を追求した自費の入れ歯まで幅広く取り扱っております。</p><div class="pricecard"><div class="th">バネのない目立たない入れ歯</div><div class="bd"><p class="nm">入れ歯治療</p><div class="row"><div class="rec"><p class="t">こんなあなたにオススメ！</p><ul><li>今の入れ歯が歯ぐきに当たって痛く、硬いものが噛めない</li><li>食事中や会話中に外れやすく、ストレスを感じる</li><li>笑った時に「金属のバネ」が見えるのが恥ずかしい</li></ul></div><div class="pr"><span>保険の入れ歯（レジン床）</span><b class="jp">保険適用（数千円〜1万円程度）</b><span style="margin-top:6px">※すべて税込表示</span></div></div></div></div><table class="ptable2"><tr><th colspan="2">料金表（税込明記）</th></tr><tr><td>保険の入れ歯（レジン床）</td><td class="jp">保険適用（数千円〜1万円程度）</td></tr><tr><td>ノンクラスプデンチャー（金属バネなし）</td><td class="">〇〇,〇〇〇円〜</td></tr><tr><td>金属床義歯（薄くて違和感が少なく、食べ物の温度を感じやすい）</td><td class="">〇〇〇,〇〇〇円〜</td></tr><tr><td>現在お使いの入れ歯の調整</td><td class="jp">保険適用内（まずはご相談ください）</td></tr></table><div class="notebox">各種クレジットカード、デンタルローンも取り扱っております（※自費診療のみ）。</div><div class="paylist"><span>各種クレジットカード</span><span>デンタルローン（分割払い）</span><span>医療費控除の対象</span></div><div style="margin-top:34px"><div class="bandh">入れ歯の種類と特徴</div><div class="cmpw"><table class="cmp"><thead><tr><th></th><th class="me">保険の入れ歯（レジン床）</th><th class="">ノンクラスプデンチャー</th><th class="">金属床義歯</th></tr></thead><tbody><tr><th>見た目</th><td class="me">金属のバネが見える場合あり</td><td class="">バネがなく目立たない</td><td class=""><mark class="tbd">※要確認</mark></td></tr><tr><th>装着感</th><td class="me"><mark class="tbd">※要確認</mark></td><td class=""><mark class="tbd">※要確認</mark></td><td class="">薄くて違和感が少ない</td></tr><tr><th>食べ物の温度</th><td class="me"><mark class="tbd">※要確認</mark></td><td class=""><mark class="tbd">※要確認</mark></td><td class="">感じやすい</td></tr><tr><th>費用</th><td class="me">保険適用（数千円〜1万円程度）</td><td class="">〇〇,〇〇〇円〜</td><td class="">〇〇〇,〇〇〇円〜</td></tr></tbody></table></div></div></div></section><section class="sec tint" id="photo"><div class="wrap"><div class="hdg rv"><p class=pill>医療広告ガイドライン遵守</p><h2>入れ歯治療の症例写真</h2></div><div class="lp-case"><div class="ba"><div class="photo "><b>Before</b><img src="img/denture.jpg" alt="" loading="lazy"></div><div class="photo "><b>After</b><img src="img/implant_model.jpg" alt="" loading="lazy"></div></div><table><tr><th>主訴</th><td>前歯の部分入れ歯の金具が見えるのが嫌だ。（50代女性）</td></tr><tr><th>治療内容</th><td>残っている歯のクリーニング後、金属のバネがないノンクラスプデンチャーを製作。</td></tr><tr><th>期間/回数</th><td>約1ヶ月 / 4回</td></tr><tr><th>費用</th><td>〇〇〇,〇〇〇円（税込）</td></tr><tr><th>リスク・副作用</th><td>素材の特性上、数年使用すると樹脂がわずかに変色したり、すり減ったりする可能性があります。また、過度な力が加わると割れることがあります。</td></tr></table><p class="note" style="padding:10px 16px;margin:0">※症例写真はイメージです。実際の症例写真に差し替えます。</p></div></div></section><section class="sec" id="flow"><div class="wrap"><div class="hdg rv"><h2>入れ歯治療の流れ</h2></div><div class="lp-steps"><div class="lp-step"><div class="photo "><img src="img/woman_smile2.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.01</div><h3>初診カウンセリング・現在のお悩みヒアリング</h3><p>24時間対応のWEB予約、またはLINEからご予約ください。LINE予約の場合は、そのままスムーズに事前問診にお答えいただけます。</p></div></div><div class="lp-step flip"><div class="photo "><img src="img/consult2.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.02</div><h3>お口の中の検査、残っている歯の治療（必要な場合）</h3><p>現在のお悩みや、治療に対するご希望（痛みが苦手、費用感など）をじっくりとお伺いし、ご納得いただいてから治療をスタートします。</p></div></div><div class="lp-step"><div class="photo "><img src="img/exam.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.03</div><h3>精密な型取り・噛み合わせの記録</h3><p>必要に応じて、レントゲンや歯科用CT、口腔内カメラでの撮影を行い、現在の状態を正確に把握します。</p></div></div><div class="lp-step flip"><div class="photo "><img src="img/tools.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.04</div><h3>仮の入れ歯での試着・噛み合わせチェック（※自費の場合など数回行うことがあります）</h3><p>治療計画に沿って、痛みに最大限配慮しながら治療を進めます。都度、本日の治療内容と次回のご予定をお伝えします。</p></div></div><div class="lp-step"><div class="photo "><img src="img/denture.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.05</div><h3>完成・お渡し</h3><p>都度、本日の治療内容と次回のご予定をお伝えします。</p></div></div><div class="lp-step flip"><div class="photo "><img src="img/hygienist.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.06</div><h3>実際に使用していただきながらの「微調整」</h3><p>治療完了後が本当のスタートです。再発を防ぎ、健康な状態を維持するため、定期的なメンテナンスをご案内いたします。</p></div></div></div></div></section><section class="sec tint"><div class="wrap"><div class="hdg rv"><h2>アフターフォロー</h2></div><div class="msgbox"><div class="photo "><img src="img/family.jpg" alt="" loading="lazy"></div><div><h3>入れ歯は「完成してから」が本番。夜間・土日診療で徹底サポート</h3><p>入れ歯は、お渡ししたその日がゴールではありません。実際に食事をしてみると、お口の中の粘膜が押されて「少し痛い」「ここが当たる」といった部分が必ず出てきます。</p><p>快適に噛めるようになるためには、使い始めの数週間で何度か「微調整」を行うことが不可欠です。成増歯科室キムラは駅徒歩0分の好立地で、平日夜21時・土日も診療しているため、万が一「痛くて噛めない」という急なトラブル時にもすぐに対応できる安心の環境が整っています。</p></div></div></div></section><section class="sec" id="risk"><div class="wrap risk"><div class="hdg rv"><h2>入れ歯治療のリスク・副作用</h2></div><p>入れ歯治療は比較的安全な治療ですが、以下のような症状を引き起こす可能性がございます。</p><ul><li>素材の特性上、数年使用すると樹脂がわずかに変色したり、すり減ったりする可能性があります。また、過度な力が加わると割れることがあります。</li></ul><p>リスクを最小限に抑えるため、当院では十分なカウンセリングを行い、患者様のご希望をしっかりとお伺いしています。また、歯科用CTや拡大鏡などの精密機器を活用し、安全で納得のいく結果を提供できるよう努めていますので、ご安心ください。</p><div class="hbox" style="margin-top:26px"><div class="hb-h">担当医からのメッセージ</div><div class="hb-b"><div class="msgbox" style="border:0;padding:0"><div class="photo "><img src="img/dentist2.jpg" alt="" loading="lazy"><span class="cap">※院長の写真に差し替え</span></div><div><h3>患者様の声に耳を傾け、最善の治療を。</h3><p>「私が日々の診療で最も大切にしているのは『傾聴』です。痛みに対する不安、治療費に関する疑問、見た目のコンプレックスなど、まずは患者様の抱えるお悩みをすべてお聞かせください。」</p><p class="sign">成増歯科室キムラ 院長<b>〇〇 〇〇</b></p><a class="more" href="history.html"><span class="ul">ドクター紹介を見る</span></a></div></div></div></div></div></section><section class="sec tint" id="faq"><div class="wrap"><div class="hdg rv"><h2>よくある質問</h2></div><div class="acc qa"><details open><summary>他の歯医者で作った入れ歯でも診てもらえますか？</summary><div class="bd">はい。現在お使いの入れ歯をお持ちいただき、少し削ったり裏打ちをするだけで快適に使えるようになるかの診断・調整を行っております。</div></details><details><summary>新しい入れ歯はどのくらいでできますか？</summary><div class="bd">症例では約1ヶ月 / 4回です。自費の場合は仮の入れ歯での試着を数回行うことがあります。</div></details><details><summary>インプラントとどちらが良いか迷っています。</summary><div class="bd">お口の状態とご希望をお伺いし、それぞれのメリット・デメリットをご説明します。インプラント治療のページもあわせてご覧ください。</div></details><details><summary>急に痛くなった場合はどうすれば良いですか？</summary><div class="bd">平日夜21時・土日も診療しているため、急なトラブル時にもすぐに対応できます。お電話でご連絡ください。</div></details></div></div></section><section class="sec" id="clinic"><div class="wrap"><div class="hdg rv"><p class=pill>成増駅北口 徒歩0分</p><h2>成増歯科室キムラ</h2></div><div class="access"><div class="hbox"><div class="hb-h">所在地・マップ</div><div class="hb-b"><div class="map"><iframe loading="lazy" src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%9D%BF%E6%A9%8B%E5%8C%BA%E6%88%90%E5%A2%973-12-2&z=17&output=embed"></iframe></div><p style="font-weight:700;margin:14px 0 2px">〒175-0094 東京都板橋区成増3-12-2 長太郎第8ビル 4F</p><p class="note" style="margin:0">東武東上線「成増駅」北口より徒歩0分</p></div></div><div class="hbox"><div class="hb-h">診療時間・ご予約</div><div class="hb-b"><a class="tel num" href="tel:0339756888">03-3975-6888</a><div style="margin-top:12px"><table class="hours"><thead><tr><th>診療時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr></thead><tbody>
+<body class="lp"><header class="ehd"><div class="ehd-in"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"><span class="tx"><b>NARIMASU DENTAL</b><small>成増駅北口 徒歩0分・完全予約制</small></span></a>
+<nav class="enav"><a href="index.html" class="">ホーム</a><div class="hm"><a href="services.html" class="on">診療案内</a><div class="emega"><div class="emega-in"><div class="side"><p class="ey">Service</p><h3>診療案内</h3><p>突然の痛みから、一生涯の噛める喜び、そして美しい口元まで。専門治療のページをご覧ください。</p><a href="services.html">診療案内一覧を見る<span>↗</span></a></div><div class="grid"><a href="lp-implant.html"><div class="photo "><img src="img/implant.jpg" alt="" loading="lazy"></div><span class="en">Implant</span><span class="t">インプラント</span><span class="d">しっかり噛めて、自然な見た目を取り戻す</span></a><a href="lp-snoring.html"><div class="photo "><img src="img/snoring.jpg" alt="" loading="lazy"></div><span class="en">Sleep Dentistry</span><span class="t">いびき治療（睡眠歯科）</span><span class="d">専用マウスピースで、いびき・無呼吸を改善</span></a><a href="lp-whitening.html"><div class="photo "><img src="img/whitening.jpg" alt="" loading="lazy"></div><span class="en">Whitening</span><span class="t">ホワイトニング</span><span class="d">ライフスタイルで選べる医療ホワイトニング</span></a><a href="lp-denture.html"><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><span class="en">Denture</span><span class="t">入れ歯（義歯）</span><span class="d">「痛い」「噛めない」「外れやすい」を解決</span></a><a href="lp-ortho.html"><div class="photo "><img src="img/ortho.jpg" alt="" loading="lazy"></div><span class="en">Orthodontics</span><span class="t">矯正歯科</span><span class="d">目立たないマウスピース矯正・部分矯正</span></a></div></div></div></div><a href="about.html" class="">クリニック紹介</a><a href="reservation.html" class="">初めての方へ</a><a href="column.html" class="">コラム</a><a href="access.html" class="">アクセス・診療時間</a></nav>
+<a class="etel" href="tel:0339756888"><b>03-3975-6888</b><small>平日夜21時・土日診療</small></a>
+<button class="eburger" aria-label="メニュー"><i></i><i></i></button></div></header>
+<div class="spmenu"><div class="sm-in"><div><p class="cap">Menu</p><a class="l" href="index.html">ホーム</a><a class="l" href="services.html">診療案内</a><a class="l" href="about.html">クリニック紹介</a><a class="l" href="reservation.html">初めての方へ</a><a class="l" href="column.html">コラム</a><a class="l" href="access.html">アクセス・診療時間</a></div><div><p class="cap">Special Treatment</p><a class="l" href="lp-implant.html">インプラント</a><a class="l" href="lp-snoring.html">いびき治療（睡眠歯科）</a><a class="l" href="lp-whitening.html">ホワイトニング</a><a class="l" href="lp-denture.html">入れ歯（義歯）</a><a class="l" href="lp-ortho.html">矯正歯科</a><a class="l" href="questionnaire.html">事前問診フォーム</a></div>
+<div class="sm-btns"><a href="monshin.html">24時間WEB予約</a><a href="#line">LINEで予約・事前問診</a><a href="tel:0339756888">電話 <span class="num">03-3975-6888</span></a></div></div></div><main><section class="lphero"><p class="vt">Denture</p><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><div class="tx"><p class="cat">Denture</p><h1>「痛い」「噛めない」「外れやすい」を過去のものに。<br>お口にピタリと吸い付く、精密な「最新入れ歯治療」</h1><div class="lp-emblems"><div><b>バネなし</b><small>義歯に対応</small></div><div><b>他院製</b><small>調整も歓迎</small></div><div><b>夜21時</b><small>平日診療</small></div><div><b>土日</b><small>診療</small></div></div><div class="tags"><span class="tag">バネのない目立たない入れ歯</span><span class="tag">噛み合わせの徹底追求</span><span class="tag">他院の入れ歯調整も歓迎</span></div><p>成増駅徒歩0分・土日も診療で、こまめな「微調整」も無理なく通えます。</p><div class="ctas"><a class="btn web" href="reservation.html">まずはWEBから無料相談（入れ歯のお悩み）をご予約</a><a class="btn line" href="#line">LINEでカンタン事前問診・ご予約</a></div><p class="telrow">お電話でのご相談<b>03-3975-6888</b></p></div></section><nav class="lpnav"><a href="#problem"><small>Trouble</small>お悩み</a><a href="#about"><small>About</small>治療について</a><a href="#type"><small>Feature</small>3つの特徴</a><a href="#reason"><small>Reason</small>選ばれる理由</a><a href="#price"><small>Price</small>料金</a><a href="#photo"><small>Photo</small>症例写真</a><a href="#flow"><small>Flow</small>治療の流れ</a><a href="#risk"><small>Risk</small>リスク</a><a href="#faq"><small>Q&amp;A</small>よくある質問</a></nav><section class="sec" id="problem"><div class="wrap"><div class="ehdg rv"><h2>現在の入れ歯や歯の欠損について、こんなお悩みはありませんか？</h2></div><div class="lp-probs"><div class="lp-prob"><div class="ph">お悩み 1</div><div class="bd">今の入れ歯が歯ぐきに当たって痛く、硬いものが噛めない</div></div><div class="lp-prob"><div class="ph">お悩み 2</div><div class="bd">食事中や会話中に外れやすく、ストレスを感じる</div></div><div class="lp-prob"><div class="ph">お悩み 3</div><div class="bd">笑った時に「金属のバネ」が見えるのが恥ずかしい</div></div><div class="lp-prob"><div class="ph">お悩み 4</div><div class="bd">他の歯医者で作った入れ歯がどうしても合わない</div></div><div class="lp-prob"><div class="ph">お悩み 5</div><div class="bd">歯を失ったが、インプラントの手術には抵抗（恐怖感や費用面）がある</div></div></div><div class="arrowbanner">ひとつでも当てはまる方は、<br>成増歯科室キムラの入れ歯治療でお悩みを解決しましょう。</div></div></section><section class="sec tint" id="about"><div class="wrap"><div class="ehdg rv"><h2>入れ歯治療について</h2></div><div style="display:grid;grid-template-columns:1fr 380px;gap:30px;align-items:center" class="row2"><div><p>「入れ歯は痛くて当たり前」「合わないから外して食事をしている」…そんなふうに諦めていませんか？ 合わない入れ歯を使い続けることは、食事の楽しみを奪うだけでなく、残っている健康な歯に過度な負担をかけたり、顎の関節や全身のゆがみ（肩こり・頭痛）を引き起こす原因にもなります。</p><p>お口の形や顎の動きは、患者様一人ひとりで全く異なります。成増歯科室キムラでは、単に「型を取って作る」だけでなく、根本的な「噛み合わせ」から見直すことで、ご自身の体の一部のように自然に機能する精密な入れ歯をご提供します。</p></div><div class="photo "><img src="img/seniors2.jpg" alt="" loading="lazy"></div></div></div></section><section class="sec" id="type"><div class="wrap"><div class="ehdg rv"><h2>成増歯科室キムラの入れ歯治療 3つの特徴</h2></div><div class="lp-types"><div class="lp-type"><div class="th">金属のバネがない、目立たない「ノンクラスプデンチャー」</div><div class="photo "><img src="img/denture.jpg" alt="" loading="lazy"><span class="cap">写真：ノンクラスプデンチャー</span></div><div class="bd"><p class="n">POINT 01</p>「入れ歯だと気づかれたくない」という方には、金属の留め具（クラスプ）を一切使用しない自費の入れ歯をご提案します。歯ぐきと同じピンク色の特殊な樹脂で作られているため、大きく口を開けて笑っても入れ歯だとほとんど分かりません。</div></div><div class="lp-type"><div class="th">「噛み合わせ」のバランスを重視した精密な設計</div><div class="photo "><img src="img/consult2.jpg" alt="" loading="lazy"><span class="cap">写真：噛み合わせの記録・型取り</span></div><div class="bd"><p class="n">POINT 02</p>どんなに良い素材を使っても、上下の歯の噛み合わせがズレていれば「痛い・噛めない」入れ歯になってしまいます。当院では、顎の動きや筋肉のバランスまでを総合的に考慮した精密な型取りを行い、しっかりと噛み砕ける機能的な入れ歯を設計します。</div></div><div class="lp-type"><div class="th">他院で作った入れ歯の「調整・修理」にも対応</div><div class="photo "><img src="img/hygienist2.jpg" alt="" loading="lazy"><span class="cap">写真：入れ歯の調整</span></div><div class="bd"><p class="n">POINT 03</p>「いきなり新しく作り直すのは費用が不安…」という方もご安心ください。当院では、現在お使いの入れ歯をお持ちいただき、少し削ったり裏打ち（フィット感の改善）をするだけで快適に使えるようになるかの診断・調整も積極的に行っております。</div></div></div><div class="midcta" style="margin-top:30px"><p>「新しい入れ歯の相談がしたい」「今の入れ歯を直せるか見てほしい」など、まずは今お使いの入れ歯をお持ちになって、お気軽にご来院ください。</p><div class="b"><a class="btn web" href="reservation.html">24時間WEB予約（入れ歯の相談・調整）はこちら</a><a class="btn line" href="#line">LINEでカンタン事前問診・ご予約</a></div></div></div></section><section class="sec tint" id="reason"><div class="wrap lp-reason"><h2>成増歯科室キムラが選ばれる理由</h2><ul><li><span class="no">その1</span><div><h3>駅徒歩0分・平日夜21時・土日診療で、無理なく通い続けられます</h3><p>成増駅北口を出てすぐの好立地で、通勤・通学帰りや休日のお買い物ついでにも通院いただけます。</p></div></li><li><span class="no">その2</span><div><h3>50年の歴史と信頼。親子3代で通える「かかりつけ医」</h3><p>医療法人社団守佳会として、新宿・銀座・成増で培った技術とノウハウを活かし、誠実な治療をお約束します。</p></div></li><li><span class="no">その3</span><div><h3>歯科用CT・拡大鏡による精密な診断と、クラスB滅菌器による世界基準の感染対策</h3><p>厚生労働省が定める施設基準をクリアした、清潔で安心できる医療環境を整えています。</p></div></li><li><span class="no">その4</span><div><h3>入れ歯は「完成してから」が本番。夜間・土日診療で徹底サポート</h3><p>入れ歯は、お渡ししたその日がゴールではありません。実際に食事をしてみると、お口の中の粘膜が押されて「少し痛い」「ここが当たる」といった部分が必ず出てきます。</p></div></li></ul></div></section><section class="sec" id="price"><div class="wrap"><div class="ehdg rv"><h2>治療実績・ご希望に合わせた料金プラン</h2><p class="sb">入れ歯治療の料金</p></div><p class="lp-lead">保険適用の入れ歯から、より快適性を追求した自費の入れ歯まで幅広く取り扱っております。</p><div class="pricecard"><div class="th">バネのない目立たない入れ歯</div><div class="bd"><p class="nm">入れ歯治療</p><div class="row"><div class="rec"><p class="t">こんなあなたにオススメ！</p><ul><li>今の入れ歯が歯ぐきに当たって痛く、硬いものが噛めない</li><li>食事中や会話中に外れやすく、ストレスを感じる</li><li>笑った時に「金属のバネ」が見えるのが恥ずかしい</li></ul></div><div class="pr"><span>保険の入れ歯（レジン床）</span><b class="jp">保険適用（数千円〜1万円程度）</b><span style="margin-top:6px">※すべて税込表示</span></div></div></div></div><table class="ptable2"><tr><th colspan="2">料金表（税込明記）</th></tr><tr><td>保険の入れ歯（レジン床）</td><td class="jp">保険適用（数千円〜1万円程度）</td></tr><tr><td>ノンクラスプデンチャー（金属バネなし）</td><td class="">〇〇,〇〇〇円〜</td></tr><tr><td>金属床義歯（薄くて違和感が少なく、食べ物の温度を感じやすい）</td><td class="">〇〇〇,〇〇〇円〜</td></tr><tr><td>現在お使いの入れ歯の調整</td><td class="jp">保険適用内（まずはご相談ください）</td></tr></table><div class="notebox">各種クレジットカード、デンタルローンも取り扱っております（※自費診療のみ）。</div><div class="paylist"><span>各種クレジットカード</span><span>デンタルローン（分割払い）</span><span>医療費控除の対象</span></div><div style="margin-top:34px"><div class="bandh">入れ歯の種類と特徴</div><div class="cmpw"><table class="cmp"><thead><tr><th></th><th class="me">保険の入れ歯（レジン床）</th><th class="">ノンクラスプデンチャー</th><th class="">金属床義歯</th></tr></thead><tbody><tr><th>見た目</th><td class="me">金属のバネが見える場合あり</td><td class="">バネがなく目立たない</td><td class=""><mark class="tbd">※要確認</mark></td></tr><tr><th>装着感</th><td class="me"><mark class="tbd">※要確認</mark></td><td class=""><mark class="tbd">※要確認</mark></td><td class="">薄くて違和感が少ない</td></tr><tr><th>食べ物の温度</th><td class="me"><mark class="tbd">※要確認</mark></td><td class=""><mark class="tbd">※要確認</mark></td><td class="">感じやすい</td></tr><tr><th>費用</th><td class="me">保険適用（数千円〜1万円程度）</td><td class="">〇〇,〇〇〇円〜</td><td class="">〇〇〇,〇〇〇円〜</td></tr></tbody></table></div></div></div></section><section class="sec tint" id="photo"><div class="wrap"><div class="ehdg rv"><h2>入れ歯治療の症例写真</h2><p class="sb">医療広告ガイドライン遵守</p></div><div class="lp-case"><div class="ba"><div class="photo "><b>Before</b><img src="img/denture.jpg" alt="" loading="lazy"></div><div class="photo "><b>After</b><img src="img/implant_model.jpg" alt="" loading="lazy"></div></div><table><tr><th>主訴</th><td>前歯の部分入れ歯の金具が見えるのが嫌だ。（50代女性）</td></tr><tr><th>治療内容</th><td>残っている歯のクリーニング後、金属のバネがないノンクラスプデンチャーを製作。</td></tr><tr><th>期間/回数</th><td>約1ヶ月 / 4回</td></tr><tr><th>費用</th><td>〇〇〇,〇〇〇円（税込）</td></tr><tr><th>リスク・副作用</th><td>素材の特性上、数年使用すると樹脂がわずかに変色したり、すり減ったりする可能性があります。また、過度な力が加わると割れることがあります。</td></tr></table><p class="note" style="padding:10px 16px;margin:0">※症例写真はイメージです。実際の症例写真に差し替えます。</p></div></div></section><section class="sec" id="flow"><div class="wrap"><div class="ehdg rv"><h2>入れ歯治療の流れ</h2></div><div class="lp-steps"><div class="lp-step"><div class="photo "><img src="img/woman_smile2.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.01</div><h3>初診カウンセリング・現在のお悩みヒアリング</h3><p>24時間対応のWEB予約、またはLINEからご予約ください。LINE予約の場合は、そのままスムーズに事前問診にお答えいただけます。</p></div></div><div class="lp-step flip"><div class="photo "><img src="img/consult2.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.02</div><h3>お口の中の検査、残っている歯の治療（必要な場合）</h3><p>現在のお悩みや、治療に対するご希望（痛みが苦手、費用感など）をじっくりとお伺いし、ご納得いただいてから治療をスタートします。</p></div></div><div class="lp-step"><div class="photo "><img src="img/exam.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.03</div><h3>精密な型取り・噛み合わせの記録</h3><p>必要に応じて、レントゲンや歯科用CT、口腔内カメラでの撮影を行い、現在の状態を正確に把握します。</p></div></div><div class="lp-step flip"><div class="photo "><img src="img/tools.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.04</div><h3>仮の入れ歯での試着・噛み合わせチェック（※自費の場合など数回行うことがあります）</h3><p>治療計画に沿って、痛みに最大限配慮しながら治療を進めます。都度、本日の治療内容と次回のご予定をお伝えします。</p></div></div><div class="lp-step"><div class="photo "><img src="img/denture.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.05</div><h3>完成・お渡し</h3><p>都度、本日の治療内容と次回のご予定をお伝えします。</p></div></div><div class="lp-step flip"><div class="photo "><img src="img/hygienist.jpg" alt="" loading="lazy"></div><div class="tx"><div class="sh">STEP.06</div><h3>実際に使用していただきながらの「微調整」</h3><p>治療完了後が本当のスタートです。再発を防ぎ、健康な状態を維持するため、定期的なメンテナンスをご案内いたします。</p></div></div></div></div></section><section class="sec tint"><div class="wrap"><div class="ehdg rv"><h2>アフターフォロー</h2></div><div class="msgbox"><div class="photo "><img src="img/family.jpg" alt="" loading="lazy"></div><div><h3>入れ歯は「完成してから」が本番。夜間・土日診療で徹底サポート</h3><p>入れ歯は、お渡ししたその日がゴールではありません。実際に食事をしてみると、お口の中の粘膜が押されて「少し痛い」「ここが当たる」といった部分が必ず出てきます。</p><p>快適に噛めるようになるためには、使い始めの数週間で何度か「微調整」を行うことが不可欠です。成増歯科室キムラは駅徒歩0分の好立地で、平日夜21時・土日も診療しているため、万が一「痛くて噛めない」という急なトラブル時にもすぐに対応できる安心の環境が整っています。</p></div></div></div></section><section class="sec" id="risk"><div class="wrap risk"><div class="ehdg rv"><h2>入れ歯治療のリスク・副作用</h2></div><p>入れ歯治療は比較的安全な治療ですが、以下のような症状を引き起こす可能性がございます。</p><ul><li>素材の特性上、数年使用すると樹脂がわずかに変色したり、すり減ったりする可能性があります。また、過度な力が加わると割れることがあります。</li></ul><p>リスクを最小限に抑えるため、当院では十分なカウンセリングを行い、患者様のご希望をしっかりとお伺いしています。また、歯科用CTや拡大鏡などの精密機器を活用し、安全で納得のいく結果を提供できるよう努めていますので、ご安心ください。</p><div class="hbox" style="margin-top:26px"><div class="hb-h">担当医からのメッセージ</div><div class="hb-b"><div class="msgbox" style="border:0;padding:0"><div class="photo "><img src="img/dentist2.jpg" alt="" loading="lazy"><span class="cap">※院長の写真に差し替え</span></div><div><h3>患者様の声に耳を傾け、最善の治療を。</h3><p>「私が日々の診療で最も大切にしているのは『傾聴』です。痛みに対する不安、治療費に関する疑問、見た目のコンプレックスなど、まずは患者様の抱えるお悩みをすべてお聞かせください。」</p><p class="sign">成増歯科室キムラ 院長<b>〇〇 〇〇</b></p><a class="more" href="history.html"><span class="ul">ドクター紹介を見る</span></a></div></div></div></div></div></section><section class="sec tint" id="faq"><div class="wrap"><div class="ehdg rv"><h2>よくある質問</h2></div><div class="acc qa"><details open><summary>他の歯医者で作った入れ歯でも診てもらえますか？</summary><div class="bd">はい。現在お使いの入れ歯をお持ちいただき、少し削ったり裏打ちをするだけで快適に使えるようになるかの診断・調整を行っております。</div></details><details><summary>新しい入れ歯はどのくらいでできますか？</summary><div class="bd">症例では約1ヶ月 / 4回です。自費の場合は仮の入れ歯での試着を数回行うことがあります。</div></details><details><summary>インプラントとどちらが良いか迷っています。</summary><div class="bd">お口の状態とご希望をお伺いし、それぞれのメリット・デメリットをご説明します。インプラント治療のページもあわせてご覧ください。</div></details><details><summary>急に痛くなった場合はどうすれば良いですか？</summary><div class="bd">平日夜21時・土日も診療しているため、急なトラブル時にもすぐに対応できます。お電話でご連絡ください。</div></details></div></div></section><section class="sec" id="clinic"><div class="wrap"><div class="ehdg rv"><h2>成増歯科室キムラ</h2><p class="sb">成増駅北口 徒歩0分</p></div><div class="access"><div class="hbox"><div class="hb-h">所在地・マップ</div><div class="hb-b"><div class="map"><iframe loading="lazy" src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%9D%BF%E6%A9%8B%E5%8C%BA%E6%88%90%E5%A2%973-12-2&z=17&output=embed"></iframe></div><p style="font-weight:700;margin:14px 0 2px">〒175-0094 東京都板橋区成増3-12-2 長太郎第8ビル 4F</p><p class="note" style="margin:0">東武東上線「成増駅」北口より徒歩0分</p></div></div><div class="hbox"><div class="hb-h">診療時間・ご予約</div><div class="hb-b"><a class="tel num" href="tel:0339756888">03-3975-6888</a><div style="margin-top:12px"><table class="hours"><thead><tr><th>診療時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr></thead><tbody>
 <tr><td>10:00〜13:30</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td></tr>
 <tr><td>15:00〜21:00</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="x">／</td><td class="x">／</td></tr>
 <tr><td>15:00〜20:00</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="o">●</td><td class="x">／</td></tr>
-<tr><td>15:00〜18:00</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="o">●</td></tr></tbody></table></div><p class="note">※休診日：祝祭日（その他、学会等による臨時休診あり）　※完全予約制</p><a class="btn web" href="access.html" style="width:100%;margin-top:10px">駅からの道順を見る</a></div></div></div><p class="legal">※本ページで紹介している治療は自費診療（保険適用外）を含みます。治療内容・費用・期間・回数・リスク・副作用はページ内の症例紹介および料金表をご確認ください。治療効果には個人差があります。</p></div></section></main><section class="ctazone"><div class="wrap"><div class="cta-in"><h2>「新しい入れ歯の相談がしたい」「今の入れ歯を直せるか見てほしい」など、まずは今お使いの入れ歯をお持ちになって、お気軽にご来院ください。</h2></div><div class="ccards"><a class="ccard" href="monshin.html"><div class="photo "><img src="img/counsel.jpg" alt="" loading="lazy"></div><div><h3>24時間WEB予約（入れ歯の相談・調整）はこちら</h3><p>スマートフォン・パソコンからいつでも</p></div><span class="arw">→</span></a><a class="ccard" href="#line"><div class="photo "><img src="img/woman_smile2.jpg" alt="" loading="lazy"></div><div><h3>LINEでカンタン事前問診・ご予約</h3><p>そのまま事前問診にお答えいただけます</p></div><span class="arw">→</span></a><a class="ccard" href="tel:0339756888"><div class="photo "><img src="img/reception.jpg" alt="" loading="lazy"></div><div><h3>お電話でのご相談</h3><p class="tel num">03-3975-6888</p><p>受付時間内にお電話ください</p></div><span class="arw">→</span></a></div></div></section>
-<footer class="gft"><div class="wrap"><div class="flinks"><a href="services.html">診療案内</a><a href="about.html">医院紹介（当院について）</a><a href="history.html">歴史と理念・ドクター紹介</a><a href="lp-implant.html">インプラント</a><a href="lp-snoring.html">いびき治療（睡眠歯科）</a><a href="facility.html">院内案内・設備</a><a href="lp-whitening.html">ホワイトニング</a><a href="lp-denture.html">入れ歯（義歯）</a><a href="about.html#standard">施設基準</a><a href="lp-ortho.html">矯正歯科</a><a href="monshin.html">24時間WEB予約</a><a href="questionnaire.html">事前問診フォーム</a><a href="access.html">アクセス・診療時間</a><a href="column.html">コラム「シカトーク」</a><a href="#">プライバシーポリシー</a></div>
-<div class="fbot"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"></a><p>医療法人社団守佳会 成増歯科室キムラ<br>〒175-0094 東京都板橋区成増3-12-2 長太郎第8ビル 4F　TEL <span class="num">03-3975-6888</span><br>診療時間：平日 10:00〜13:30 / 15:00〜21:00　土曜 〜20:00　日曜 〜18:00　休診日：祝祭日　完全予約制</p></div>
+<tr><td>15:00〜18:00</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="x">／</td><td class="o">●</td></tr></tbody></table></div><p class="note">※休診日：祝祭日（その他、学会等による臨時休診あり）　※完全予約制</p><a class="btn web" href="access.html" style="width:100%;margin-top:10px">駅からの道順を見る</a></div></div></div><p class="legal">※本ページで紹介している治療は自費診療（保険適用外）を含みます。治療内容・費用・期間・回数・リスク・副作用はページ内の症例紹介および料金表をご確認ください。治療効果には個人差があります。</p></div></section></main><section class="ecta"><div class="wrap">
+<div class="big rv"><p class="l1">Reservation</p><span class="ln"></span><p class="l2">&amp; Access</p></div>
+<div class="row rv"><h2>「新しい入れ歯の相談がしたい」「今の入れ歯を直せるか見てほしい」など、まずは今お使いの入れ歯をお持ちになって、お気軽にご来院ください。</h2><p></p></div>
+<div class="boxes rv"><a class="bx" href="monshin.html"><span class="t"><h3>24時間WEB予約（入れ歯の相談・調整）はこちら</h3><p>スマートフォン・パソコンからいつでも</p></span><span class="a">↗</span></a><a class="bx" href="#line"><span class="t"><h3>LINEでカンタン事前問診・ご予約</h3><p>そのまま事前問診にお答えいただけます</p></span><span class="a">↗</span></a><a class="bx" href="tel:0339756888"><span class="t"><h3>お電話でのご相談</h3><p class="tel">03-3975-6888</p><p>受付時間内にお電話ください</p></span><span class="a">↗</span></a></div></div></section>
+<footer class="eft"><div class="wrap"><div class="top"><div><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"></a>
+<p class="addr">医療法人社団守佳会 成増歯科室キムラ<br>〒175-0094 東京都板橋区成増3-12-2 長太郎第8ビル 4F<br>TEL <span class="num">03-3975-6888</span>　完全予約制<br>診療時間：平日 10:00〜13:30 / 15:00〜21:00　土曜 〜20:00　日曜 〜18:00<br>休診日：祝祭日</p></div>
+<div class="links"><a href="services.html">診療案内</a><a href="about.html">医院紹介（当院について）</a><a href="history.html">歴史と理念・ドクター紹介</a><a href="lp-implant.html">インプラント</a><a href="lp-snoring.html">いびき治療（睡眠歯科）</a><a href="facility.html">院内案内・設備</a><a href="lp-whitening.html">ホワイトニング</a><a href="lp-denture.html">入れ歯（義歯）</a><a href="about.html#standard">施設基準</a><a href="lp-ortho.html">矯正歯科</a><a href="monshin.html">24時間WEB予約</a><a href="questionnaire.html">事前問診フォーム</a><a href="access.html">アクセス・診療時間</a><a href="column.html">コラム「シカトーク」</a><a href="#">プライバシーポリシー</a></div></div>
 <div class="copy"><span>© NARIMASU DENTAL CLINIC KIMURA</span><span>医療法人社団 守佳会</span></div></div></footer>
-<a href="#" class="pagetop">↑</a>
-<div class="spbar"><a class="t" href="tel:0339756888"><small>お電話</small>電話する</a><a class="w" href="monshin.html"><small>24時間</small>WEB予約</a><a class="l" href="#line"><small>事前問診</small>LINE予約</a></div>
+<div class="ebar"><div class="ebar-in"><a href="monshin.html">24時間WEB予約<small>初診・再診</small></a><a href="#line">LINE予約<small>事前問診もそのまま</small></a><a href="tel:0339756888">電話<small class="num">03-3975-6888</small></a></div></div>
 <script>
 (function(){
- var hd=document.querySelector('.hd'), pt=document.querySelector('.pagetop');
- function s(){var y=scrollY; hd.classList.toggle('solid',y>20||hd.dataset.solid==='1'); if(pt)pt.classList.toggle('show',y>600);} addEventListener('scroll',s,{passive:true}); s();
- var bg=document.querySelector('.burger'); if(bg)bg.addEventListener('click',function(){document.body.classList.toggle('menu-open')});
+ var bg=document.querySelector('.eburger'); if(bg)bg.addEventListener('click',function(){document.body.classList.toggle('menu-open')});
  document.querySelectorAll('.spmenu a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open')})});
  if(/static/.test(location.search)){document.documentElement.classList.add('static');document.querySelectorAll('.rv').forEach(function(e){e.classList.add('vis')});}
  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
  document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
  var tabs=document.querySelectorAll('.tabs button'); tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');var c=b.dataset.cat;document.querySelectorAll('[data-cat].ncard').forEach(function(a){a.style.display=(c==='all'||a.dataset.cat===c)?'':'none'})})});
+ document.querySelectorAll('.e-case .chips span').forEach(function(s,i,all){s.addEventListener('click',function(){all.forEach(function(x){x.classList.remove('on')});s.classList.add('on')})});
  document.querySelectorAll('form[data-thanks]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var t=document.getElementById(f.dataset.thanks);if(t)t.scrollIntoView({behavior:'smooth'})})});
 })();
-</script>
-</body></html>
+</script></body></html>
