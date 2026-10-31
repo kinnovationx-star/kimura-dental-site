@@ -1431,10 +1431,10 @@ a:hover .arw{background:var(--ink);color:#fff;border-color:var(--ink)}
 /* ---------- スマホ：注力メニュー・コラムは1枚ずつ見せる横スライダー ---------- */
 .sp-dots{display:none}
 @media (max-width:900px){
- .e-feat,.e-col{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:14px;margin:0 -20px;padding:0 20px;border-bottom:0}
- .e-feat::-webkit-scrollbar,.e-col::-webkit-scrollbar{display:none}
+ .e-feat,.e-col,.e-menu{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:14px;margin:0 -20px;padding:0 20px;border-bottom:0}
+ .e-feat::-webkit-scrollbar,.e-col::-webkit-scrollbar,.e-menu::-webkit-scrollbar{display:none}
  .e-feat{border-top:0}
- .e-feat a,.e-col a{flex:0 0 84%;scroll-snap-align:center;min-width:0}
+ .e-feat a,.e-col a,.e-menu a{flex:0 0 84%;scroll-snap-align:center;min-width:0}
  .e-feat a,.e-feat a:nth-child(n+3),.e-feat a:first-child{border:1px solid var(--hair);border-top:2px solid var(--mc);background:#fff;padding:22px 20px 24px}
  .e-feat h3{font-size:17px}.e-feat .pr b{font-size:36px}
  .e-col a{background:#fff;border:1px solid var(--hair);padding:0 0 20px}
@@ -1531,6 +1531,26 @@ body{background:#fff}
  .pin-items .e-row p{font-size:12.5px;line-height:1.8}
  .pin-items .e-row .tags{display:none}
 }
+
+/* 10/31 症例：5分野を切り替え／ビフォーアフターはスマホでも横並び／診療メニューはスマホで横スライダー */
+.e-case .case-item{display:none}
+.e-case .case-item.on{display:block;animation:caseIn .6s cubic-bezier(.16,.84,.24,1)}
+@keyframes caseIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+.e-case dl{grid-template-columns:repeat(4,1fr)}
+.e-case .chips span,.e-case .sl .dots i,.e-case .sl .ar span{cursor:pointer}
+.e-case .sl .dots i{height:2px}
+@media (max-width:900px){
+ .e-case .ba,.lp-case .ba{grid-template-columns:1fr 1fr;gap:6px}
+ .e-case .ba .photo,.lp-case .ba .photo{aspect-ratio:1/1}
+ .e-case .ba .photo b,.lp-case .ba .photo b{font-size:12px;padding:6px 12px;letter-spacing:.14em}
+ .e-case dl{grid-template-columns:1fr}
+ .e-menu a{background:#fff;border:1px solid var(--hair);padding:0 0 20px}
+ .e-menu a>*:not(.photo){margin-left:18px;margin-right:18px}
+ .e-menu .photo{aspect-ratio:4/3;margin-bottom:16px}
+ .e-menu h3{font-size:18px}
+}
+
+@media (max-width:900px){.e-menu a.rv,.e-feat a.rv,.e-col a.rv{opacity:1;transform:none}}
 </style></head>
 <body class=""><header class="ehd"><div class="ehd-in"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"><span class="tx"><b>NARIMASU DENTAL</b><small>成増駅北口 徒歩0分・完全予約制</small></span></a>
 <nav class="enav"><a href="index.html" class="">ホーム</a><div class="hm"><a href="services.html" class="">診療案内</a><div class="emega"><div class="emega-in"><div class="side"><p class="ey">Service</p><h3>診療案内</h3><p>突然の痛みから、一生涯の噛める喜び、そして美しい口元まで。専門治療のページをご覧ください。</p><a href="services.html">診療案内一覧を見る<span>↗</span></a></div><div class="grid"><a href="lp-implant.html"><div class="photo "><img src="img/implant.jpg" alt="" loading="lazy"></div><span class="en">Implant</span><span class="t">インプラント</span><span class="d">しっかり噛めて、自然な見た目を取り戻す</span></a><a href="lp-snoring.html"><div class="photo "><img src="img/snoring.jpg" alt="" loading="lazy"></div><span class="en">Sleep Dentistry</span><span class="t">いびき治療（睡眠歯科）</span><span class="d">専用マウスピースで、いびき・無呼吸を改善</span></a><a href="lp-whitening.html"><div class="photo "><img src="img/whitening.jpg" alt="" loading="lazy"></div><span class="en">Whitening</span><span class="t">ホワイトニング</span><span class="d">ライフスタイルで選べる医療ホワイトニング</span></a><a href="lp-denture.html"><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><span class="en">Denture</span><span class="t">入れ歯（義歯）</span><span class="d">「痛い」「噛めない」「外れやすい」を解決</span></a><a href="lp-ortho.html"><div class="photo "><img src="img/ortho.jpg" alt="" loading="lazy"></div><span class="en">Orthodontics</span><span class="t">矯正歯科</span><span class="d">目立たないマウスピース矯正・部分矯正</span></a></div></div></div></div><a href="about.html" class="">クリニック紹介</a><a href="reservation.html" class="">初めての方へ</a><a href="column.html" class="">コラム</a><a href="access.html" class="on">アクセス・診療時間</a></nav>
@@ -1558,7 +1578,7 @@ body{background:#fff}
 <div class="ebar"><div class="ebar-in"><a href="monshin.html">24時間WEB予約<small>初診・再診</small></a><a href="#line">LINE予約<small>事前問診もそのまま</small></a><a href="tel:0339756888">電話<small class="num">03-3975-6888</small></a></div></div>
 <script>
 (function(){
- document.querySelectorAll('.e-feat,.e-col').forEach(function(sl){
+ document.querySelectorAll('.e-feat,.e-col,.e-menu').forEach(function(sl){
   var n=sl.children.length, d=document.createElement('div'); d.className='sp-dots';
   for(var i=0;i<n;i++){var b=document.createElement('i'); if(!i)b.className='on'; d.appendChild(b)}
   sl.after(d);
@@ -1571,7 +1591,13 @@ body{background:#fff}
  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
  document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
  var tabs=document.querySelectorAll('.tabs button'); tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');var c=b.dataset.cat;document.querySelectorAll('[data-cat].ncard').forEach(function(a){a.style.display=(c==='all'||a.dataset.cat===c)?'':'none'})})});
- document.querySelectorAll('.e-case .chips span').forEach(function(s,i,all){s.addEventListener('click',function(){all.forEach(function(x){x.classList.remove('on')});s.classList.add('on')})});
+ document.querySelectorAll('.e-case').forEach(function(c){
+  var chips=c.querySelectorAll('.chips span'), items=c.querySelectorAll('.case-item'), dots=c.querySelectorAll('.sl .dots i'), ar=c.querySelectorAll('.sl .ar span'), k=0;
+  function go(i){k=(i+items.length)%items.length;[chips,items,dots].forEach(function(l){[].forEach.call(l,function(x,j){x.classList.toggle('on',j===k)})})}
+  [].forEach.call(chips,function(s,i){s.addEventListener('click',function(){go(i)})});
+  [].forEach.call(dots,function(s,i){s.addEventListener('click',function(){go(i)})});
+  if(ar[0])ar[0].addEventListener('click',function(){go(k-1)}); if(ar[1])ar[1].addEventListener('click',function(){go(k+1)});
+ });
  document.querySelectorAll('form[data-thanks]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();var t=document.getElementById(f.dataset.thanks);if(t)t.scrollIntoView({behavior:'smooth'})})});
 
  /* 理由セクション：固定スクロール */
