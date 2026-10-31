@@ -1573,6 +1573,38 @@ body{background:#fff}
  .pin .pin-items>.e-row,.pin .pin-items>.srow{grid-template-rows:auto auto;align-content:start}
  .pin .pin-items>* .photo{align-self:start}
 }
+
+/* 番号タブは無し。見出しは固定したまま、写真と文章だけが切り替わる */
+.pin-stage{display:flex;flex-direction:column;padding:36px 0 28px}
+.pin-head{flex:none;margin:0 0 34px}
+.pin-head .ehdg{margin:0}
+.pin-head .ehdg.rv{opacity:1;transform:none}
+.lp-reason .pin-head h2{margin:0}
+.pin-items{flex:1;min-height:0}
+.pin .pin-items>* .tx{padding:0!important}
+.pin .pin-items>* .photo{margin-top:12px}
+.pin.off .pin-head{margin-bottom:50px}
+@media (min-width:901px) and (max-height:860px){
+ .pin-stage{padding:22px 0 18px}
+ .pin-head{margin-bottom:22px}
+ .pin-head .ehdg h2,.lp-reason .pin-head h2{font-size:26px}
+ .pin-head .ehdg .ey,.lp-reason .pin-head h2::before{margin-bottom:8px}
+ .pin-head .ehdg .sb{margin-top:6px}
+}
+@media (min-width:901px) and (max-height:700px){
+ .pin-head .ehdg .sb{display:none}
+ .pin-head .ehdg h2,.lp-reason .pin-head h2{font-size:22px}
+}
+@media (max-width:900px){
+ .pin-stage{padding:14px 0 10px}
+ .pin-head{margin-bottom:12px}
+ .pin-head .ehdg h2,.lp-reason .pin-head h2{font-size:19px;line-height:1.55}
+ .pin-head .ehdg .sb{display:none}
+ .pin-head .ehdg .ey,.lp-reason .pin-head h2::before{margin-bottom:4px}
+ .pin .pin-items>* .photo{margin-top:0}
+}
+
+@media (min-width:901px){.pin .pin-items>* .photo{max-height:calc(100% - 12px)}.pin .pin-items>* .photo img{width:100%;height:100%;object-fit:cover}}
 </style></head>
 <body class=""><header class="ehd"><div class="ehd-in"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"><span class="tx"><b>NARIMASU DENTAL</b><small>成増駅北口 徒歩0分・完全予約制</small></span></a>
 <nav class="enav"><a href="index.html" class="">ホーム</a><div class="hm"><a href="services.html" class="">診療案内</a><div class="emega"><div class="emega-in"><div class="side"><p class="ey">Service</p><h3>診療案内</h3><p>突然の痛みから、一生涯の噛める喜び、そして美しい口元まで。専門治療のページをご覧ください。</p><a href="services.html">診療案内一覧を見る<span>↗</span></a></div><div class="grid"><a href="lp-implant.html"><div class="photo "><img src="img/implant.jpg" alt="" loading="lazy"></div><span class="en">Implant</span><span class="t">インプラント</span><span class="d">しっかり噛めて、自然な見た目を取り戻す</span></a><a href="lp-snoring.html"><div class="photo "><img src="img/snoring.jpg" alt="" loading="lazy"></div><span class="en">Sleep Dentistry</span><span class="t">いびき治療（睡眠歯科）</span><span class="d">専用マウスピースで、いびき・無呼吸を改善</span></a><a href="lp-whitening.html"><div class="photo "><img src="img/whitening.jpg" alt="" loading="lazy"></div><span class="en">Whitening</span><span class="t">ホワイトニング</span><span class="d">ライフスタイルで選べる医療ホワイトニング</span></a><a href="lp-denture.html"><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><span class="en">Denture</span><span class="t">入れ歯（義歯）</span><span class="d">「痛い」「噛めない」「外れやすい」を解決</span></a><a href="lp-ortho.html"><div class="photo "><img src="img/ortho.jpg" alt="" loading="lazy"></div><span class="en">Orthodontics</span><span class="t">矯正歯科</span><span class="d">目立たないマウスピース矯正・部分矯正</span></a></div></div></div></div><a href="about.html" class="">クリニック紹介</a><a href="reservation.html" class="">初めての方へ</a><a href="column.html" class="on">コラム</a><a href="access.html" class="">アクセス・診療時間</a></nav>
@@ -1622,9 +1654,9 @@ body{background:#fff}
   var top=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ehh'))||0, nav=document.querySelector('.lpnav'); if(nav)top+=nav.offsetHeight;
   var bar=document.querySelector('.ebar'), bot=(bar&&getComputedStyle(bar).display!=='none')?bar.offsetHeight:0;
   pins.forEach(function(p){p.style.setProperty('--pin-top',top+'px');p.style.setProperty('--pin-bot',bot+'px');p.classList.remove('off');p._k=-1;
-   var st=p.querySelector('.pin-stage'), foot=p.querySelector('.pin-foot'), sb=st.getBoundingClientRect(), fb=foot.getBoundingClientRect(), bad=false;
-   [].forEach.call(p.querySelectorAll('.pin-items>*'),function(r){var t=r.querySelector('.tx'),tb=t.getBoundingClientRect(),h=t.scrollHeight;
-    if(innerWidth>900){if(tb.top+h-parseFloat(getComputedStyle(t).paddingBottom)>fb.top-6)bad=true}else{if(tb.top+h-96>fb.top-4)bad=true}});
+   var box=p.querySelector('.pin-items'), H=box.clientHeight, bad=false;
+   [].forEach.call(p.querySelectorAll('.pin-items>*'),function(r){var t=r.querySelector('.tx'),ph=r.querySelector('.photo');
+    var need=innerWidth>900?t.scrollHeight:ph.offsetHeight+16+t.scrollHeight; if(need>H+2)bad=true});
    if(isStatic||bad)p.classList.add('off');});
   pinTick();
  }

@@ -1573,6 +1573,38 @@ body{background:#fff}
  .pin .pin-items>.e-row,.pin .pin-items>.srow{grid-template-rows:auto auto;align-content:start}
  .pin .pin-items>* .photo{align-self:start}
 }
+
+/* 番号タブは無し。見出しは固定したまま、写真と文章だけが切り替わる */
+.pin-stage{display:flex;flex-direction:column;padding:36px 0 28px}
+.pin-head{flex:none;margin:0 0 34px}
+.pin-head .ehdg{margin:0}
+.pin-head .ehdg.rv{opacity:1;transform:none}
+.lp-reason .pin-head h2{margin:0}
+.pin-items{flex:1;min-height:0}
+.pin .pin-items>* .tx{padding:0!important}
+.pin .pin-items>* .photo{margin-top:12px}
+.pin.off .pin-head{margin-bottom:50px}
+@media (min-width:901px) and (max-height:860px){
+ .pin-stage{padding:22px 0 18px}
+ .pin-head{margin-bottom:22px}
+ .pin-head .ehdg h2,.lp-reason .pin-head h2{font-size:26px}
+ .pin-head .ehdg .ey,.lp-reason .pin-head h2::before{margin-bottom:8px}
+ .pin-head .ehdg .sb{margin-top:6px}
+}
+@media (min-width:901px) and (max-height:700px){
+ .pin-head .ehdg .sb{display:none}
+ .pin-head .ehdg h2,.lp-reason .pin-head h2{font-size:22px}
+}
+@media (max-width:900px){
+ .pin-stage{padding:14px 0 10px}
+ .pin-head{margin-bottom:12px}
+ .pin-head .ehdg h2,.lp-reason .pin-head h2{font-size:19px;line-height:1.55}
+ .pin-head .ehdg .sb{display:none}
+ .pin-head .ehdg .ey,.lp-reason .pin-head h2::before{margin-bottom:4px}
+ .pin .pin-items>* .photo{margin-top:0}
+}
+
+@media (min-width:901px){.pin .pin-items>* .photo{max-height:calc(100% - 12px)}.pin .pin-items>* .photo img{width:100%;height:100%;object-fit:cover}}
 </style></head>
 <body class=""><header class="ehd"><div class="ehd-in"><a href="index.html" class="logo"><img src="img/logo.png" alt="成増歯科室キムラ"><span class="tx"><b>NARIMASU DENTAL</b><small>成増駅北口 徒歩0分・完全予約制</small></span></a>
 <nav class="enav"><a href="index.html" class="">ホーム</a><div class="hm"><a href="services.html" class="">診療案内</a><div class="emega"><div class="emega-in"><div class="side"><p class="ey">Service</p><h3>診療案内</h3><p>突然の痛みから、一生涯の噛める喜び、そして美しい口元まで。専門治療のページをご覧ください。</p><a href="services.html">診療案内一覧を見る<span>↗</span></a></div><div class="grid"><a href="lp-implant.html"><div class="photo "><img src="img/implant.jpg" alt="" loading="lazy"></div><span class="en">Implant</span><span class="t">インプラント</span><span class="d">しっかり噛めて、自然な見た目を取り戻す</span></a><a href="lp-snoring.html"><div class="photo "><img src="img/snoring.jpg" alt="" loading="lazy"></div><span class="en">Sleep Dentistry</span><span class="t">いびき治療（睡眠歯科）</span><span class="d">専用マウスピースで、いびき・無呼吸を改善</span></a><a href="lp-whitening.html"><div class="photo "><img src="img/whitening.jpg" alt="" loading="lazy"></div><span class="en">Whitening</span><span class="t">ホワイトニング</span><span class="d">ライフスタイルで選べる医療ホワイトニング</span></a><a href="lp-denture.html"><div class="photo "><img src="img/seniors.jpg" alt="" loading="lazy"></div><span class="en">Denture</span><span class="t">入れ歯（義歯）</span><span class="d">「痛い」「噛めない」「外れやすい」を解決</span></a><a href="lp-ortho.html"><div class="photo "><img src="img/ortho.jpg" alt="" loading="lazy"></div><span class="en">Orthodontics</span><span class="t">矯正歯科</span><span class="d">目立たないマウスピース矯正・部分矯正</span></a></div></div></div></div><a href="about.html" class="on">クリニック紹介</a><a href="reservation.html" class="">初めての方へ</a><a href="column.html" class="">コラム</a><a href="access.html" class="">アクセス・診療時間</a></nav>
@@ -1580,8 +1612,8 @@ body{background:#fff}
 <button class="eburger" aria-label="メニュー"><i></i><i></i></button></div></header>
 <div class="spmenu"><div class="sm-in"><div><p class="cap">Menu</p><a class="l" href="index.html">ホーム</a><a class="l" href="services.html">診療案内</a><a class="l" href="about.html">クリニック紹介</a><a class="l" href="reservation.html">初めての方へ</a><a class="l" href="column.html">コラム</a><a class="l" href="access.html">アクセス・診療時間</a></div><div><p class="cap">Special Treatment</p><a class="l" href="lp-implant.html">インプラント</a><a class="l" href="lp-snoring.html">いびき治療（睡眠歯科）</a><a class="l" href="lp-whitening.html">ホワイトニング</a><a class="l" href="lp-denture.html">入れ歯（義歯）</a><a class="l" href="lp-ortho.html">矯正歯科</a><a class="l" href="questionnaire.html">事前問診フォーム</a></div>
 <div class="sm-btns"><a href="monshin.html">24時間WEB予約</a><a href="#line">LINEで予約・事前問診</a><a href="tel:0339756888">電話 <span class="num">03-3975-6888</span></a></div></div></div><main><section class="ephero"><div class="in"><div class="rv"><p class="en">Philosophy</p><p class="pill">クリニック紹介</p><h1>当院の歴史と理念・ドクター紹介</h1><p class="ld">「忙しいからと、歯の健康を諦めてほしくない。」<br>その想いから、私たちは成増の地でいち早く週末診療をスタートさせました。50年にわたり受け継がれる誠実な医療への姿勢と、皆様のお口の健康を守るドクター陣をご紹介します。</p></div><div class="photo rv"><img src="img/corridor_warm.jpg" alt="" loading="lazy"></div></div></section>
-<p class="crumb"><a href="index.html">ホーム</a><i>／</i>歴史と理念・ドクター紹介</p><section class="sec bg2"><div class="wrap"><div class="ehdg rv"><p class="ey">PROMISE</p><h2>患者様の生涯の健康を、共に守り育てる3つの約束</h2><p class="sb">当院の診療理念</p></div>
-<div class="pin" data-pin style="--n:3"><div class="pin-stage"><div class="pin-items"><div class="srow rv"><div class="photo "><img src="img/counsel.jpg" alt="" loading="lazy"></div><div class="tx"><span class="no">#01</span><h3><span class="ul">徹底したインフォームド・コンセント（説明と同意）</span></h3><p>「何をされているのか分からない」という不安は、歯科治療において最も避けるべきだと考えています。当院では、現在の口腔内の状態から、考えられる複数の治療の選択肢、それぞれのメリット・デメリット、費用や期間に至るまで、患者様が完全に納得されるまで丁寧に説明を行います。患者様の同意なき治療は決して行いません。</p></div></div><div class="srow flip rv"><div class="photo "><img src="img/tools.jpg" alt="" loading="lazy"></div><div class="tx"><span class="no">#02</span><h3><span class="ul">なるべく「削らない・抜かない」低侵襲治療</span></h3><p>一度削ってしまった歯、抜いてしまった歯は二度と元には戻りません。当院では、拡大鏡や精密機器を駆使し、虫歯に感染した部分だけを最小限に取り除く「低侵襲（MI：ミニマルインターベンション）治療」を徹底しています。ご自身の生まれ持った歯を1日でも長く残すことが、私たちの最大の目標です。</p></div></div><div class="srow rv"><div class="photo "><img src="img/platform.jpg" alt="" loading="lazy"></div><div class="tx"><span class="no">#03</span><h3><span class="ul">ライフスタイルに合わせた「通いやすい」医療の提供</span></h3><p>歯科治療は、継続して通院していただくことが非常に重要です。当院が「成増駅徒歩0分」という立地で「平日夜21時・土日診療」を行っているのは、多忙なビジネスパーソンや学生の方々が、無理なく、そして途絶えることなく治療と予防を続けられる環境を提供するためです。</p></div></div></div><div class="pin-foot"><p class="pin-count"><b>01</b><span>/ 03</span></p><div class="pin-dots"><i>01</i><i>02</i><i>03</i></div></div></div></div></div></section>
+<p class="crumb"><a href="index.html">ホーム</a><i>／</i>歴史と理念・ドクター紹介</p><section class="sec bg2"><div class="wrap"><div class="pin" data-pin style="--n:3"><div class="pin-stage"><div class="pin-head"><div class="ehdg rv"><p class="ey">PROMISE</p><h2>患者様の生涯の健康を、共に守り育てる3つの約束</h2><p class="sb">当院の診療理念</p></div></div><div class="pin-items">
+<div class="srow rv"><div class="photo "><img src="img/counsel.jpg" alt="" loading="lazy"></div><div class="tx"><span class="no">#01</span><h3><span class="ul">徹底したインフォームド・コンセント（説明と同意）</span></h3><p>「何をされているのか分からない」という不安は、歯科治療において最も避けるべきだと考えています。当院では、現在の口腔内の状態から、考えられる複数の治療の選択肢、それぞれのメリット・デメリット、費用や期間に至るまで、患者様が完全に納得されるまで丁寧に説明を行います。患者様の同意なき治療は決して行いません。</p></div></div><div class="srow flip rv"><div class="photo "><img src="img/tools.jpg" alt="" loading="lazy"></div><div class="tx"><span class="no">#02</span><h3><span class="ul">なるべく「削らない・抜かない」低侵襲治療</span></h3><p>一度削ってしまった歯、抜いてしまった歯は二度と元には戻りません。当院では、拡大鏡や精密機器を駆使し、虫歯に感染した部分だけを最小限に取り除く「低侵襲（MI：ミニマルインターベンション）治療」を徹底しています。ご自身の生まれ持った歯を1日でも長く残すことが、私たちの最大の目標です。</p></div></div><div class="srow rv"><div class="photo "><img src="img/platform.jpg" alt="" loading="lazy"></div><div class="tx"><span class="no">#03</span><h3><span class="ul">ライフスタイルに合わせた「通いやすい」医療の提供</span></h3><p>歯科治療は、継続して通院していただくことが非常に重要です。当院が「成増駅徒歩0分」という立地で「平日夜21時・土日診療」を行っているのは、多忙なビジネスパーソンや学生の方々が、無理なく、そして途絶えることなく治療と予防を続けられる環境を提供するためです。</p></div></div></div></div></div></div></section>
 <section class="sec"><div class="wrap"><div class="ehdg rv"><p class="ey">DOCTORS</p><h2>経験豊富なドクター陣が、あなたのお口をサポートします</h2><p class="sb">ドクター紹介</p></div>
 <div class="feat" style="margin-bottom:100px"><div class="photo big rv"><img src="img/dentist3.jpg" alt="" loading="lazy"><span class="cap">※名誉顧問の写真に差し替え</span></div><div class="side rv"><div class="photo small"><img src="img/xray2.jpg" alt="" loading="lazy"></div><p class="h-s" style="margin-bottom:6px">名誉顧問</p><h3 class="h-m" style="margin-bottom:2px">木村 吉太郎</h3><p class="note" style="margin:0 0 16px">きむら きちたろう</p><p>日本の歯周病治療を牽引してきた確かな知見をもとに、当院の医療水準を監修しております。重度の歯周疾患から予防医学に至るまで、学術的な裏付け（エビデンス）に基づいた診療方針の根幹を築き上げました。</p><p class="h-s" style="margin:20px 0 6px;font-size:14px">略歴・資格等</p><ul style="margin:0;padding-left:1.2em;font-size:14px"><li>日本歯周病学会 元会長</li><li><mark class="tbd">※その他、大学での役職や著書などがあれば追記</mark></li></ul></div></div>
 <div class="feat flip" style="margin-bottom:100px"><div class="photo big rv"><img src="img/counsel.jpg" alt="" loading="lazy"><span class="cap">※理事長の写真に差し替え</span></div><div class="side rv"><div class="photo small"><img src="img/family.jpg" alt="" loading="lazy"></div><p class="h-s" style="margin-bottom:6px">理事長</p><h3 class="h-m" style="margin-bottom:2px">木村 盛吉</h3><p class="note" style="margin:0 0 16px">きむら せいきち</p><p>ご挨拶：「<span class="num">1971</span>年に東京歯科大学を卒業して以来、半世紀以上にわたり歯科医療の最前線に立ってまいりました。都心での高度な診療経験を経て、この成増の地で開業した当時、仕事で忙しく歯医者に通えない患者様を数多く目の当たりにしました。『なんとかして、この方々の歯を守りたい』という想いから、当時としては珍しかった週末診療・夜間診療をスタートさせました。</p><p>時代は変わり、医療設備はデジタル化され大きく進化しましたが、『患者様一人ひとりに真剣に向き合う』という当院の根本的な姿勢は、これからも決して変わることはありません。」</p><p class="h-s" style="margin:20px 0 6px;font-size:14px">略歴・資格等</p><ul style="margin:0;padding-left:1.2em;font-size:14px"><li>1971年 東京歯科大学 卒業</li><li>医療法人社団守佳会 理事長</li></ul></div></div>
@@ -1627,9 +1659,9 @@ body{background:#fff}
   var top=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ehh'))||0, nav=document.querySelector('.lpnav'); if(nav)top+=nav.offsetHeight;
   var bar=document.querySelector('.ebar'), bot=(bar&&getComputedStyle(bar).display!=='none')?bar.offsetHeight:0;
   pins.forEach(function(p){p.style.setProperty('--pin-top',top+'px');p.style.setProperty('--pin-bot',bot+'px');p.classList.remove('off');p._k=-1;
-   var st=p.querySelector('.pin-stage'), foot=p.querySelector('.pin-foot'), sb=st.getBoundingClientRect(), fb=foot.getBoundingClientRect(), bad=false;
-   [].forEach.call(p.querySelectorAll('.pin-items>*'),function(r){var t=r.querySelector('.tx'),tb=t.getBoundingClientRect(),h=t.scrollHeight;
-    if(innerWidth>900){if(tb.top+h-parseFloat(getComputedStyle(t).paddingBottom)>fb.top-6)bad=true}else{if(tb.top+h-96>fb.top-4)bad=true}});
+   var box=p.querySelector('.pin-items'), H=box.clientHeight, bad=false;
+   [].forEach.call(p.querySelectorAll('.pin-items>*'),function(r){var t=r.querySelector('.tx'),ph=r.querySelector('.photo');
+    var need=innerWidth>900?t.scrollHeight:ph.offsetHeight+16+t.scrollHeight; if(need>H+2)bad=true});
    if(isStatic||bad)p.classList.add('off');});
   pinTick();
  }
